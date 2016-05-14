@@ -4,9 +4,9 @@ Real Solar System Visual Enhancements is an addon for the Environmental Visual E
 
 Credits:
 
-* Cloud textures by Pingopete.
-* Environmental Visual Enhancements by rbray89.
-* Scatterer by Blackrack
+* Cloud textures by ![Pingopete](https://github.com/Pingopete)
+* Environmental Visual Enhancements by ![rbray89](https://github.com/rbray89)
+* Scatterer by ![Blackrack](https://github.com/LGhassen)
 
 License: CC-BY-NC-SA
 
