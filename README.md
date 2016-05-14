@@ -6,7 +6,6 @@ Credits:
 
 * Cloud textures by Pingopete.
 * Environmental Visual Enhancements by rbray89.
+* Scatterer by Blackrack
 
 License: CC-BY-NC-SA
-
-![](https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSS_themis_09.png)
