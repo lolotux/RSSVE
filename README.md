@@ -10,4 +10,4 @@ Credits:
 
 License: CC-BY-NC-SA
 
-![](https://raw.githubusercontent.com/PhineasFreak/PicBin/3c140a8aff657e892e991e6ddc6bb7d19bc86d86/PicBin/RSSVE_git.png)
+![](https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git_02.png)
