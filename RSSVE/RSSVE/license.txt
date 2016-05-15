@@ -10,8 +10,16 @@ Credits:
 
 * Cloud textures by Pingopete:
 
-    https://github.com/Pingopete/RVE-KSP-1.0.4
+    https://github.com/Pingopete
 
 * Environmental Visual Enhancements by rbray89:
 
-    https://github.com/rbray89/EnvironmentalVisualEnhancements
+    https://github.com/rbray89
+
+* Scatterer by Blackrack:
+
+    https://github.com/LGhassen
+
+* Scatterer configuration by sDaze and Berlin:
+
+    http://forum.kerbalspaceprogram.com/index.php?/topic/138572-112-112-stock-size-real-solar-system/&page=1
