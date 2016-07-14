@@ -19,7 +19,3 @@ Credits:
 * Scatterer by Blackrack:
 
     https://github.com/LGhassen
-
-* Scatterer configuration by sDaze and Berlin:
-
-    http://forum.kerbalspaceprogram.com/index.php?/topic/138572-112-112-stock-size-real-solar-system/&page=1
