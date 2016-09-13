@@ -1,6 +1,6 @@
 # RSSVE
 
-Real Solar System Visual Enhancements (RSSVE) is an addon for the Environmental Visual Enhancements (EVE) modification, providing clouds and other visual improvements for Real Solar System (RSS).
+Real Solar System Visual Enhancements (RSSVE) is an add-on for the Environmental Visual Enhancements (EVE), providing clouds and other visual improvements for the Real Solar System (RSS) modification.
 
 Credits:
 
@@ -10,4 +10,10 @@ Credits:
 
 License: CC-BY-NC-SA
 
+![](https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git_05.png)
+
 ![](https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git_02.png)
+
+![](https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git_04.png)
+
+![](https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git_03.png)
