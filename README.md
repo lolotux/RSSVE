@@ -11,13 +11,13 @@ Credits:
 * Environmental Visual Enhancements by ![rbray89](https://github.com/rbray89)
 * Scatterer by ![Blackrack](https://github.com/LGhassen)
 
-![](RSSVE:Venus)
+![][RSSVE:Venus]
 
 ![][RSSVE:Earth]
 
-![](RSSVE:Mars)
+![][RSSVE:Mars]
 
-![](RSSVE:Jupiter)
+![][RSSVE:Jupiter]
 
 [RSSVE:version]: https://img.shields.io/badge/KSP%20Version-1.1.3.1289-red.svg
 [RSSVE:license]: https://img.shields.io/badge/License-CC%20BY--NC--SA%203.0-green.svg
