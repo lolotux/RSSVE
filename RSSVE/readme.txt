@@ -27,3 +27,9 @@ License:
 RSSVE is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC-BY-NC-SA 3.0) license.
 
 You should have received a copy of the license along with this work. If not, visit the official Creative Commons web page: https://creativecommons.org/licenses/by-nc-sa/3.0/
+
+Credits:
+
+    * Cloud textures by Pingopete
+    * Environmental Visual Enhancements by rbray89 & WazWaz
+    * Scatterer by Blackrack
