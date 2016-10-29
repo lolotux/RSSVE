@@ -1,12 +1,15 @@
 # ==================================================
-# Ignore selected Windows folders/files.
+# Ignore selected folders/files.
 # ==================================================
 
 $RECYCLE.BIN/
+Network Trash Folder
+Temporary Items
 
-Thumbs.db
-ehthumbs.db
+*.lnk
 Desktop.ini
+ehthumbs.db
+Thumbs.db
 
 # ==================================================
 # Ignore selected mod folders/files.
