@@ -15,5 +15,6 @@ Thumbs.db
 # Ignore selected mod folders/files.
 # ==================================================
 
-*.raw
 *.old
+*.png
+*.raw
