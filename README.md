@@ -23,7 +23,7 @@ Check the ![RSSVE wiki][RSSVE:wiki] for more information.
 
 RSSVE is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC-BY-NC-SA 3.0) license.
 
-You should have received a copy of the license along with this work. If not, visit the ![official Creative Commons web page](RSSVE:cc-license)
+You should have received a copy of the license along with this work. If not, visit the ![official Creative Commons web page](RSSVE:cc-license).
 
 --------------------------------------------------
 
@@ -35,6 +35,8 @@ You should have received a copy of the license along with this work. If not, vis
 
 ![][RSSVE:Jupiter]
 
+![][RSSVE:Titan]
+
 [RSSVE:shield-version]: https://img.shields.io/badge/KSP%20Version-1.1.3.1289-red.svg
 [RSSVE:shield-license]: https://img.shields.io/badge/License-CC%20BY--NC--SA%203.0-green.svg
 [RSSVE:cc-license]: https://creativecommons.org/licenses/by-nc-sa/3.0/
@@ -45,3 +47,4 @@ You should have received a copy of the license along with this work. If not, vis
 [RSSVE:Earth]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_earth.png
 [RSSVE:Mars]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_mars.png
 [RSSVE:Jupiter]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_jupiter.png
+[RSSVE:Titan]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_titan.png
