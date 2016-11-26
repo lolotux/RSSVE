@@ -2,19 +2,21 @@
 # Ignore selected folders/files.
 # ==================================================
 
-$RECYCLE.BIN/
-Network Trash Folder
-Temporary Items
+**bin/*
 
+*.db
+*.DB
+*.ini
+*.INI
 *.lnk
-Desktop.ini
-ehthumbs.db
-Thumbs.db
-
-# ==================================================
-# Ignore selected mod folders/files.
-# ==================================================
-
+*.LNK
 *.old
+*.OLD
+*.pdb
+*.PDB
 *.png
+*.PNG
 *.raw
+*.RAW
+*.userprefs
+*.USERPREFS

@@ -8,10 +8,14 @@
 # Plain text
 # ==================================================
 
-*.cfg text
-*.CFG text
-*.txt text
-*.TXT text
+*.cfg    text
+*.CFG    text
+*.csproj text
+*.CSPROJ text
+*.sln    text
+*.SLN    text
+*.txt    text
+*.TXT    text
 
 # ==================================================
 # Images
@@ -19,10 +23,19 @@
 
 *.dds  binary
 *.DDS  binary
+*.dll  binary
+*.DLL  binary
 *.half binary
 *.HALF binary
 *.raw  binary
 *.RAW  binary
+
+# ==================================================
+# Code
+# ==================================================
+
+*.cs csharp
+*.CS csharp
 
 # ==================================================
 # Ignore list

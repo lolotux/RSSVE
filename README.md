@@ -21,9 +21,9 @@ Check the ![RSSVE wiki][RSSVE:wiki] for more information.
 
 ### License
 
-RSSVE is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC-BY-NC-SA 3.0) license.
+RSSVE is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 (CC-BY-NC-SA 4.0) license.
 
-You should have received a copy of the license along with this work. If not, visit the ![official Creative Commons web page](RSSVE:cc-license).
+You should have received a copy of the license along with this work. If not, visit the ![official Creative Commons web page](RSSVE:cc-license-link).
 
 --------------------------------------------------
 
@@ -38,8 +38,8 @@ You should have received a copy of the license along with this work. If not, vis
 ![][RSSVE:Titan]
 
 [RSSVE:shield-version]: https://img.shields.io/badge/KSP%20Version-1.1.3.1289-red.svg
-[RSSVE:shield-license]: https://img.shields.io/badge/License-CC%20BY--NC--SA%203.0-green.svg
-[RSSVE:cc-license]: https://creativecommons.org/licenses/by-nc-sa/3.0/
+[RSSVE:shield-license]: https://img.shields.io/badge/License-CC--BY--NC--SA%204.0-green.svg
+[RSSVE:cc-license-link]: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 [RSSVE:wiki]: https://github.com/PhineasFreak/RSSVE/wiki
 
