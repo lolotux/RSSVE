@@ -51,6 +51,6 @@ You should have received a copy of the license along with this work. If not, vis
 [RSSVE:Earth]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_earth.png
 [RSSVE:Mars]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_mars.png
 [RSSVE:Jupiter]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_jupiter.png
-[RSSVE:Saturn] https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_saturn.png
+[RSSVE:Saturn]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_saturn.png
 [RSSVE:Titan]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_titan.png
-[RSSVE:Uranus] https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_uranus.png
+[RSSVE:Uranus]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_uranus.png
