@@ -2,7 +2,8 @@
 # Ignore selected folders/files.
 # ==================================================
 
-**bin/*
+Source/bin/*
+Source/obj/*
 
 *.db
 *.DB

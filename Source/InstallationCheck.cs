@@ -46,9 +46,9 @@ namespace RSSVE
             {
                 //  Log some basic information that might be of interest when debugging.
 
-                Debug.Log("[" + Constants.AssemblyName + "] Assembly path: " + KSPUtil.ApplicationRootPath);
                 Debug.Log("[" + Constants.AssemblyName + "] Assembly location: " + Assembly.GetExecutingAssembly().Location);
                 Debug.Log("[" + Constants.AssemblyName + "] Assembly version: " + Version.AssemblyVersion);
+                Debug.Log("[" + Constants.AssemblyName + "] Assembly compatibility: " + Constants.VersionCompatible.Major + "." + Constants.VersionCompatible.Minor  + "." + Constants.VersionCompatible.Revis);
 
                 //  Search for this mod's DLL existing in the wrong location. This will also detect duplicate copies because only one can be in the right place.
 
@@ -69,14 +69,14 @@ namespace RSSVE
 
                 if (!AssemblyLoader.loadedAssemblies.Any(a => a.assembly.GetName ().Name.StartsWith ("EVEManager", StringComparison.CurrentCulture) && a.url == ""))
                 {
-                    Debug.Log("[" + Constants.AssemblyName + "] Missing or incorrectly installed Scatterer.");
+                    Debug.Log("[" + Constants.AssemblyName + "] Missing or incorrectly installed Environmental Visual Enhancements.");
 
                     PopupDialog.SpawnPopupDialog(new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), "Missing Environmental Visual Enhancements", Constants.AssemblyName + " requires the Environmental Visual Enhancements mod in order to function properly.\n", "OK", false, HighLogic.UISkin);
                 }
 
                 //  Check if Scatterer is installed.
 
-                if (!AssemblyLoader.loadedAssemblies.Any(a => a.assembly.GetName ().Name.StartsWith ("Scatterer", StringComparison.CurrentCulture) && a.url == ""))
+                if (!AssemblyLoader.loadedAssemblies.Any(a => a.assembly.GetName ().Name.StartsWith ("scatterer", StringComparison.CurrentCulture) && a.url == ""))
                 {
                     Debug.Log("[" + Constants.AssemblyName + "] Missing or incorrectly installed Scatterer.");
 

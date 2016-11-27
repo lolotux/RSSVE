@@ -57,7 +57,7 @@ namespace RSSVE
             // Even if you don't lock down functionality, you should return true if your users
             // can expect a future update to be available.
 
-            return Versioning.version_minor == Constants.VersionCompatible.Minor && Versioning.version_major == Constants.VersionCompatible.Minor && Versioning.Revision == Constants.VersionCompatible.Revis;
+            return (Versioning.version_minor == Constants.VersionCompatible.Minor && Versioning.version_major == Constants.VersionCompatible.Major && Versioning.Revision == Constants.VersionCompatible.Revis);
         }
 
         public static bool IsUnityCompatible()

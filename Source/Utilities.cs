@@ -15,6 +15,7 @@
 //  ================================================================================
 
 using System.Reflection;
+using System.Diagnostics;
 
 namespace RSSVE
 {
@@ -22,9 +23,9 @@ namespace RSSVE
     {
         public struct VersionCompatible
         {
-            static public readonly int Major = 1;
-            static public readonly int Minor = 2;
-            static public readonly int Revis = 1; 
+            static public int Major = 1;
+            static public int Minor = 2;
+            static public int Revis = 1; 
         }
 
         static public readonly string AssemblyName = "RSSVE";
@@ -39,12 +40,9 @@ namespace RSSVE
         {
             get
             {
-                if (_AssemblyVersion == null)
-                {
-                    var GetVersion = Assembly.GetExecutingAssembly().GetName().Version;
+                var GetVersion = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location);
 
-                    _AssemblyVersion = GetVersion.Major + "." + GetVersion.Minor + "." + GetVersion.Revision + "." + GetVersion.Build;
-                }
+                _AssemblyVersion = GetVersion.FileMajorPart + "." + GetVersion.FileMinorPart + "." + GetVersion.FileBuildPart + "." + GetVersion.FilePrivatePart;
 
                 return _AssemblyVersion;
             }
