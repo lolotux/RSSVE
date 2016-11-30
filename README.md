@@ -41,16 +41,22 @@ You should have received a copy of the license along with this work. If not, vis
 
 ![][RSSVE:Uranus]
 
-[RSSVE:shield-version]: https://img.shields.io/badge/KSP%20Version-1.1.3.1289-red.svg
-[RSSVE:shield-license]: https://img.shields.io/badge/License-CC--BY--NC--SA%204.0-green.svg
+![][RSSVE:Neptune]
+
+![][RSSVE:Triton]
+
+[RSSVE:shield-version]:  https://img.shields.io/badge/KSP%20Version-1.1.3.1289-red.svg
+[RSSVE:shield-license]:  https://img.shields.io/badge/License-CC--BY--NC--SA%204.0-green.svg
 [RSSVE:cc-license-link]: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 [RSSVE:wiki]: https://github.com/PhineasFreak/RSSVE/wiki
 
-[RSSVE:Venus]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_venus.png
-[RSSVE:Earth]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_earth.png
-[RSSVE:Mars]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_mars.png
+[RSSVE:Venus]:   https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_venus.png
+[RSSVE:Earth]:   https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_earth.png
+[RSSVE:Mars]:    https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_mars.png
 [RSSVE:Jupiter]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_jupiter.png
-[RSSVE:Saturn]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_saturn.png
-[RSSVE:Titan]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_titan.png
-[RSSVE:Uranus]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_uranus.png
+[RSSVE:Saturn]:  https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_saturn.png
+[RSSVE:Titan]:   https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_titan.png
+[RSSVE:Uranus]:  https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_uranus.png
+[RSSVE:Neptune]: https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_neptune.png
+[RSSVE:Triton]:  https://raw.githubusercontent.com/PhineasFreak/PicBin/master/PicBin/RSSVE_git/RSSVE_triton.png
