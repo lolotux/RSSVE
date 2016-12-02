@@ -47,7 +47,7 @@ You should have received a copy of the license along with this work. If not, vis
 
 ![][RSSVE:Pluto]
 
-[RSSVE:shield-version]:  https://img.shields.io/badge/KSP%20Version-1.1.3.1289-red.svg
+[RSSVE:shield-version]:  https://img.shields.io/badge/KSP%20Version-1.2.1.1604-red.svg
 [RSSVE:shield-license]:  https://img.shields.io/badge/License-CC--BY--NC--SA%204.0-green.svg
 [RSSVE:cc-license-link]: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
