@@ -67,7 +67,7 @@ namespace RSSVE
 
                 //  Check if Environmental Visual Enhancements is installed.
 
-                if (!AssemblyLoader.loadedAssemblies.Any(a => a.assembly.GetName ().Name.StartsWith ("EVEManager", StringComparison.CurrentCulture) && a.url == ""))
+                if (!AssemblyLoader.loadedAssemblies.Any(a => a.assembly.GetName ().Name.StartsWith ("EVEManager", StringComparison.InvariantCultureIgnoreCase) && a.url.ToLower() == "environmentalvisualenhancements/plugins"))
                 {
                     Debug.Log("[" + Constants.AssemblyName + "] Missing or incorrectly installed Environmental Visual Enhancements.");
 
@@ -76,7 +76,7 @@ namespace RSSVE
 
                 //  Check if Scatterer is installed.
 
-                if (!AssemblyLoader.loadedAssemblies.Any(a => a.assembly.GetName ().Name.StartsWith ("scatterer", StringComparison.CurrentCulture) && a.url == ""))
+                if (!AssemblyLoader.loadedAssemblies.Any(a => a.assembly.GetName ().Name.StartsWith ("Scatterer", StringComparison.InvariantCultureIgnoreCase) && a.url.ToLower() == "scatterer"))
                 {
                     Debug.Log("[" + Constants.AssemblyName + "] Missing or incorrectly installed Scatterer.");
 
@@ -85,7 +85,7 @@ namespace RSSVE
 
                 //  Check it Module Manager is installed.
 
-                if (!AssemblyLoader.loadedAssemblies.Any(a => a.assembly.GetName ().Name.StartsWith ("ModuleManager", StringComparison.CurrentCulture) && a.url == ""))
+                if (!AssemblyLoader.loadedAssemblies.Any(a => a.assembly.GetName ().Name.StartsWith ("ModuleManager", StringComparison.InvariantCultureIgnoreCase) && a.url.ToLower() == ""))
                 {
                     Debug.Log("[" + Constants.AssemblyName + "] Missing or incorrectly installed Module Manager.");
 
