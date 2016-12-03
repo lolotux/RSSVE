@@ -46,11 +46,11 @@ namespace RSSVE
             {
                 //  Log some basic information that might be of interest when debugging.
 
-                Debug.Log("[" + Constants.AssemblyName + "] Assembly location: " + Assembly.GetExecutingAssembly().Location);
-                Debug.Log("[" + Constants.AssemblyName + "] Assembly version: " + Version.AssemblyVersion);
-                Debug.Log("[" + Constants.AssemblyName + "] Assembly compatibility: " + Constants.VersionCompatible.Major + "." + Constants.VersionCompatible.Minor  + "." + Constants.VersionCompatible.Revis);
+                Notification.Logger(Constants.AssemblyName, "Assembly location: " + Assembly.GetExecutingAssembly().Location);
+                Notification.Logger(Constants.AssemblyName, "Assembly version: " + Version.AssemblyVersion);
+                Notification.Logger(Constants.AssemblyName, "Assembly compatibility: " + Constants.VersionCompatible.Major + "." + Constants.VersionCompatible.Minor  + "." + Constants.VersionCompatible.Revis);
 
-                //  Search for this mod's DLL existing in the wrong location. This will also detect duplicate copies because only one can be in the right place.
+               //  Search for this mod's DLL existing in the wrong location. This will also detect duplicate copies because only one can be in the right place.
 
                 var assemblies = AssemblyLoader.loadedAssemblies.Where(a => a.assembly.GetName().Name == Assembly.GetExecutingAssembly().GetName().Name).Where(a => a.url != Constants.AssemblyPath);
 
@@ -60,49 +60,48 @@ namespace RSSVE
 
                     string badPathsString = string.Join("\n", badPaths.ToArray());
 
-                    Debug.Log("[" + Constants.AssemblyName + "] Incorrect installation, bad path(s):\n" + badPathsString);
+                    Notification.Logger(Constants.AssemblyName, "Incorrect installation, bad path(s):\n" + badPathsString);
 
-                    PopupDialog.SpawnPopupDialog(new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), "Incorrect " + Constants.AssemblyName + " Installation", Constants.AssemblyName + " has been installed incorrectly and will not function properly. All files should be located in KSP/GameData/" + Constants.AssemblyName + ". Do not move any files from inside that folder.\n\nIncorrect path(s):\n" + badPathsString, "OK", false, HighLogic.UISkin);
+                    Notification.Dialog("Incorrect " + Constants.AssemblyName + " Installation", Constants.AssemblyName + " has been installed incorrectly and will not function properly. All files should be located in KSP/GameData/" + Constants.AssemblyName + ". Do not move any files from inside that folder.\n\nIncorrect path(s):\n" + badPathsString);
                 }
 
                 //  Check if Environmental Visual Enhancements is installed.
 
                 if (!AssemblyLoader.loadedAssemblies.Any(a => a.assembly.GetName ().Name.StartsWith ("EVEManager", StringComparison.InvariantCultureIgnoreCase) && a.url.ToLower() == "environmentalvisualenhancements/plugins"))
                 {
-                    Debug.Log("[" + Constants.AssemblyName + "] Missing or incorrectly installed Environmental Visual Enhancements.");
+                    Notification.Logger(Constants.AssemblyName, "Missing or incorrectly installed Environmental Visual Enhancements.");
 
-                    PopupDialog.SpawnPopupDialog(new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), "Missing Environmental Visual Enhancements", Constants.AssemblyName + " requires the Environmental Visual Enhancements mod in order to function properly.\n", "OK", false, HighLogic.UISkin);
+                    Notification.Dialog("Missing Environmental Visual Enhancements", Constants.AssemblyName + " requires the Environmental Visual Enhancements mod in order to function properly.\n");
                 }
 
                 //  Check if Scatterer is installed.
 
                 if (!AssemblyLoader.loadedAssemblies.Any(a => a.assembly.GetName ().Name.StartsWith ("Scatterer", StringComparison.InvariantCultureIgnoreCase) && a.url.ToLower() == "scatterer"))
                 {
-                    Debug.Log("[" + Constants.AssemblyName + "] Missing or incorrectly installed Scatterer.");
+                    Notification.Logger(Constants.AssemblyName, "Missing or incorrectly installed Scatterer.");
 
-                    PopupDialog.SpawnPopupDialog(new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), "Missing Scatterer", Constants.AssemblyName + " requires the Scatterer mod in order to function properly.\n", "OK", false, HighLogic.UISkin);
+                    Notification.Dialog("Missing Scatterer", Constants.AssemblyName + " requires the Scatterer mod in order to function properly.\n");
                 }
 
                 //  Check it Module Manager is installed.
 
                 if (!AssemblyLoader.loadedAssemblies.Any(a => a.assembly.GetName ().Name.StartsWith ("ModuleManager", StringComparison.InvariantCultureIgnoreCase) && a.url.ToLower() == ""))
                 {
-                    Debug.Log("[" + Constants.AssemblyName + "] Missing or incorrectly installed Module Manager.");
+                    Notification.Logger(Constants.AssemblyName, "Missing or incorrectly installed Module Manager.");
 
-                    PopupDialog.SpawnPopupDialog(new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), "Missing Module Manager", Constants.AssemblyName + " requires the Module Manager mod in order to function properly.\n", "OK", false, HighLogic.UISkin);
+                    Notification.Dialog("Missing Module Manager", Constants.AssemblyName + " requires the Module Manager mod in order to function properly.\n");
                 }
             }
             catch (Exception ex)
             {
-                Debug.Log("[" + Constants.AssemblyName + "] Caught an exception: \n" + ex.Message + "\n" + ex.StackTrace);
+                Notification.Logger(Constants.AssemblyName, "Caught an exception: \n" + ex.Message + "\n" + ex.StackTrace);
 
-                PopupDialog.SpawnPopupDialog(new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), "Incorrect " + Constants.AssemblyName + " installation",
+                Notification.Dialog("Incorrect " + Constants.AssemblyName + " installation",
                     "An error has occurred while checking the installation of " + Constants.AssemblyName + ".\n\n" +
                     "You need to\n" +
                     "  • Terminate the KSP instance\n" +
                     "  • Send a complete copy of the 'output.log' file to the mod developer\n" +
-                    "  • Completely remove and re-install " + Constants.AssemblyName,
-                    "OK", false, HighLogic.UISkin);
+                    "  • Completely remove and re-install " + Constants.AssemblyName);
             }
         }
     }

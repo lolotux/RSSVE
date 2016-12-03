@@ -16,6 +16,7 @@
 
 using System.Reflection;
 using System.Diagnostics;
+using UnityEngine;
 
 namespace RSSVE
 {
@@ -23,20 +24,37 @@ namespace RSSVE
     {
         public struct VersionCompatible
         {
-            static public int Major = 1;
-            static public int Minor = 2;
-            static public int Revis = 1; 
+            static public readonly int Major = 1;
+            static public readonly int Minor = 2;
+            static public readonly int Revis = 1; 
         }
 
         static public readonly string AssemblyName = "RSSVE";
         static public readonly string AssemblyPath =  AssemblyName + "/Plugins";
     }
 
+    class Notification
+    {
+        public static bool Dialog(string MessageTitle, string MessageContent)
+        {
+            PopupDialog.SpawnPopupDialog(new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), MessageTitle, MessageContent, "OK", false, HighLogic.UISkin);
+
+            return true;
+        }
+
+        public static bool Logger(string AssemblyTagName, string Content)
+        {
+            UnityEngine.Debug.Log("[" + AssemblyTagName + "] " + Content);
+
+            return true;
+        }
+    }
+ 
     class Version
     {
-        static public string _AssemblyVersion;
+        public static string _AssemblyVersion;
 
-        static public string AssemblyVersion
+        public static string AssemblyVersion
         {
             get
             {
