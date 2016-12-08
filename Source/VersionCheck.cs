@@ -62,9 +62,7 @@ namespace RSSVE
 
         public static bool IsUnityCompatible()
         {
-            //  return Application.unityVersion == "5.4.0p4";
-
-            return true;
+            return (Application.unityVersion == Constants.UnityVersion);
         }
 
         //  Version of the compatibility checker itself.

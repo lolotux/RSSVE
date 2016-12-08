@@ -1,7 +1,7 @@
 //  ================================================================================
 //  Real Solar System Visual Enhancements for Kerbal Space Program.
 
-//  Copyright © 2016, Phineas Freak
+//  Copyright © 2016, Alexander "Phineas Freak" Kampolis
 
 //  This file is part of Real Solar System Visual Enhancements.
 
@@ -26,9 +26,10 @@ namespace RSSVE
         {
             static public readonly int Major = 1;
             static public readonly int Minor = 2;
-            static public readonly int Revis = 1; 
+            static public readonly int Revis = 2;
         }
 
+        static public readonly string UnityVersion = "5.4.0p4";
         static public readonly string AssemblyName = "RSSVE";
         static public readonly string AssemblyPath =  AssemblyName + "/Plugins";
     }
@@ -49,7 +50,7 @@ namespace RSSVE
             return true;
         }
     }
- 
+
     class Version
     {
         public static string _AssemblyVersion;

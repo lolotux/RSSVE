@@ -1,7 +1,7 @@
 //  ================================================================================
 //  Real Solar System Visual Enhancements for Kerbal Space Program.
 
-//  Copyright © 2016, Phineas Freak
+//  Copyright © 2016, Alexander "Phineas Freak" Kampolis
 
 //  This file is part of Real Solar System Visual Enhancements.
 
@@ -54,7 +54,7 @@ using System.Runtime.InteropServices;
 //  ================================================================================
 
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.2.1.1604")]
-[assembly: AssemblyInformationalVersion("1.2.1.1604")]
+[assembly: AssemblyFileVersion("1.2.2.1622")]
+[assembly: AssemblyInformationalVersion("1.2.2.1622")]
 
 [assembly: KSPAssembly("RSSVE", 1, 0)]
