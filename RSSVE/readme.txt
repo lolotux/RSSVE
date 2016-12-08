@@ -6,9 +6,9 @@ Real Solar System Visual Enhancements (RSSVE) is an add-on for the Environmental
 
 Installation:
 
-    1. Download the latest version of Module Manager.
-    2. Download the latest version of Environmental Visual Enhancements (EVE). Note that RSSVE requires only the "AnyCPU-EVE-Release" package.
-    3. Download the latest version of Scatterer.
+    1. Download the latest version of Module Manager for your respective KSP version.
+    2. Download the latest version of Environmental Visual Enhancements (EVE) for your respective KSP version. Note that RSSVE requires only the "AnyCPU-EVE-Release" package.
+    3. Download the latest version of Scatterer for your respective KSP version.
     4. Install the mods according to the instructions provided by each one.
     5. Download the latest version of Real Solar System Visual Enhancements (RSSVE).
     6. Extract the contents of RSSVE inside the GameData folder. The final file & folder structure should look like this:
