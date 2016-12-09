@@ -30,6 +30,7 @@ You should have received a copy of the license along with this work. If not, vis
 
 Credits:
 
+    * Real Solar System by NathanKell
     * Cloud textures by Pingopete
     * Environmental Visual Enhancements by rbray89 & WazWaz
     * Scatterer by Blackrack
