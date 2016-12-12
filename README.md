@@ -11,9 +11,10 @@ Check the ![RSSVE wiki][RSSVE:wiki-link] for more information.
 
 ### Credits
 
-* Real Solar System by ![NathanKell][RSSVE:RSS-link]
-* Cloud textures by ![Pingopete][RSSVE:RVE-link]
+* Module Manager by ![ialdabaoth][RSSVE:MM-link-ialdabaoth] and ![sarbian][RSSVE:MM-link-sarbian]
 * Environmental Visual Enhancements by ![rbray89][RSSVE:EVE-link-rbray] and ![WazWaz][RSSVE:EVE-link-waz]
+* Real Solar System by ![NathanKell][RSSVE:RSS-link]
+* RVE by ![Pingopete][RSSVE:RVE-link]
 * Scatterer by ![Blackrack][RSSVE:Scatterer-link]
 
 ### Contributions
@@ -52,11 +53,13 @@ You should have received a copy of the license along with this work. If not, vis
 [RSSVE:shield-license]:  https://img.shields.io/badge/License-CC--BY--NC--SA%204.0-green.svg
 [RSSVE:cc-license-link]: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-[RSSVE:RSS-link]:       https://github.com/KSP-RO/RealSolarSystem
-[RSSVE:RVE-link]:       https://github.com/Pingopete
-[RSSVE:EVE-link-rbray]: https://github.com/rbray89
-[RSSVE:EVE-link-waz]:   https://github.com/WazWaz
-[RSSVE:Scatterer-link]: https://github.com/LGhassen
+[RSSVE:EVE-link-rbray]:     https://github.com/rbray89
+[RSSVE:EVE-link-waz]:       https://github.com/WazWaz
+[RSSVE:MM-link-ialdabaoth]: https://github.com/Ialdabaoth
+[RSSVE:MM-link-sarbian]:    https://github.com/sarbian/ModuleManager
+[RSSVE:RSS-link]:           https://github.com/KSP-RO/RealSolarSystem
+[RSSVE:RVE-link]:           https://github.com/Pingopete
+[RSSVE:Scatterer-link]:     https://github.com/LGhassen
 
 [RSSVE:wiki-link]: https://github.com/PhineasFreak/RSSVE/wiki
 

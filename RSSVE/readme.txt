@@ -11,7 +11,7 @@ Installation:
     3. Download the latest version of Scatterer for your respective KSP version.
     4. Install the mods according to the instructions provided by each one.
     5. Download the latest version of Real Solar System Visual Enhancements (RSSVE).
-    6. Extract the contents of RSSVE inside the GameData folder. The final file & folder structure should look like this:
+    6. Extract the contents of the RSSVE .zip file and move the resulting "RSSVE" folder inside the GameData folder. The final file & folder structure should look like this:
 
     *   GameData/ModuleManager.X.X.XX.X.dll
     *   GameData/EnvironmentalVisualEnhancements
@@ -30,7 +30,8 @@ You should have received a copy of the license along with this work. If not, vis
 
 Credits:
 
-    * Real Solar System by NathanKell
-    * Cloud textures by Pingopete
     * Environmental Visual Enhancements by rbray89 & WazWaz
+    * Module Manager by ialdabaoth and sarbian
+    * Real Solar System by NathanKell
+    * RVE by Pingopete
     * Scatterer by Blackrack
