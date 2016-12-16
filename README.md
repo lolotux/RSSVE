@@ -17,9 +17,10 @@ Check the ![RSSVE wiki][RSSVE:wiki-link] for more information.
 * RVE by ![Pingopete][RSSVE:RVE-link]
 * Scatterer by ![Blackrack][RSSVE:Scatterer-link]
 
-### Contributions
+### Contributors
 
-* Francois W. Nel
+* ![Francois W. Nel][https://github.com/francoiswnel/]
+* ![Lukas Theisen][https://github.com/Theysen]
 
 ### License
 

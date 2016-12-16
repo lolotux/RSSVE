@@ -35,3 +35,8 @@ Credits:
     * Real Solar System by NathanKell
     * RVE by Pingopete
     * Scatterer by Blackrack
+
+Contributors:
+
+    * Francois W. Nel
+    * Lukas Theisen
