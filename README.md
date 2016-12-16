@@ -19,8 +19,8 @@ Check the ![RSSVE wiki][RSSVE:wiki-link] for more information.
 
 ### Contributors
 
-* ![Francois W. Nel][https://github.com/francoiswnel/]
-* ![Lukas Theisen][https://github.com/Theysen]
+* ![Francois W. Nel][RSSVE:contributor-francois]
+* ![Lukas Theisen][RSSVE:contributor-theysen]
 
 ### License
 
@@ -61,6 +61,9 @@ You should have received a copy of the license along with this work. If not, vis
 [RSSVE:RSS-link]:           https://github.com/KSP-RO/RealSolarSystem
 [RSSVE:RVE-link]:           https://github.com/Pingopete
 [RSSVE:Scatterer-link]:     https://github.com/LGhassen
+
+![Francois W. Nel][RSSVE:contributor-francois]
+![Lukas Theisen][RSSVE:contributor-theysen]
 
 [RSSVE:wiki-link]: https://github.com/PhineasFreak/RSSVE/wiki
 
