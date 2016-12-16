@@ -62,8 +62,8 @@ You should have received a copy of the license along with this work. If not, vis
 [RSSVE:RVE-link]:           https://github.com/Pingopete
 [RSSVE:Scatterer-link]:     https://github.com/LGhassen
 
-![Francois W. Nel][RSSVE:contributor-francois]
-![Lukas Theisen][RSSVE:contributor-theysen]
+[RSSVE:contributor-francois]: https://github.com/francoiswnel
+[RSSVE:contributor-theysen]:  https://github.com/Theysen
 
 [RSSVE:wiki-link]: https://github.com/PhineasFreak/RSSVE/wiki
 
