@@ -23,3 +23,5 @@ Source/obj/*
 *.RAW
 *.userprefs
 *.USERPREFS
+*.xml
+*.XML
