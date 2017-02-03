@@ -1,7 +1,7 @@
 //  ================================================================================
 //  Real Solar System Visual Enhancements for Kerbal Space Program.
 
-//  Copyright © 2016, Alexander "Phineas Freak" Kampolis
+//  Copyright © 2016-2017, Alexander "Phineas Freak" Kampolis.
 
 //  This file is part of Real Solar System Visual Enhancements.
 

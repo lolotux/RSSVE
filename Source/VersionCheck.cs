@@ -1,6 +1,6 @@
 //  ================================================================================
 /*
- * Copyright (c) 2016, Majiir, ferram4
+ * Copyright © 2014-2017, Majiir, ferram4.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification, are permitted
