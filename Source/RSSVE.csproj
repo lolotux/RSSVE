@@ -29,6 +29,7 @@
     <OutputPath>..\RSSVE\Plugins</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\RSSVE\Plugins\RSSVE.xml</DocumentationFile>
     <ConsolePause>false</ConsolePause>
     <NoStdLib>false</NoStdLib>
   </PropertyGroup>

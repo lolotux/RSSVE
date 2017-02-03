@@ -20,28 +20,82 @@ using UnityEngine;
 
 namespace RSSVE
 {
+    /// <summary>
+    /// Set up the constants used by RSSVE.
+    /// </summary>
+
     public static class Constants
     {
+        /// <summary>
+        /// Version compatible struct.
+        /// </summary>
+
         public struct VersionCompatible
         {
+            /// <summary>
+            /// The major version value.
+            /// </summary>
+
             static public readonly int Major = 1;
+
+            /// <summary>
+            /// The minor version value.
+            /// </summary>
+
             static public readonly int Minor = 2;
+
+            /// <summary>
+            /// The revision version value.
+            /// </summary>
+
             static public readonly int Revis = 2;
         }
 
+        /// <summary>
+        /// Compatible Unity version.
+        /// </summary>
+
         static public readonly string UnityVersion = "5.4.0p4";
+
+        /// <summary>
+        /// The name of the assembly (used as a tag).
+        /// </summary>
+
         static public readonly string AssemblyName = "RSSVE";
+
+        /// <summary>
+        /// The path where the assembly resides.
+        /// </summary>
+
         static public readonly string AssemblyPath =  AssemblyName + "/Plugins";
     }
 
     class Notification
     {
+        /// <summary>
+        /// Method to create popup notification dialogs.
+        /// </summary>
+        /// <param name = "MessageTitle">Dialog title (string)</param>
+        /// <param name = "MessageContent">Dialog message (string)</param>
+        /// <returns>
+        /// Returns always true.
+        /// </returns>
+
         public static bool Dialog(string MessageTitle, string MessageContent)
         {
             PopupDialog.SpawnPopupDialog(new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), MessageTitle, MessageContent, "OK", false, HighLogic.UISkin);
 
             return true;
         }
+
+        /// <summary>
+        /// Method to print debug lines to the KSP log.
+        /// </summary>
+        /// <param name = "AssemblyTagName">Assembly tag (string)</param>
+        /// <param name = "Content">Log message (string)</param>
+        /// <returns>
+        /// Returns always true.
+        /// </returns>
 
         public static bool Logger(string AssemblyTagName, string Content)
         {
@@ -50,6 +104,13 @@ namespace RSSVE
             return true;
         }
     }
+
+    /// <summary>
+    /// Method to get the assembly version.
+    /// </summary>
+    /// <returns>
+    /// Returns the assembly version (major.minor.revision.build).
+    /// </returns>
 
     class Version
     {

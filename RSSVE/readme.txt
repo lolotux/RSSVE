@@ -39,4 +39,4 @@ Credits:
 Contributors:
 
     * Francois W. Nel
-    * Lukas Theisen
+    * Lukas "Theysen" Theisen

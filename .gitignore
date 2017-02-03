@@ -1,5 +1,6 @@
 # ==================================================
-# Ignore selected folders/files.
+# Ignore selected folders & file types from the git
+# commit.
 # ==================================================
 
 Source/bin/*
@@ -7,6 +8,7 @@ Source/obj/*
 
 *.db
 *.DB
+*.DS_Store
 *.ini
 *.INI
 *.lnk

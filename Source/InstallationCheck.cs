@@ -40,6 +40,10 @@ namespace RSSVE
 
     class InstallChecker : MonoBehaviour
     {
+        /// <summary>
+        /// Method to start the installation checker. Operates only in the Main Menu scene.
+        /// </summary>
+
         protected void Start()
         {
             try

@@ -5,7 +5,7 @@
 * text=auto
 
 # ==================================================
-# Plain text
+# Text files
 # ==================================================
 
 *.cfg    text
@@ -16,6 +16,8 @@
 *.SLN    text
 *.txt    text
 *.TXT    text
+*.xml    text
+*.XML    text
 
 # ==================================================
 # Images
@@ -23,22 +25,29 @@
 
 *.dds  binary
 *.DDS  binary
-*.dll  binary
-*.DLL  binary
 *.half binary
 *.HALF binary
+*.png  binary
+*.PNG  binary
 *.raw  binary
 *.RAW  binary
+
+# ==================================================
+# Assemblies
+# ==================================================
+
+*.dll  binary
+*.DLL  binary
 
 # ==================================================
 # Code
 # ==================================================
 
-*.cs csharp
-*.CS csharp
+*.cs diff=csharp
+*.CS diff=csharp
 
 # ==================================================
-# Ignore list
+# Ignore list (folder & file names)
 # ==================================================
 
 Source         export-ignore

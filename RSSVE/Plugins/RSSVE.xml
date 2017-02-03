@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RSSVE</name>
+    </assembly>
+    <members>
+        <member name="M:RSSVE.InstallChecker.Start">
+            <summary>
+            Method to start the installation checker. Operates only in the Main Menu scene.
+            </summary>
+        </member>
+        <member name="T:RSSVE.Constants">
+            <summary>
+            Set up the constants used by RSSVE.
+            </summary>
+        </member>
+        <member name="T:RSSVE.Constants.VersionCompatible">
+            <summary>
+            Version compatible struct.
+            </summary>
+        </member>
+        <member name="F:RSSVE.Constants.VersionCompatible.Major">
+            <summary>
+            The major version value.
+            </summary>
+        </member>
+        <member name="F:RSSVE.Constants.VersionCompatible.Minor">
+            <summary>
+            The minor version value.
+            </summary>
+        </member>
+        <member name="F:RSSVE.Constants.VersionCompatible.Revis">
+            <summary>
+            The revision version value.
+            </summary>
+        </member>
+        <member name="F:RSSVE.Constants.UnityVersion">
+            <summary>
+            Compatible Unity version.
+            </summary>
+        </member>
+        <member name="F:RSSVE.Constants.AssemblyName">
+            <summary>
+            The name of the assembly (used as a tag).
+            </summary>
+        </member>
+        <member name="F:RSSVE.Constants.AssemblyPath">
+            <summary>
+            The path where the assembly resides.
+            </summary>
+        </member>
+        <member name="M:RSSVE.Notification.Dialog(System.String,System.String)">
+            <summary>
+            Method to create popup notification dialogs.
+            </summary>
+            <param name = "MessageTitle">Dialog title (string)</param>
+            <param name = "MessageContent">Dialog message (string)</param>
+            <returns>
+            Returns always true.
+            </returns>
+        </member>
+        <member name="M:RSSVE.Notification.Logger(System.String,System.String)">
+            <summary>
+            Method to print debug lines to the KSP log.
+            </summary>
+            <param name = "AssemblyTagName">Assembly tag (string)</param>
+            <param name = "Content">Log message (string)</param>
+            <returns>
+            Returns always true.
+            </returns>
+        </member>
+        <member name="T:RSSVE.Version">
+            <summary>
+            Method to get the assembly version.
+            </summary>
+            <returns>
+            Returns the assembly version (major.minor.revision.build).
+            </returns>
+        </member>
+    </members>
+</doc>
