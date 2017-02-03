@@ -50,7 +50,7 @@
 # Ignore list (folder & file names)
 # ==================================================
 
-Source         export-ignore
+Source export-ignore
 
 .gitattributes export-ignore
 .gitignore     export-ignore
