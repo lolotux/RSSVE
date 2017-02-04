@@ -5,7 +5,7 @@
 * text=auto
 
 # ==================================================
-# Text files
+# Generic files
 # ==================================================
 
 *.cfg    text
@@ -20,7 +20,7 @@
 *.XML    text
 
 # ==================================================
-# Images
+# Texture files
 # ==================================================
 
 *.dds  binary
@@ -33,14 +33,16 @@
 *.RAW  binary
 
 # ==================================================
-# Assemblies
+# Assemblies & database files
 # ==================================================
 
 *.dll  binary
 *.DLL  binary
+*.pdb  binary
+*.PDB  binary
 
 # ==================================================
-# Code
+# Compilable source code files
 # ==================================================
 
 *.cs diff=csharp
@@ -56,5 +58,3 @@ Source export-ignore
 .gitignore     export-ignore
 *.md           export-ignore
 *.MD           export-ignore
-*.xml          export-ignore
-*.XML          export-ignore

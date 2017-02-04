@@ -15,8 +15,6 @@ Source/obj/*
 *.LNK
 *.old
 *.OLD
-*.pdb
-*.PDB
 *.png
 *.PNG
 *.raw
