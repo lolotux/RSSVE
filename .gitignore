@@ -1,9 +1,8 @@
 # ==================================================
 # Ignore selected folders & file types from the git
-# commit.
+# repository.
 # ==================================================
 
-Source/bin/*
 Source/obj/*
 
 *.db
@@ -15,6 +14,8 @@ Source/obj/*
 *.LNK
 *.old
 *.OLD
+*.pdb
+*.PDB
 *.png
 *.PNG
 *.raw

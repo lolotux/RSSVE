@@ -26,7 +26,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Real Solar System Visual Enhancements")]
 [assembly: AssemblyProduct("RSSVE")]
 [assembly: AssemblyCompany("Phineas Freak")]
-[assembly: AssemblyCopyright("Copyright © 2016, Phineas Freak")]
+[assembly: AssemblyCopyright("Copyright © 2016 - 2017, Phineas Freak")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")] 
 

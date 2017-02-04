@@ -38,8 +38,6 @@
 
 *.dll  binary
 *.DLL  binary
-*.pdb  binary
-*.PDB  binary
 
 # ==================================================
 # Compilable source code files

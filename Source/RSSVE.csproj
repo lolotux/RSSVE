@@ -8,7 +8,8 @@
     <RootNamespace>RSSVE</RootNamespace>
     <AssemblyName>RSSVE</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <Description>Real Solar System Visual Enhancements.</Description>
+    <Description>Real Solar System Visual Enhancements. An RSS visual enhancements pack for the RealSolarSystem KSP modification.</Description>
+    <ReleaseVersion>1.2.2.1622</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
