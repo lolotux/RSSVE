@@ -102,7 +102,7 @@ namespace RSSVE
 
                 Notification.Dialog("Incorrect " + Constants.AssemblyName + " installation",
                     "An error has occurred while checking the installation of " + Constants.AssemblyName + ".\n\n" +
-                    "You need to\n" +
+                    "You need to:\n" +
                     "  • Terminate the KSP instance\n" +
                     "  • Send a complete copy of the 'output.log' file to the mod developer\n" +
                     "  • Completely remove and re-install " + Constants.AssemblyName);

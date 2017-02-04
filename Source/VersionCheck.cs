@@ -62,6 +62,8 @@ namespace RSSVE
 
         public static bool IsUnityCompatible()
         {
+            //  Check if the version of Unity used by KSP is compatible with the version of Unity that the mod expects.
+
             return (Application.unityVersion == Constants.UnityVersion);
         }
 

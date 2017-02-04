@@ -52,7 +52,7 @@ namespace RSSVE
         }
 
         /// <summary>
-        /// Compatible Unity version.
+        /// The compatible Unity version.
         /// </summary>
 
         static public readonly string UnityVersion = "5.4.0p4";
@@ -64,7 +64,7 @@ namespace RSSVE
         static public readonly string AssemblyName = "RSSVE";
 
         /// <summary>
-        /// The path where the assembly resides.
+        /// The relative path where the assembly resides.
         /// </summary>
 
         static public readonly string AssemblyPath =  AssemblyName + "/Plugins";
@@ -89,7 +89,7 @@ namespace RSSVE
         }
 
         /// <summary>
-        /// Method to print debug lines to the KSP log.
+        /// Method to print generic text to the KSP debug log.
         /// </summary>
         /// <param name = "AssemblyTagName">Assembly tag (string)</param>
         /// <param name = "Content">Log message (string)</param>
@@ -109,7 +109,7 @@ namespace RSSVE
     /// Method to get the assembly version.
     /// </summary>
     /// <returns>
-    /// Returns the assembly version (major.minor.revision.build).
+    /// Returns the assembly version as a string (major.minor.revision.build).
     /// </returns>
 
     class Version
