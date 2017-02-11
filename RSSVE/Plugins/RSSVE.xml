@@ -36,7 +36,7 @@
         </member>
         <member name="F:RSSVE.Constants.UnityVersion">
             <summary>
-            Compatible Unity version.
+            The compatible Unity version.
             </summary>
         </member>
         <member name="F:RSSVE.Constants.AssemblyName">
@@ -46,7 +46,7 @@
         </member>
         <member name="F:RSSVE.Constants.AssemblyPath">
             <summary>
-            The path where the assembly resides.
+            The relative path where the assembly resides.
             </summary>
         </member>
         <member name="M:RSSVE.Notification.Dialog(System.String,System.String)">
@@ -61,7 +61,7 @@
         </member>
         <member name="M:RSSVE.Notification.Logger(System.String,System.String)">
             <summary>
-            Method to print debug lines to the KSP log.
+            Method to print generic text to the KSP debug log.
             </summary>
             <param name = "AssemblyTagName">Assembly tag (string)</param>
             <param name = "Content">Log message (string)</param>
@@ -74,7 +74,7 @@
             Method to get the assembly version.
             </summary>
             <returns>
-            Returns the assembly version (major.minor.revision.build).
+            Returns the assembly version as a string (major.minor.revision.build).
             </returns>
         </member>
     </members>
