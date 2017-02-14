@@ -5,24 +5,33 @@
 
 Real Solar System Visual Enhancements (RSSVE) is an add-on for the Environmental Visual Enhancements (EVE), providing clouds and other visual improvements for the Real Solar System (RSS) modification.
 
-### Installation
+## Installation
 
 Check the ![RSSVE wiki][RSSVE:wiki-link] for more information.
 
-### Credits
+## Credits
 
-* Module Manager by ![ialdabaoth][RSSVE:MM-link-ialdabaoth] and ![sarbian][RSSVE:MM-link-sarbian]
-* Environmental Visual Enhancements by ![rbray89][RSSVE:EVE-link-rbray] and ![WazWaz][RSSVE:EVE-link-waz]
-* Real Solar System by ![NathanKell][RSSVE:RSS-link]
-* RVE by ![Pingopete][RSSVE:RVE-link]
-* Scatterer by ![Blackrack][RSSVE:Scatterer-link]
+#### Textures:
 
-### Contributors
+  * Cloud and city detail textures by ![Real Visual Enhancements][RSSVE:RVE-link]
+  * Earth cloud and city light main textures by ![NASA Visible Earth][RSSVE:NASA-VE-link]
+  * Gas giants source textures (used for exporting some basic cloud textures) by ![JHT's Planetary Pixel Emporium][RSSVE:PPE-link]
 
-* ![Francois W. Nel][RSSVE:contributor-francois]
-* ![Lukas Theisen][RSSVE:contributor-theysen]
+#### Programming:
 
-### License
+  * CubeTheSphere utility by ![Unreal Realm Of Concepts][RSSVE:CubeTheSphere-link]
+  * Module Manager by ![ialdabaoth][RSSVE:MM-link-ialdabaoth] and ![sarbian][RSSVE:MM-link-sarbian]
+  * Environmental Visual Enhancements (EVE) by ![rbray89][RSSVE:EVE-link-rbray] and ![WazWaz][RSSVE:EVE-link-waz]
+  * Real Solar System (RSS) by ![NathanKell][RSSVE:RSS-link]
+  * Real Visual Enhancements (RVE) by ![Pingopete][RSSVE:RVE-link]
+  * Scatterer by ![Blackrack][RSSVE:Scatterer-link]
+
+## Contributors
+
+  * ![Francois W. Nel][RSSVE:contributor-francois]
+  * ![Lukas Theisen][RSSVE:contributor-theysen]
+
+## License
 
 RSSVE is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 (CC-BY-NC-SA 4.0) license.
 
@@ -54,10 +63,13 @@ You should have received a copy of the license along with this work. If not, vis
 [RSSVE:shield-license]:  https://img.shields.io/badge/License-CC--BY--NC--SA%204.0-green.svg
 [RSSVE:cc-license-link]: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
+[RSSVE:CubeTheSphere-link]: http://realmofconcepts.com/unreal/CubeTheSphere.html
 [RSSVE:EVE-link-rbray]:     https://github.com/rbray89
 [RSSVE:EVE-link-waz]:       https://github.com/WazWaz
 [RSSVE:MM-link-ialdabaoth]: https://github.com/Ialdabaoth
 [RSSVE:MM-link-sarbian]:    https://github.com/sarbian/ModuleManager
+[RSSVE:NASA-VE-link]:       http://visibleearth.nasa.gov
+[RSSVE:PPE-link]:           http://planetpixelemporium.com/
 [RSSVE:RSS-link]:           https://github.com/KSP-RO/RealSolarSystem
 [RSSVE:RVE-link]:           https://github.com/Pingopete
 [RSSVE:Scatterer-link]:     https://github.com/LGhassen
