@@ -1,0 +1,55 @@
+==================================================
+RSSVE v1.2.2-RC3 for KSP 1.2.2 (26/02/2017)
+==================================================
+
+Change Log:
+
+    * Compatibility update for the Scatterer v0.300 release.
+    * Many small tweaks to the atmospheric scatter effects of all bodies.
+    * Increased the apparent brightness of the Moon (might still need some tweaking).
+    * Titan will now appear less bright and saturated than before.
+    * Remade and simplified the Earth aurora main and detail textures.
+    * Removed an old Earth cloud main texture.
+    * Re-factored the file and folder structure to ease management and development.
+    * New binary assemblies for KSP 1.1.3 users (for use with Scatterer v0.255).
+
+Bug Fixes:
+
+    * None so far.
+
+Known Issues:
+
+    * The city lights may appear to fade in/out or flicker.
+    * The new Scatterer cloud integration and Kopernicus ring shader features are currently disabled.
+
+==================================================
+RSSVE v1.2.2-RC2 for KSP 1.2.2 (16/12/2016)
+==================================================
+
+Change Log:
+
+    * Improved Earth Scatterer configs (atmospheric and oceanic). Courtesy of user Lukas "Theysen" Theisen.
+
+Bug Fixes:
+
+    * Softer transition between the Earth PQS and SS.
+
+Known Issues:
+
+    * The city lights may appear to fade in/out or flicker.
+
+==================================================
+RSSVE v1.2.2-RC1 for KSP 1.2.2 (12/12/2016)
+==================================================
+
+Change Log:
+
+    * First release candidate for Real Solar System Visual Enhancements.
+
+Bug Fixes:
+
+    * None so far.
+
+Known Issues:
+
+    * None so far.
