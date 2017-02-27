@@ -9,7 +9,9 @@ Change Log:
     * Increased the apparent brightness of the Moon (might still need some tweaking).
     * Titan will now appear less bright and saturated than before.
     * Remade and simplified the Earth aurora main and detail textures.
-    * Removed an old Earth cloud main texture.
+    * The Earth aurora is now less visible in the daylight.
+    * Removed an old and unused Earth cloud main texture.
+    * Removed the Earth PQS texture (was a performance hog and did not look good anyway).
     * Re-factored the file and folder structure to ease management and development.
     * New binary assemblies for KSP 1.1.3 users (for use with Scatterer v0.255).
 
