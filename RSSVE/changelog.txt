@@ -13,7 +13,7 @@ Change Log:
     * Removed an old and unused Earth cloud main texture.
     * Removed the Earth PQS texture (was a performance hog and did not look good anyway).
     * Re-factored the file and folder structure to ease management and development.
-    * New binary assemblies for KSP 1.1.3 users (for use with Scatterer v0.255).
+    * New binary assemblies for KSP 1.1.3 users (for use with EVE 1.1-3 and Scatterer v0.255).
 
 Bug Fixes:
 
