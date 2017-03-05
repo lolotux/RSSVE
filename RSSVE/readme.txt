@@ -11,12 +11,17 @@ Installation:
     3. Download the latest version of Scatterer for your respective KSP version.
     4. Install the mods according to the instructions provided by each one.
     5. Download the latest version of Real Solar System Visual Enhancements (RSSVE).
-    6. Extract the contents of the RSSVE .zip file and move the resulting "RSSVE" folder inside the GameData folder. The final file and folder structure should look like this:
+    6. Extract the contents of the RSSVE .zip file and move the resulting "RSSVE" folder inside the GameData folder. The final basic file and folder structure should look like this:
 
-    *   GameData/ModuleManager.X.X.XX.X.dll
-    *   GameData/EnvironmentalVisualEnhancements
-    *   GameData/RSSVE
-    *   GameData/Scatterer
+        * GameData/
+        *   ModuleManager.X.X.XX.X.dll
+        *   EnvironmentalVisualEnhancements
+        *   Kopernicus
+        *   ModularFlightIntegrator
+        *   RealSolarSystem
+        *   RSS-Textures
+        *   RSSVE
+        *   Scatterer
 
     7. Launch KSP and enjoy the new visual effects!
 
