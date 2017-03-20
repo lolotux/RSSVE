@@ -39,6 +39,7 @@
     <Compile Include="InstallationCheck.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="VersionCheck.cs" />
+    <Compile Include="OperatingSystemCheck.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

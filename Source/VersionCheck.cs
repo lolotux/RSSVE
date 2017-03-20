@@ -75,13 +75,12 @@ namespace RSSVE
         {
             // Checkers are identified by the type name and version field name.
 
-            FieldInfo[] fields =
-                getAllTypes()
-                    .Where(t => t.Name == "CompatibilityChecker")
-                    .Select(t => t.GetField("_version", BindingFlags.Static | BindingFlags.NonPublic))
-                    .Where(f => f != null)
-                    .Where(f => f.FieldType == typeof(int))
-                    .ToArray();
+            var fields = getAllTypes()
+                .Where(t => t.Name == "CompatibilityChecker")
+                .Select(t => t.GetField("_version", BindingFlags.Static | BindingFlags.NonPublic))
+                .Where(f => f != null)
+                .Where(f => f.FieldType == typeof(int))
+                .ToArray();
 
             //  Let the latest version of the checker execute.
 
@@ -96,54 +95,52 @@ namespace RSSVE
 
             //  A mod is incompatible if its compatibility checker has an IsCompatible method which returns false.
 
-            string[] incompatible =
-                fields
-                    .Select(f => f.DeclaringType.GetMethod("IsCompatible", Type.EmptyTypes))
-                    .Where(m => m.IsStatic)
-                    .Where(m => m.ReturnType == typeof(bool))
-                    .Where(m =>
+            var incompatible = fields
+                .Select(f => f.DeclaringType.GetMethod("IsCompatible", Type.EmptyTypes))
+                .Where(m => m.IsStatic)
+                .Where(m => m.ReturnType == typeof(bool))
+                .Where(m =>
+                {
+                    try
                     {
-                        try
-                        {
-                            return !(bool)m.Invoke(null, new object[0]);
-                        }
-                        catch (Exception e)
-                        {
-                            //  If a mod throws an exception from IsCompatible, it's not compatible.
+                        return !(bool)m.Invoke(null, new object[0]);
+                    }
+                    catch (Exception e)
+                    {
+                        //  If a mod throws an exception from IsCompatible, it's not compatible.
 
-                            Debug.LogWarning(string.Format("[CompatibilityChecker] Exception while invoking IsCompatible() from '{0}':\n\n{1}", m.DeclaringType.Assembly.GetName().Name, e));
+                        Debug.LogWarning(string.Format("[CompatibilityChecker] Exception while invoking IsCompatible() from '{0}':\n\n{1}", m.DeclaringType.Assembly.GetName().Name, e));
 
-                            return true;
-                        }
-                    })
-                    .Select(m => m.DeclaringType.Assembly.GetName().Name)
-                    .ToArray();
+                        return true;
+                    }
+                })
+                .Select(m => m.DeclaringType.Assembly.GetName().Name)
+                .ToArray();
 
             //  A mod is incompatible with Unity if its compatibility checker has an IsUnityCompatible method which returns false.
 
-            string[] incompatibleUnity =
-                fields
-                    .Select(f => f.DeclaringType.GetMethod("IsUnityCompatible", Type.EmptyTypes))
-                    .Where(m => m != null)  //  Mods without IsUnityCompatible() are assumed to be compatible.
-                    .Where(m => m.IsStatic)
-                    .Where(m => m.ReturnType == typeof(bool))
-                    .Where(m =>
+            var incompatibleUnity = fields
+                .Select(f => f.DeclaringType.GetMethod("IsUnityCompatible", Type.EmptyTypes))
+                .Where(m => m != null)  //  Mods without IsUnityCompatible() are assumed to be compatible.
+                .Where(m => m.IsStatic)
+                .Where(m => m.ReturnType == typeof(bool))
+                .Where(m =>
+                {
+                    try
                     {
-                        try
-                        {
-                            return !(bool)m.Invoke(null, new object[0]);
-                        }
-                        catch (Exception e)
-                        {
-                            //  If a mod throws an exception from IsUnityCompatible, it's not compatible.
+                        return !(bool)m.Invoke(null, new object[0]);
+                    }
+                    catch (Exception e)
+                    {
+                        //  If a mod throws an exception from IsUnityCompatible, it's not compatible.
 
-                            Debug.LogWarning(string.Format("[CompatibilityChecker] Exception while invoking IsUnityCompatible() from '{0}':\n\n{1}", m.DeclaringType.Assembly.GetName().Name, e));
+                        Debug.LogWarning(string.Format("[CompatibilityChecker] Exception while invoking IsUnityCompatible() from '{0}':\n\n{1}", m.DeclaringType.Assembly.GetName().Name, e));
 
-                            return true;
-                        }
-                    })
-                    .Select(m => m.DeclaringType.Assembly.GetName().Name)
-                    .ToArray();
+                        return true;
+                    }
+                })
+                .Select(m => m.DeclaringType.Assembly.GetName().Name)
+                .ToArray();
 
             Array.Sort(incompatible);
             Array.Sort(incompatibleUnity);

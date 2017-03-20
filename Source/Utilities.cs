@@ -14,6 +14,7 @@
 //      • https://www.creativecommons.org/licensies/by-nc-sa/4.0
 //  ================================================================================
 
+using System;
 using System.Reflection;
 using System.Diagnostics;
 using UnityEngine;
@@ -21,13 +22,13 @@ using UnityEngine;
 namespace RSSVE
 {
     /// <summary>
-    /// Set up the constants used by RSSVE.
+    /// Class to set up the parameters required and used by RSSVE.
     /// </summary>
 
     public static class Constants
     {
         /// <summary>
-        /// Version compatible struct.
+        /// Version parameters struct.
         /// </summary>
 
         public struct VersionCompatible
@@ -49,6 +50,12 @@ namespace RSSVE
             /// </summary>
 
             static public readonly int Revis = 2;
+
+            /// <summary>
+            /// The build version value.
+            /// </summary>
+
+            static public readonly int Build = 1622;
         }
 
         /// <summary>
@@ -58,7 +65,7 @@ namespace RSSVE
         static public readonly string UnityVersion = "5.4.0p4";
 
         /// <summary>
-        /// The name of the assembly (used as a tag).
+        /// The name of the assembly (used as a tag for the notification dialogs and the log file).
         /// </summary>
 
         static public readonly string AssemblyName = "RSSVE";
@@ -70,6 +77,10 @@ namespace RSSVE
         static public readonly string AssemblyPath =  AssemblyName + "/Plugins";
     }
 
+    /// <summary>
+    /// Class to create user notification dialogs and log basic information to the KSP log file.
+    /// </summary>
+
     class Notification
     {
         /// <summary>
@@ -78,43 +89,67 @@ namespace RSSVE
         /// <param name = "MessageTitle">Dialog title (string)</param>
         /// <param name = "MessageContent">Dialog message (string)</param>
         /// <returns>
-        /// Returns always true.
+        /// Does not return a value.
         /// </returns>
 
-        public static bool Dialog(string MessageTitle, string MessageContent)
+        public static void Dialog(string MessageTitle, string MessageContent)
         {
             PopupDialog.SpawnPopupDialog(new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), MessageTitle, MessageContent, "OK", false, HighLogic.UISkin);
-
-            return true;
         }
 
         /// <summary>
-        /// Method to print generic text to the KSP debug log.
+        /// Method to print generic text in the KSP debug log.
         /// </summary>
         /// <param name = "AssemblyTagName">Assembly tag (string)</param>
         /// <param name = "Content">Log message (string)</param>
         /// <returns>
-        /// Returns always true.
+        /// Does not return a value.
         /// </returns>
 
-        public static bool Logger(string AssemblyTagName, string Content)
+        public static void Logger(string AssemblyTagName, string Content)
         {
             UnityEngine.Debug.Log("[" + AssemblyTagName + "] " + Content);
-
-            return true;
         }
     }
 
     /// <summary>
-    /// Method to get the assembly version.
+    /// Class to get basic system operational parameters.
     /// </summary>
-    /// <returns>
-    /// Returns the assembly version as a string (major.minor.revision.build).
-    /// </returns>
+
+    public static class System
+    {
+        /// <summary>
+        /// Method to get the operating system octet size.
+        /// </summary>
+        /// <returns>
+        /// Returns "Yes" if the Operating System is using the AMD64 specification (x64) and "No" if it is using the baseline x86.
+        /// </returns>
+
+        public static string Is64BitOS()
+        {
+            if (IntPtr.Size == 8)
+            {
+                return "Yes";
+            }
+
+            return "No";
+        }
+    }    
+
+    /// <summary>
+    /// Class to get the assembly version information.
+    /// </summary>
 
     class Version
     {
         public static string _AssemblyVersion;
+
+        /// <summary>
+        /// Method to get the assembly version.
+        /// </summary>
+        /// <returns>
+        /// Returns the assembly version as a string (major.minor.revision.build).
+        /// </returns>
 
         public static string AssemblyVersion
         {

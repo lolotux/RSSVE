@@ -36,12 +36,16 @@ using UnityEngine;
 
 namespace RSSVE
 {
+    /// <summary>
+    /// Version and filesystem integrity checker class. Operates only in the Main Menu scene.
+    /// </summary>
+
     [KSPAddon(KSPAddon.Startup.MainMenu, true)]
 
     class InstallChecker : MonoBehaviour
     {
         /// <summary>
-        /// Method to start the installation checker. Operates only in the Main Menu scene.
+        /// Method to start the installation checker.
         /// </summary>
 
         protected void Start()
@@ -52,7 +56,8 @@ namespace RSSVE
 
                 Notification.Logger(Constants.AssemblyName, "Assembly location: " + Assembly.GetExecutingAssembly().Location);
                 Notification.Logger(Constants.AssemblyName, "Assembly version: " + Version.AssemblyVersion);
-                Notification.Logger(Constants.AssemblyName, "Assembly compatibility: " + Constants.VersionCompatible.Major + "." + Constants.VersionCompatible.Minor  + "." + Constants.VersionCompatible.Revis);
+                Notification.Logger(Constants.AssemblyName, "Assembly compatibility: " + Constants.VersionCompatible.Major + "." + Constants.VersionCompatible.Minor  + "." + Constants.VersionCompatible.Revis + "." + Constants.VersionCompatible.Build);
+                Notification.Logger(Constants.AssemblyName, "Using the x86-64 instruction set:" + System.Is64BitOS ());
 
                //  Search for this mod's DLL existing in the wrong location. This will also detect duplicate copies because only one can be in the right place.
 
@@ -62,7 +67,7 @@ namespace RSSVE
                 {
                     var badPaths = assemblies.Select(a => a.path).Select(p => Uri.UnescapeDataString(new Uri(Path.GetFullPath(KSPUtil.ApplicationRootPath)).MakeRelativeUri(new Uri(p)).ToString().Replace('/', Path.DirectorySeparatorChar)));
 
-                    string badPathsString = string.Join("\n", badPaths.ToArray());
+                    var badPathsString = string.Join("\n", badPaths.ToArray());
 
                     Notification.Logger(Constants.AssemblyName, "Incorrect installation, bad path(s):\n" + badPathsString);
 
@@ -105,7 +110,7 @@ namespace RSSVE
                     "You need to:\n" +
                     "  • Terminate the KSP instance\n" +
                     "  • Send a complete copy of the 'output.log' file to the mod developer\n" +
-                    "  • Completely remove and re-install " + Constants.AssemblyName);
+                    "  • Completely remove and re-install " + Constants.AssemblyName + " and it's required mods\n");
             }
         }
     }

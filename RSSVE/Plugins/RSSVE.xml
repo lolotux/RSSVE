@@ -4,19 +4,24 @@
         <name>RSSVE</name>
     </assembly>
     <members>
+        <member name="T:RSSVE.InstallChecker">
+            <summary>
+            Version and filesystem integrity checker class. Operates only in the Main Menu scene.
+            </summary>
+        </member>
         <member name="M:RSSVE.InstallChecker.Start">
             <summary>
-            Method to start the installation checker. Operates only in the Main Menu scene.
+            Method to start the installation checker.
             </summary>
         </member>
         <member name="T:RSSVE.Constants">
             <summary>
-            Set up the constants used by RSSVE.
+            Class to set up the parameters required and used by RSSVE.
             </summary>
         </member>
         <member name="T:RSSVE.Constants.VersionCompatible">
             <summary>
-            Version compatible struct.
+            Version parameters struct.
             </summary>
         </member>
         <member name="F:RSSVE.Constants.VersionCompatible.Major">
@@ -34,6 +39,11 @@
             The revision version value.
             </summary>
         </member>
+        <member name="F:RSSVE.Constants.VersionCompatible.Build">
+            <summary>
+            The build version value.
+            </summary>
+        </member>
         <member name="F:RSSVE.Constants.UnityVersion">
             <summary>
             The compatible Unity version.
@@ -41,12 +51,17 @@
         </member>
         <member name="F:RSSVE.Constants.AssemblyName">
             <summary>
-            The name of the assembly (used as a tag).
+            The name of the assembly (used as a tag for the notification dialogs and the log file).
             </summary>
         </member>
         <member name="F:RSSVE.Constants.AssemblyPath">
             <summary>
             The relative path where the assembly resides.
+            </summary>
+        </member>
+        <member name="T:RSSVE.Notification">
+            <summary>
+            Class to create user notification dialogs and log basic information to the KSP log file.
             </summary>
         </member>
         <member name="M:RSSVE.Notification.Dialog(System.String,System.String)">
@@ -56,26 +71,54 @@
             <param name = "MessageTitle">Dialog title (string)</param>
             <param name = "MessageContent">Dialog message (string)</param>
             <returns>
-            Returns always true.
+            Does not return a value.
             </returns>
         </member>
         <member name="M:RSSVE.Notification.Logger(System.String,System.String)">
             <summary>
-            Method to print generic text to the KSP debug log.
+            Method to print generic text in the KSP debug log.
             </summary>
             <param name = "AssemblyTagName">Assembly tag (string)</param>
             <param name = "Content">Log message (string)</param>
             <returns>
-            Returns always true.
+            Does not return a value.
+            </returns>
+        </member>
+        <member name="T:RSSVE.System">
+            <summary>
+            Class to get basic system operational parameters.
+            </summary>
+        </member>
+        <member name="M:RSSVE.System.Is64BitOS">
+            <summary>
+            Method to get the operating system octet size.
+            </summary>
+            <returns>
+            Returns "Yes" if the Operating System is using the AMD64 specification (x64) and "No" if it is using the baseline x86.
             </returns>
         </member>
         <member name="T:RSSVE.Version">
+            <summary>
+            Class to get the assembly version information.
+            </summary>
+        </member>
+        <member name="P:RSSVE.Version.AssemblyVersion">
             <summary>
             Method to get the assembly version.
             </summary>
             <returns>
             Returns the assembly version as a string (major.minor.revision.build).
             </returns>
+        </member>
+        <member name="T:RSSVE.OSChecker">
+            <summary>
+            Operating System checker. Operates only in the Loading scene.
+            </summary>
+        </member>
+        <member name="M:RSSVE.OSChecker.Start">
+            <summary>
+            Method to start the OS checker.
+            </summary>
         </member>
     </members>
 </doc>

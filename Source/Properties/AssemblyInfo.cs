@@ -18,9 +18,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-//  ================================================================================
 //  General Information about the specified assembly.
-//  ================================================================================
 
 [assembly: AssemblyTitle("RSSVE")]
 [assembly: AssemblyDescription("Real Solar System Visual Enhancements")]
@@ -36,13 +34,10 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("Stable")]
 #endif
 
-//  ================================================================================
 //  Hide the specified assembly from any COM components.
-//  ================================================================================
 
 [assembly: ComVisible(false)]
 
-//  ================================================================================
 //  Version information for the specified assembly.
 
 //  Consists of the following four values:
@@ -51,7 +46,6 @@ using System.Runtime.InteropServices;
 //    • Minor Version 
 //    • Build Number
 //    • Revision
-//  ================================================================================
 
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.2.2.1622")]
