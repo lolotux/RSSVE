@@ -15,8 +15,9 @@
 //  ================================================================================
 
 using System;
-using System.Reflection;
 using System.Diagnostics;
+using System.IO;
+using System.Reflection;
 using UnityEngine;
 
 namespace RSSVE
@@ -74,7 +75,7 @@ namespace RSSVE
         /// The relative path where the assembly resides.
         /// </summary>
 
-        static public readonly string AssemblyPath =  AssemblyName + "/Plugins";
+        static public readonly string AssemblyPath =  AssemblyName + Path.DirectorySeparatorChar + "Plugins";
     }
 
     /// <summary>
