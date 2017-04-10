@@ -109,7 +109,7 @@ namespace RSSVE
 
         public static void Logger(string AssemblyTagName, string Content)
         {
-            UnityEngine.Debug.Log("[" + AssemblyTagName + "] " + Content);
+            UnityEngine.Debug.Log(string.Format("[{0}]: {1}", AssemblyTagName, Content));
         }
     }
 
@@ -158,7 +158,7 @@ namespace RSSVE
             {
                 var GetVersion = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location);
 
-                _AssemblyVersion = GetVersion.FileMajorPart + "." + GetVersion.FileMinorPart + "." + GetVersion.FileBuildPart + "." + GetVersion.FilePrivatePart;
+                _AssemblyVersion = string.Format("{0}.{1}.{2}.{3}", GetVersion.FileMajorPart, GetVersion.FileMinorPart, GetVersion.FileBuildPart, GetVersion.FilePrivatePart);
 
                 return _AssemblyVersion;
             }
