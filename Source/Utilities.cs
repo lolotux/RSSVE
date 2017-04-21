@@ -16,7 +16,6 @@
 
 using System;
 using System.Diagnostics;
-using System.IO;
 using System.Reflection;
 using UnityEngine;
 
@@ -75,7 +74,7 @@ namespace RSSVE
         /// The relative path where the assembly resides.
         /// </summary>
 
-        static public readonly string AssemblyPath =  AssemblyName + Path.DirectorySeparatorChar + "Plugins";
+        static public readonly string AssemblyPath = AssemblyName + "/Plugins";
     }
 
     /// <summary>
@@ -93,9 +92,12 @@ namespace RSSVE
         /// Does not return a value.
         /// </returns>
 
-        public static void Dialog(string MessageTitle, string MessageContent)
+        public static void Dialog (string MessageTitle, string MessageContent)
         {
-            PopupDialog.SpawnPopupDialog(new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), MessageTitle, MessageContent, "OK", false, HighLogic.UISkin);
+            if (!MessageTitle.Equals (null))
+            {
+                PopupDialog.SpawnPopupDialog (new Vector2 (0.5f, 0.5f), new Vector2 (0.5f, 0.5f), MessageTitle, MessageContent, "OK", false, HighLogic.UISkin, true, string.Empty);
+            }
         }
 
         /// <summary>
@@ -107,9 +109,12 @@ namespace RSSVE
         /// Does not return a value.
         /// </returns>
 
-        public static void Logger(string AssemblyTagName, string Content)
+        public static void Logger (string AssemblyTagName, string Content)
         {
-            UnityEngine.Debug.Log(string.Format("[{0}]: {1}", AssemblyTagName, Content));
+            if (!AssemblyTagName.Equals (null))
+            {
+                UnityEngine.Debug.Log (string.Format("[{0}]: {1}", AssemblyTagName, Content));
+            }
         }
     }
 
@@ -120,22 +125,107 @@ namespace RSSVE
     public static class System
     {
         /// <summary>
+        /// Method to get the operating system graphics renderer.
+        /// </summary>
+        /// <returns>
+        /// Returns one of the following renderer types: D3D9, D3D11, OpenGL or Unknown.
+        /// </returns>
+
+        public static string GetGraphicsRenderer
+        {
+            get
+            {
+                var RendererType = SystemInfo.graphicsDeviceVersion;
+
+                string RendererName = string.Empty;
+
+                if (RendererType.StartsWith ("Direct3D 9", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    RendererName = "D3D9";
+                }
+                else if (RendererType.StartsWith ("Direct3D 11", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    RendererName = "D3D11";
+                }
+                else if (RendererType.StartsWith ("OpenGL", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    RendererName = "OpenGL";
+                }
+                else
+                {
+                    RendererName = "Unknown";
+                }
+
+                return RendererName;
+            }
+        }
+
+        /// <summary>
         /// Method to get the operating system octet size.
         /// </summary>
         /// <returns>
-        /// Returns "Yes" if the Operating System is using the AMD64 specification (x64) and "No" if it is using the baseline x86.
+        /// Returns true if the Operating System is using the AMD64 specification (x64) and false if it is using the baseline x86.
         /// </returns>
 
-        public static string Is64BitOS()
+        public static bool Is64BitOS
         {
-            if (IntPtr.Size == 8)
+            get
             {
-                return "Yes";
-            }
+                if (IntPtr.Size.Equals(8))
+                {
+                    return true;
+                }
 
-            return "No";
+                return false;
+            }
         }
-    }    
+
+        /// <summary>
+        /// Method to get the operating system type.
+        /// </summary>
+        /// <returns>
+        /// Returns the following operating system types: Linux, OSX, Windows and Unknown.
+        /// </returns>
+
+        public static string GetPlatformType
+        {
+            get
+            {
+                var PlatformType = Application.platform;
+
+                string PlatformTypeName = string.Empty;
+
+                switch (PlatformType)
+                {
+                    case RuntimePlatform.LinuxPlayer:
+
+                        PlatformTypeName = "Linux";
+
+                    break;
+
+                    case RuntimePlatform.OSXPlayer:
+
+                        PlatformTypeName = "OSX";
+
+                    break;
+
+                    case RuntimePlatform.WindowsPlayer:
+
+                        PlatformTypeName = "Windows";
+
+                    break;
+
+                    default:
+
+                        PlatformTypeName = "Unknown";
+
+                    break;
+                }
+
+                return PlatformTypeName;
+            }
+        }
+    }
 
     /// <summary>
     /// Class to get the assembly version information.
@@ -143,8 +233,6 @@ namespace RSSVE
 
     class Version
     {
-        public static string _AssemblyVersion;
-
         /// <summary>
         /// Method to get the assembly version.
         /// </summary>
@@ -152,15 +240,13 @@ namespace RSSVE
         /// Returns the assembly version as a string (major.minor.revision.build).
         /// </returns>
 
-        public static string AssemblyVersion
+        public static string GetAssemblyVersion
         {
             get
             {
-                var GetVersion = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location);
+                var AssemblyVersion = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location);
 
-                _AssemblyVersion = string.Format("{0}.{1}.{2}.{3}", GetVersion.FileMajorPart, GetVersion.FileMinorPart, GetVersion.FileBuildPart, GetVersion.FilePrivatePart);
-
-                return _AssemblyVersion;
+                return string.Format("{0}.{1}.{2}.{3}", AssemblyVersion.FileMajorPart, AssemblyVersion.FileMinorPart, AssemblyVersion.FileBuildPart, AssemblyVersion.FilePrivatePart);
             }
         }
     }

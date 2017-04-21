@@ -52,65 +52,72 @@ namespace RSSVE
         {
             try
             {
-                //  Log some basic information that might be of interest when debugging.
+                //  Search for this mod's DLL existing in the wrong location. This will also detect duplicate copies because only one can be in the right place.
 
-                Notification.Logger(Constants.AssemblyName, "Assembly location: " + Assembly.GetExecutingAssembly().Location);
-                Notification.Logger(Constants.AssemblyName, "Assembly version: " + Version.AssemblyVersion);
-                Notification.Logger(Constants.AssemblyName, "Assembly compatibility: " + Constants.VersionCompatible.Major + "." + Constants.VersionCompatible.Minor  + "." + Constants.VersionCompatible.Revis + "." + Constants.VersionCompatible.Build);
-                Notification.Logger(Constants.AssemblyName, "Using the x86-64 instruction set:" + System.Is64BitOS ());
-
-               //  Search for this mod's DLL existing in the wrong location. This will also detect duplicate copies because only one can be in the right place.
-
-                var assemblies = AssemblyLoader.loadedAssemblies.Where(a => a.assembly.GetName().Name == Assembly.GetExecutingAssembly().GetName().Name).Where(a => a.url != Constants.AssemblyPath);
+                var assemblies = AssemblyLoader.loadedAssemblies.Where(asm => asm.assembly.GetName().Name == Assembly.GetExecutingAssembly().GetName().Name).Where(asm => asm.url != Constants.AssemblyPath);
 
                 if (assemblies.Any())
                 {
-                    var badPaths = assemblies.Select(a => a.path).Select(p => Uri.UnescapeDataString(new Uri(Path.GetFullPath(KSPUtil.ApplicationRootPath)).MakeRelativeUri(new Uri(p)).ToString().Replace('/', Path.DirectorySeparatorChar)));
+                    var BadPaths = assemblies.Select(asm => asm.path).Select(p => Uri.UnescapeDataString(new Uri(Path.GetFullPath(KSPUtil.ApplicationRootPath)).MakeRelativeUri(new Uri(p)).ToString().Replace('/', Path.DirectorySeparatorChar)));
 
-                    var badPathsString = string.Join("\n", badPaths.ToArray());
+                    var BadPathsString = string.Join("\n", BadPaths.ToArray());
 
-                    Notification.Logger(Constants.AssemblyName, "Incorrect installation, bad path(s):\n" + badPathsString);
+                    Notification.Logger(Constants.AssemblyName, string.Format("Incorrect installation, bad path(s): {0}", BadPathsString));
 
-                    Notification.Dialog("Incorrect " + Constants.AssemblyName + " Installation", Constants.AssemblyName + " has been installed incorrectly and will not function properly. All files should be located in KSP/GameData/" + Constants.AssemblyName + ". Do not move any files from inside that folder.\n\nIncorrect path(s):\n" + badPathsString);
+                    Notification.Dialog(string.Format("Incorrect {0} Installation", Constants.AssemblyName), string.Format("{0} has been installed incorrectly and will not function properly. All files should be located under the KSP/GameData/RSSVE folder. Do not move any files from inside that folder!\n\nIncorrect path(s):\n  • {1}", Constants.AssemblyName, BadPathsString));
                 }
+
+                string MissingDependenciesNames = string.Empty;
+
+                int MissingDependenciesCount = 0;
 
                 //  Check if Environmental Visual Enhancements is installed.
 
-                if (!AssemblyLoader.loadedAssemblies.Any(a => a.assembly.GetName ().Name.StartsWith ("EVEManager", StringComparison.InvariantCultureIgnoreCase) && a.url.ToLower() == "environmentalvisualenhancements/plugins"))
+                if (!AssemblyLoader.loadedAssemblies.Any(asm => asm.assembly.GetName ().Name.StartsWith ("EVEManager", StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower().Equals("environmentalvisualenhancements/plugins")))
                 {
-                    Notification.Logger(Constants.AssemblyName, "Missing or incorrectly installed Environmental Visual Enhancements.");
+                    MissingDependenciesNames += "  •  Environmental Visual Enhancements\n";
+                    MissingDependenciesCount += 1;
 
-                    Notification.Dialog("Missing Environmental Visual Enhancements", Constants.AssemblyName + " requires the Environmental Visual Enhancements mod in order to function properly.\n");
+                    Notification.Logger(Constants.AssemblyName, "Missing or incorrectly installed Environmental Visual Enhancements!");
                 }
 
                 //  Check if Scatterer is installed.
 
-                if (!AssemblyLoader.loadedAssemblies.Any(a => a.assembly.GetName ().Name.StartsWith ("Scatterer", StringComparison.InvariantCultureIgnoreCase) && a.url.ToLower() == "scatterer"))
+                if (!AssemblyLoader.loadedAssemblies.Any(asm => asm.assembly.GetName ().Name.StartsWith ("Scatterer", StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower().Equals("scatterer")))
                 {
-                    Notification.Logger(Constants.AssemblyName, "Missing or incorrectly installed Scatterer.");
+                    MissingDependenciesNames += "  •  Scatterer\n";
+                    MissingDependenciesCount += 1;
 
-                    Notification.Dialog("Missing Scatterer", Constants.AssemblyName + " requires the Scatterer mod in order to function properly.\n");
+                    Notification.Logger(Constants.AssemblyName, "Missing or incorrectly installed Scatterer!");
                 }
 
                 //  Check it Module Manager is installed.
 
-                if (!AssemblyLoader.loadedAssemblies.Any(a => a.assembly.GetName ().Name.StartsWith ("ModuleManager", StringComparison.InvariantCultureIgnoreCase) && a.url.ToLower() == ""))
+                if (!AssemblyLoader.loadedAssemblies.Any(asm => asm.assembly.GetName ().Name.StartsWith ("ModuleManager", StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower().Equals(string.Empty)))
                 {
-                    Notification.Logger(Constants.AssemblyName, "Missing or incorrectly installed Module Manager.");
+                    MissingDependenciesNames += "  •  Module Manager\n";
+                    MissingDependenciesCount += 1;
 
-                    Notification.Dialog("Missing Module Manager", Constants.AssemblyName + " requires the Module Manager mod in order to function properly.\n");
+                    Notification.Logger(Constants.AssemblyName, "Missing or incorrectly installed Module Manager!");
+                }
+
+                //  Warn the user if any of the dependencies are missing.
+
+                if (!MissingDependenciesCount.Equals (0))
+                {
+                    Notification.Dialog("Missing Dependencies", string.Format("{0} requires the following listed mods in order to function correctly:\n\n  {1}", Constants.AssemblyName, MissingDependenciesNames.Trim()));
                 }
             }
             catch (Exception ex)
             {
-                Notification.Logger(Constants.AssemblyName, "Caught an exception: \n" + ex.Message + "\n" + ex.StackTrace);
+                Notification.Logger(Constants.AssemblyName, string.Format("{0} Caught an exception:\n{1}\n", ex.Message, ex.StackTrace));
 
-                Notification.Dialog("Incorrect " + Constants.AssemblyName + " installation",
-                    "An error has occurred while checking the installation of " + Constants.AssemblyName + ".\n\n" +
-                    "You need to:\n" +
-                    "  • Terminate the KSP instance\n" +
-                    "  • Send a complete copy of the 'output.log' file to the mod developer\n" +
-                    "  • Completely remove and re-install " + Constants.AssemblyName + " and it's required mods\n");
+                Notification.Dialog(string.Format("Incorrect {0} installation", Constants.AssemblyName),
+                                    string.Format("An error has occurred while checking the installation of {0}.\n\n", Constants.AssemblyName) +
+                                    string.Format("You need to:\n" +
+                                    "  •  Terminate the KSP instance\n" +
+                                    "  •  Send a complete copy of the 'output.log' file to the mod developer\n" +
+                                    "  •  Completely remove and re-install {0} and it's required mods\n", Constants.AssemblyName));
             }
         }
     }

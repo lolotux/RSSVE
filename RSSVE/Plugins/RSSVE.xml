@@ -89,12 +89,28 @@
             Class to get basic system operational parameters.
             </summary>
         </member>
-        <member name="M:RSSVE.System.Is64BitOS">
+        <member name="P:RSSVE.System.GetGraphicsRenderer">
+            <summary>
+            Method to get the operating system graphics renderer.
+            </summary>
+            <returns>
+            Returns one of the following renderer types: D3D9, D3D11, OpenGL or Unknown.
+            </returns>
+        </member>
+        <member name="P:RSSVE.System.Is64BitOS">
             <summary>
             Method to get the operating system octet size.
             </summary>
             <returns>
-            Returns "Yes" if the Operating System is using the AMD64 specification (x64) and "No" if it is using the baseline x86.
+            Returns true if the Operating System is using the AMD64 specification (x64) and false if it is using the baseline x86.
+            </returns>
+        </member>
+        <member name="P:RSSVE.System.GetPlatformType">
+            <summary>
+            Method to get the operating system type.
+            </summary>
+            <returns>
+            Returns the following operating system types: Linux, OSX, Windows and Unknown.
             </returns>
         </member>
         <member name="T:RSSVE.Version">
@@ -102,7 +118,7 @@
             Class to get the assembly version information.
             </summary>
         </member>
-        <member name="P:RSSVE.Version.AssemblyVersion">
+        <member name="P:RSSVE.Version.GetAssemblyVersion">
             <summary>
             Method to get the assembly version.
             </summary>
@@ -110,14 +126,14 @@
             Returns the assembly version as a string (major.minor.revision.build).
             </returns>
         </member>
-        <member name="T:RSSVE.OSChecker">
+        <member name="T:RSSVE.StartupChecker">
             <summary>
-            Operating System checker. Operates only in the Loading scene.
+            Startup System checker. Operates only in the Loading scene.
             </summary>
         </member>
-        <member name="M:RSSVE.OSChecker.Start">
+        <member name="M:RSSVE.StartupChecker.Start">
             <summary>
-            Method to start the OS checker.
+            Method to start the startup checker.
             </summary>
         </member>
     </members>
