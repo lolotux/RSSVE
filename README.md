@@ -11,13 +11,13 @@ Check the **![RSSVE wiki][RSSVE:wiki-link]** for more information.
 
 ## Credits
 
-#### Textures:
+### Textures:
 
   * **Cloud and city detail textures** by **![Real Visual Enhancements (RVE)][RSSVE:RVE-link]**
   * **Earth cloud and city light main textures** by **![NASA Visible Earth][RSSVE:NASA-VE-link]**
   * **Gas giants source textures** (used for exporting some basic cloud textures) by **![JHT's Planetary Pixel Emporium][RSSVE:PPE-link]**
 
-#### Programming:
+### Programming:
 
   * **CubeTheSphere** utility by **![Unreal Realm Of Concepts][RSSVE:CubeTheSphere-link]**
   * **Module Manager** by **![ialdabaoth][RSSVE:MM-link-ialdabaoth]** and **![sarbian][RSSVE:MM-link-sarbian]**
@@ -37,7 +37,7 @@ RSSVE is licensed under a **Creative Commons Attribution-NonCommercial-ShareAlik
 
 You should have received a copy of the license along with this work. If not, visit the **[official Creative Commons web page][RSSVE:cc-license-link]**.
 
---------------------------------------------------
+***
 
 ![][RSSVE:Venus]
 
@@ -59,6 +59,8 @@ You should have received a copy of the license along with this work. If not, vis
 
 ![][RSSVE:Pluto]
 
+***
+
 [RSSVE:shield-version]:  https://img.shields.io/badge/KSP%20Version-1.2.2.1622-red.svg
 [RSSVE:shield-license]:  https://img.shields.io/badge/License-CC--BY--NC--SA%204.0-green.svg
 [RSSVE:cc-license-link]: https://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -69,7 +71,7 @@ You should have received a copy of the license along with this work. If not, vis
 [RSSVE:MM-link-ialdabaoth]: https://github.com/Ialdabaoth
 [RSSVE:MM-link-sarbian]:    https://github.com/sarbian/ModuleManager
 [RSSVE:NASA-VE-link]:       http://visibleearth.nasa.gov
-[RSSVE:PPE-link]:           http://planetpixelemporium.com/
+[RSSVE:PPE-link]:           http://planetpixelemporium.com
 [RSSVE:RSS-link]:           https://github.com/KSP-RO/RealSolarSystem
 [RSSVE:RVE-link]:           https://github.com/Pingopete
 [RSSVE:Scatterer-link]:     https://github.com/LGhassen
