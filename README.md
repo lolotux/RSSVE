@@ -3,39 +3,39 @@
 ![][RSSVE:shield-version]
 ![][RSSVE:shield-license]
 
-Real Solar System Visual Enhancements (RSSVE) is an add-on for the Environmental Visual Enhancements (EVE), providing clouds and other visual improvements for the Real Solar System (RSS) modification.
+**Real Solar System Visual Enhancements (RSSVE)** is an add-on for the **Environmental Visual Enhancements (EVE)**, providing clouds and other visual improvements for the **Real Solar System (RSS)** modification.
 
 ## Installation
 
-Check the ![RSSVE wiki][RSSVE:wiki-link] for more information.
+Check the **![RSSVE wiki][RSSVE:wiki-link]** for more information.
 
 ## Credits
 
 #### Textures:
 
-  * Cloud and city detail textures by ![Real Visual Enhancements][RSSVE:RVE-link]
-  * Earth cloud and city light main textures by ![NASA Visible Earth][RSSVE:NASA-VE-link]
-  * Gas giants source textures (used for exporting some basic cloud textures) by ![JHT's Planetary Pixel Emporium][RSSVE:PPE-link]
+  * **Cloud and city detail textures** by **![Real Visual Enhancements (RVE)][RSSVE:RVE-link]**
+  * **Earth cloud and city light main textures** by **![NASA Visible Earth][RSSVE:NASA-VE-link]**
+  * **Gas giants source textures** (used for exporting some basic cloud textures) by **![JHT's Planetary Pixel Emporium][RSSVE:PPE-link]**
 
 #### Programming:
 
-  * CubeTheSphere utility by ![Unreal Realm Of Concepts][RSSVE:CubeTheSphere-link]
-  * Module Manager by ![ialdabaoth][RSSVE:MM-link-ialdabaoth] and ![sarbian][RSSVE:MM-link-sarbian]
-  * Environmental Visual Enhancements (EVE) by ![rbray89][RSSVE:EVE-link-rbray] and ![WazWaz][RSSVE:EVE-link-waz]
-  * Real Solar System (RSS) by ![NathanKell][RSSVE:RSS-link]
-  * Real Visual Enhancements (RVE) by ![Pingopete][RSSVE:RVE-link]
-  * Scatterer by ![Blackrack][RSSVE:Scatterer-link]
+  * **CubeTheSphere** utility by **![Unreal Realm Of Concepts][RSSVE:CubeTheSphere-link]**
+  * **Module Manager** by **![ialdabaoth][RSSVE:MM-link-ialdabaoth]** and **![sarbian][RSSVE:MM-link-sarbian]**
+  * **Environmental Visual Enhancements (EVE)** by **![rbray89][RSSVE:EVE-link-rbray]** and **![WazWaz][RSSVE:EVE-link-waz]**
+  * **Real Solar System (RSS)** by **![NathanKell][RSSVE:RSS-link]**
+  * **Real Visual Enhancements (RVE)** by **![Pingopete][RSSVE:RVE-link]**
+  * **Scatterer** by **![Blackrack][RSSVE:Scatterer-link]**
 
 ## Contributors
 
-  * ![Francois W. Nel][RSSVE:contributor-francois]
-  * ![Lukas Theisen][RSSVE:contributor-theysen]
+  * **![Francois W. Nel][RSSVE:contributor-francois]**
+  * **![Lukas Theisen][RSSVE:contributor-theysen]**
 
 ## License
 
-RSSVE is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 (CC-BY-NC-SA 4.0) license.
+RSSVE is licensed under a **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 (CC-BY-NC-SA 4.0)** license.
 
-You should have received a copy of the license along with this work. If not, visit the [official Creative Commons web page][RSSVE:cc-license-link].
+You should have received a copy of the license along with this work. If not, visit the **[official Creative Commons web page][RSSVE:cc-license-link]**.
 
 --------------------------------------------------
 
