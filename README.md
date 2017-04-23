@@ -13,23 +13,23 @@ Check the **![RSSVE wiki][RSSVE:wiki-link]** for more information.
 
 ### Textures:
 
-  * **Cloud and city detail textures** by **![Real Visual Enhancements (RVE)][RSSVE:RVE-link]**
-  * **Earth cloud and city light main textures** by **![NASA Visible Earth][RSSVE:NASA-VE-link]**
-  * **Gas giants source textures** (used for exporting some basic cloud textures) by **![JHT's Planetary Pixel Emporium][RSSVE:PPE-link]**
+  * **Cloud and city detail textures** by **[Real Visual Enhancements (RVE)][RSSVE:RVE-link]**
+  * **Earth cloud and city light main textures** by **[NASA Visible Earth][RSSVE:NASA-VE-link]**
+  * **Gas giants source textures** (used for exporting some basic cloud textures) by **[JHT's Planetary Pixel Emporium][RSSVE:PPE-link]**
 
 ### Programming:
 
-  * **CubeTheSphere** utility by **![Unreal Realm Of Concepts][RSSVE:CubeTheSphere-link]**
-  * **Module Manager** by **![ialdabaoth][RSSVE:MM-link-ialdabaoth]** and **![sarbian][RSSVE:MM-link-sarbian]**
-  * **Environmental Visual Enhancements (EVE)** by **![rbray89][RSSVE:EVE-link-rbray]** and **![WazWaz][RSSVE:EVE-link-waz]**
-  * **Real Solar System (RSS)** by **![NathanKell][RSSVE:RSS-link]**
-  * **Real Visual Enhancements (RVE)** by **![Pingopete][RSSVE:RVE-link]**
-  * **Scatterer** by **![Blackrack][RSSVE:Scatterer-link]**
+  * **CubeTheSphere** utility by **[Unreal Realm Of Concepts][RSSVE:CubeTheSphere-link]**
+  * **Module Manager** by **[ialdabaoth][RSSVE:MM-link-ialdabaoth]** and **[sarbian][RSSVE:MM-link-sarbian]**
+  * **Environmental Visual Enhancements (EVE)** by **[rbray89][RSSVE:EVE-link-rbray]** and [WazWaz][RSSVE:EVE-link-waz]**
+  * **Real Solar System (RSS)** by **[NathanKell][RSSVE:RSS-link]**
+  * **Real Visual Enhancements (RVE)** by **[Pingopete][RSSVE:RVE-link]**
+  * **Scatterer** by **[Blackrack][RSSVE:Scatterer-link]**
 
 ## Contributors
 
-  * **![Francois W. Nel][RSSVE:contributor-francois]**
-  * **![Lukas Theisen][RSSVE:contributor-theysen]**
+  * **[Francois W. Nel][RSSVE:contributor-francois]**
+  * **[Lukas Theisen][RSSVE:contributor-theysen]**
 
 ## License
 
