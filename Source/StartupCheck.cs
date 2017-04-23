@@ -59,7 +59,7 @@ namespace RSSVE
             //  Check if we are using a different graphics renderer (D3D11 or OpenGL) under Windows (should use D3D9 for now).
             //  MacOS and Linux do not have the same problem as they only use the OpenGL renderer.
 
-            if (System.GetPlatformType.Equals ("Windows") && (!System.GetGraphicsRenderer.Equals("D3D9")))
+            if (System.GetPlatformType.Equals ("Windows") && (!System.GetGraphicsRenderer.Equals ("D3D9")))
             {
                 string IncompatibleRendererMsg = string.Empty;
 

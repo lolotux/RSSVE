@@ -71,7 +71,7 @@ namespace RSSVE
         static public readonly string AssemblyName = "RSSVE";
 
         /// <summary>
-        /// The relative path where the assembly resides.
+        /// The (relative to the "GameData") path where the assembly resides.
         /// </summary>
 
         static public readonly string AssemblyPath = AssemblyName + "/Plugins";
@@ -164,14 +164,14 @@ namespace RSSVE
         /// Method to get the operating system octet size.
         /// </summary>
         /// <returns>
-        /// Returns true if the Operating System is using the AMD64 specification (x64) and false if it is using the baseline x86.
+        /// Returns "True" if the Operating System is using the AMD64 specification (x64) and "False" if it is using the baseline Intel specification (x86).
         /// </returns>
 
         public static bool Is64BitOS
         {
             get
             {
-                if (IntPtr.Size.Equals(8))
+                if (IntPtr.Size.Equals (8))
                 {
                     return true;
                 }
@@ -184,7 +184,7 @@ namespace RSSVE
         /// Method to get the operating system type.
         /// </summary>
         /// <returns>
-        /// Returns the following operating system types: Linux, OSX, Windows and Unknown.
+        /// Returns one the following operating system types: Linux, OSX, Windows or Unknown.
         /// </returns>
 
         public static string GetPlatformType
@@ -244,9 +244,9 @@ namespace RSSVE
         {
             get
             {
-                var AssemblyVersion = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location);
+                var AssemblyVersion = FileVersionInfo.GetVersionInfo (Assembly.GetExecutingAssembly ().Location);
 
-                return string.Format("{0}.{1}.{2}.{3}", AssemblyVersion.FileMajorPart, AssemblyVersion.FileMinorPart, AssemblyVersion.FileBuildPart, AssemblyVersion.FilePrivatePart);
+                return string.Format ("{0}.{1}.{2}.{3}", AssemblyVersion.FileMajorPart, AssemblyVersion.FileMinorPart, AssemblyVersion.FileBuildPart, AssemblyVersion.FilePrivatePart);
             }
         }
     }
