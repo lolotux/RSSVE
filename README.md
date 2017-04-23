@@ -7,7 +7,7 @@
 
 ## Installation
 
-Check the **![RSSVE wiki][RSSVE:wiki-link]** for more information.
+Check the **![RSSVE wiki][RSSVE:wiki-link]** about the requirements and the installation steps.
 
 ## Credits
 
@@ -21,7 +21,7 @@ Check the **![RSSVE wiki][RSSVE:wiki-link]** for more information.
 
   * **CubeTheSphere** utility by **[Unreal Realm Of Concepts][RSSVE:CubeTheSphere-link]**
   * **Module Manager** by **[ialdabaoth][RSSVE:MM-link-ialdabaoth]** and **[sarbian][RSSVE:MM-link-sarbian]**
-  * **Environmental Visual Enhancements (EVE)** by **[rbray89][RSSVE:EVE-link-rbray]** and [WazWaz][RSSVE:EVE-link-waz]**
+  * **Environmental Visual Enhancements (EVE)** by **[rbray89][RSSVE:EVE-link-rbray]** and **[WazWaz][RSSVE:EVE-link-waz]**
   * **Real Solar System (RSS)** by **[NathanKell][RSSVE:RSS-link]**
   * **Real Visual Enhancements (RVE)** by **[Pingopete][RSSVE:RVE-link]**
   * **Scatterer** by **[Blackrack][RSSVE:Scatterer-link]**
@@ -29,7 +29,7 @@ Check the **![RSSVE wiki][RSSVE:wiki-link]** for more information.
 ## Contributors
 
   * **[Francois W. Nel][RSSVE:contributor-francois]**
-  * **[Lukas Theisen][RSSVE:contributor-theysen]**
+  * **[Lukas "Theysen" Theisen][RSSVE:contributor-theysen]**
 
 ## License
 
