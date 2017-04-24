@@ -35,14 +35,14 @@ namespace RSSVE
         {
             //  Log some basic information that might be of interest when debugging installations.
 
-            Notification.Logger (Constants.AssemblyName, string.Format ("Assembly location: {0}", Assembly.GetExecutingAssembly ().Location));
-            Notification.Logger (Constants.AssemblyName, string.Format ("Assembly version: {0}", Version.GetAssemblyVersion));
-            Notification.Logger (Constants.AssemblyName, string.Format ("Assembly compatibility: {0}.{1}.{2}.{3}", Constants.VersionCompatible.Major, Constants.VersionCompatible.Minor, Constants.VersionCompatible.Revis, Constants.VersionCompatible.Build));
+            Notification.Logger (Constants.AssemblyName, null, string.Format ("Assembly location: {0}", Assembly.GetExecutingAssembly ().Location));
+            Notification.Logger (Constants.AssemblyName, null, string.Format ("Assembly version: {0}", Version.GetAssemblyVersion));
+            Notification.Logger (Constants.AssemblyName, null, string.Format ("Assembly compatibility: {0}.{1}.{2}.{3}", Constants.VersionCompatible.Major, Constants.VersionCompatible.Minor, Constants.VersionCompatible.Revis, Constants.VersionCompatible.Build));
 
             #if DEBUG
             {
-                Notification.Logger (Constants.AssemblyName, string.Format ("Using x86-64 binaries: {0}", System.Is64BitOS));
-                Notification.Logger (Constants.AssemblyName, string.Format ("Using Unity player: {0}", System.GetPlatformType));
+                Notification.Logger (Constants.AssemblyName, null, string.Format ("Using x86-64 binaries: {0}", System.Is64BitOS));
+                Notification.Logger (Constants.AssemblyName, null, string.Format ("Using Unity player: {0}", System.GetPlatformType));
             }
             #endif
 
@@ -53,7 +53,7 @@ namespace RSSVE
             {
                 Notification.Dialog ("Unsupported OS Version", string.Format ("{0} does not operate correctly under 32 bit KSP installations.\n\nPlease use the 64 bit instance of KSP.", Constants.AssemblyName));
 
-                Notification.Logger (Constants.AssemblyName, "Unsupported OS Version (using 32 bit)!");
+                Notification.Logger (Constants.AssemblyName, "Error", "Unsupported OS Version (using 32 bit)!");
             }
 
             //  Check if we are using a different graphics renderer (D3D11 or OpenGL) under Windows (should use D3D9 for now).
@@ -80,7 +80,7 @@ namespace RSSVE
 
                 Notification.Dialog ("Unsupported Graphics Renderer Detected", string.Format ("The following listed graphics renderer is unsupported by {0} under the Windows OS:\n\n{1}\n\n Please use the default DirectX 9 graphics renderer.", Constants.AssemblyName, IncompatibleRendererMsg));
 
-                Notification.Logger (Constants.AssemblyName, string.Format ("Unsupported Graphics Renderer (using {0})!", System.GetGraphicsRenderer));
+                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("Unsupported Graphics Renderer (using {0})!", System.GetGraphicsRenderer));
             }
         }
     }

@@ -86,8 +86,8 @@ namespace RSSVE
         /// <summary>
         /// Method to create popup notification dialogs.
         /// </summary>
-        /// <param name = "MessageTitle">Dialog title (string)</param>
-        /// <param name = "MessageContent">Dialog message (string)</param>
+        /// <param name = "MessageTitle">The title of the dialog window. (string)</param>
+        /// <param name = "MessageContent">The message of the dialog window. (string)</param>
         /// <returns>
         /// Does not return a value.
         /// </returns>
@@ -103,17 +103,37 @@ namespace RSSVE
         /// <summary>
         /// Method to print generic text in the KSP debug log.
         /// </summary>
-        /// <param name = "AssemblyTagName">Assembly tag (string)</param>
-        /// <param name = "Content">Log message (string)</param>
+        /// <param name = "AssemblyTagName">Name of the assembly (to be used as a log tag) (string).</param>
+        /// <param name = "LogType">The type of the log. Can be one one of the following: null (for the basic "Log" type), Warning or Error (string).</param>
+        /// <param name = "Content">The message to be logged (string).</param>
         /// <returns>
         /// Does not return a value.
         /// </returns>
 
-        public static void Logger (string AssemblyTagName, string Content)
+        public static void Logger (string AssemblyTagName, string LogType, string Content)
         {
             if (!AssemblyTagName.Equals (null))
             {
-                UnityEngine.Debug.Log (string.Format("[{0}]: {1}", AssemblyTagName, Content));
+                switch (LogType)
+                {
+                    case ("Warning"):
+
+                        UnityEngine.Debug.LogWarning (string.Format ("{0}: {1}", AssemblyTagName, Content));
+
+                    break;
+
+                    case ("Error"):
+
+                        UnityEngine.Debug.LogError (string.Format ("{0}: {1}", AssemblyTagName, Content));
+
+                    break;
+
+                    default:
+
+                        UnityEngine.Debug.Log (string.Format ("[{0}]: {1}", AssemblyTagName, Content));
+
+                    break;
+                }
             }
         }
     }

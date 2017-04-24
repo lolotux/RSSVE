@@ -62,7 +62,7 @@ namespace RSSVE
 
                     var BadPathsString = string.Join ("\n", BadPaths.ToArray ());
 
-                    Notification.Logger (Constants.AssemblyName, string.Format ("Incorrect installation, bad path(s): {0}", BadPathsString));
+                    Notification.Logger (Constants.AssemblyName, "Error", string.Format ("Incorrect installation, bad path(s): {0}", BadPathsString));
 
                     Notification.Dialog (string.Format ("Incorrect {0} Installation", Constants.AssemblyName), string.Format ("{0} has been installed incorrectly and will not function properly. All files should be located under the KSP/GameData/RSSVE folder. Do not move any files from inside that folder!\n\nIncorrect path(s):\n    •    {1}", Constants.AssemblyName, BadPathsString));
                 }
@@ -78,7 +78,7 @@ namespace RSSVE
                     MissingDependenciesNames += "  •  Environmental Visual Enhancements\n";
                     MissingDependenciesCount += 1;
 
-                    Notification.Logger(Constants.AssemblyName, "Missing or incorrectly installed Environmental Visual Enhancements!");
+                    Notification.Logger(Constants.AssemblyName, "Warning", "Missing or incorrectly installed Environmental Visual Enhancements!");
                 }
 
                 //  Check if Scatterer is installed.
@@ -88,7 +88,7 @@ namespace RSSVE
                     MissingDependenciesNames += "  •  Scatterer\n";
                     MissingDependenciesCount += 1;
 
-                    Notification.Logger(Constants.AssemblyName, "Missing or incorrectly installed Scatterer!");
+                    Notification.Logger (Constants.AssemblyName, "Warning", "Missing or incorrectly installed Scatterer!");
                 }
 
                 //  Check it Module Manager is installed.
@@ -98,7 +98,7 @@ namespace RSSVE
                     MissingDependenciesNames += "  •  Module Manager\n";
                     MissingDependenciesCount += 1;
 
-                    Notification.Logger (Constants.AssemblyName, "Missing or incorrectly installed Module Manager!");
+                    Notification.Logger (Constants.AssemblyName, "Warning", "Missing or incorrectly installed Module Manager!");
                 }
 
                 //  Warn the user if any of the dependencies are missing.
@@ -106,11 +106,13 @@ namespace RSSVE
                 if (!MissingDependenciesCount.Equals (0))
                 {
                     Notification.Dialog ("Missing Dependencies", string.Format("{0} requires the following listed mods in order to function correctly:\n\n  {1}", Constants.AssemblyName, MissingDependenciesNames.Trim ()));
+
+                    Notification.Logger (Constants.AssemblyName, "Error", "Required dependencies missing!");
                 }
             }
             catch (Exception ex)
             {
-                Notification.Logger (Constants.AssemblyName, string.Format ("{0} Caught an exception:\n{1}\n", ex.Message, ex.StackTrace));
+                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("{0}: Caught an exception:\n{1}\n", ex.Message, ex.StackTrace));
 
                 Notification.Dialog (string.Format ("Incorrect {0} installation", Constants.AssemblyName),
                                      string.Format ("An error has occurred while checking the installation of {0}.\n\n", Constants.AssemblyName) +
