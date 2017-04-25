@@ -56,7 +56,7 @@
         </member>
         <member name="F:RSSVE.Constants.AssemblyPath">
             <summary>
-            The relative path where the assembly resides.
+            The (relative to the "GameData") path where the assembly resides.
             </summary>
         </member>
         <member name="T:RSSVE.Notification">
@@ -64,22 +64,25 @@
             Class to create user notification dialogs and log basic information to the KSP log file.
             </summary>
         </member>
-        <member name="M:RSSVE.Notification.Dialog(System.String,System.String)">
+        <member name="M:RSSVE.Notification.Dialog(System.String,System.String,System.String,System.String)">
             <summary>
             Method to create popup notification dialogs.
             </summary>
-            <param name = "MessageTitle">Dialog title (string)</param>
-            <param name = "MessageContent">Dialog message (string)</param>
+            <param name = "TitleText">The title text of the dialog window. (string)</param>
+            <param name = "TitleColor">The color of the message text.</param>
+            <param name = "ContentText">The message text of the dialog window. (string)</param>
+            <param name = "ContentColor">The color of the message text.</param>
             <returns>
             Does not return a value.
             </returns>
         </member>
-        <member name="M:RSSVE.Notification.Logger(System.String,System.String)">
+        <member name="M:RSSVE.Notification.Logger(System.String,System.String,System.String)">
             <summary>
             Method to print generic text in the KSP debug log.
             </summary>
-            <param name = "AssemblyTagName">Assembly tag (string)</param>
-            <param name = "Content">Log message (string)</param>
+            <param name = "AssemblyTagName">Name of the assembly (to be used as a log tag) (string).</param>
+            <param name = "LogType">The type of the log. Can be one one of the following: null (for the basic "Log" type), Warning or Error (string).</param>
+            <param name = "Content">The message to be logged (string).</param>
             <returns>
             Does not return a value.
             </returns>
@@ -102,7 +105,7 @@
             Method to get the operating system octet size.
             </summary>
             <returns>
-            Returns true if the Operating System is using the AMD64 specification (x64) and false if it is using the baseline x86.
+            Returns "True" if the Operating System is using the AMD64 specification (x64) and "False" if it is using the baseline Intel specification (x86).
             </returns>
         </member>
         <member name="P:RSSVE.System.GetPlatformType">
@@ -110,7 +113,7 @@
             Method to get the operating system type.
             </summary>
             <returns>
-            Returns the following operating system types: Linux, OSX, Windows and Unknown.
+            Returns one the following operating system types: Linux, OSX, Windows or Unknown.
             </returns>
         </member>
         <member name="T:RSSVE.Version">

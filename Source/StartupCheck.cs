@@ -51,7 +51,7 @@ namespace RSSVE
 
             if (System.Is64BitOS.Equals (false))
             {
-                Notification.Dialog ("Unsupported OS Version", string.Format ("{0} does not operate correctly under 32 bit KSP installations.\n\nPlease use the 64 bit instance of KSP.", Constants.AssemblyName));
+                Notification.Dialog ("Unsupported OS Version", "#F0F0F0", string.Format ("{0} does not operate correctly under 32 bit KSP installations.\n\nPlease use the 64 bit instance of KSP.", Constants.AssemblyName), "#F0F0F0");
 
                 Notification.Logger (Constants.AssemblyName, "Error", "Unsupported OS Version (using 32 bit)!");
             }
@@ -78,7 +78,7 @@ namespace RSSVE
                     break;
                 }
 
-                Notification.Dialog ("Unsupported Graphics Renderer Detected", string.Format ("The following listed graphics renderer is unsupported by {0} under the Windows OS:\n\n{1}\n\n Please use the default DirectX 9 graphics renderer.", Constants.AssemblyName, IncompatibleRendererMsg));
+                Notification.Dialog ("Unsupported Graphics Renderer Detected", "#F0F0F0", string.Format ("The following listed graphics renderer is unsupported by {0} under the Windows OS:\n\n{1}\n\n Please use the default DirectX 9 graphics renderer.", Constants.AssemblyName, IncompatibleRendererMsg), "#F0F0F0");
 
                 Notification.Logger (Constants.AssemblyName, "Error", string.Format ("Unsupported Graphics Renderer (using {0})!", System.GetGraphicsRenderer));
             }

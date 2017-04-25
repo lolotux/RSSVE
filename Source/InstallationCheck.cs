@@ -37,7 +37,7 @@ using UnityEngine;
 namespace RSSVE
 {
     /// <summary>
-    /// Version and filesystem integrity checker class. Operates only in the Main Menu scene.
+    /// Version and file system integrity checker class. Operates only in the Main Menu scene.
     /// </summary>
 
     [KSPAddon(KSPAddon.Startup.MainMenu, true)]
@@ -64,7 +64,7 @@ namespace RSSVE
 
                     Notification.Logger (Constants.AssemblyName, "Error", string.Format ("Incorrect installation, bad path(s): {0}", BadPathsString));
 
-                    Notification.Dialog (string.Format ("Incorrect {0} Installation", Constants.AssemblyName), string.Format ("{0} has been installed incorrectly and will not function properly. All files should be located under the KSP/GameData/RSSVE folder. Do not move any files from inside that folder!\n\nIncorrect path(s):\n    •    {1}", Constants.AssemblyName, BadPathsString));
+                    Notification.Dialog (string.Format ("Incorrect {0} Installation", Constants.AssemblyName), "#F0F0F0", string.Format ("{0} has been installed incorrectly and will not function properly. All files should be located under the KSP/GameData/RSSVE folder. Do not move any files from inside that folder!\n\nIncorrect path(s):\n    •    {1}", Constants.AssemblyName, BadPathsString), "#F0F0F0");
                 }
 
                 string MissingDependenciesNames = string.Empty;
@@ -105,7 +105,7 @@ namespace RSSVE
 
                 if (!MissingDependenciesCount.Equals (0))
                 {
-                    Notification.Dialog ("Missing Dependencies", string.Format("{0} requires the following listed mods in order to function correctly:\n\n  {1}", Constants.AssemblyName, MissingDependenciesNames.Trim ()));
+                    Notification.Dialog ("Missing Dependencies", "#F0F0F0", string.Format("{0} requires the following listed mods in order to function correctly:\n\n  {1}", Constants.AssemblyName, MissingDependenciesNames.Trim ()), "#F0F0F0");
 
                     Notification.Logger (Constants.AssemblyName, "Error", "Required dependencies missing!");
                 }
@@ -114,12 +114,12 @@ namespace RSSVE
             {
                 Notification.Logger (Constants.AssemblyName, "Error", string.Format ("{0}: Caught an exception:\n{1}\n", ex.Message, ex.StackTrace));
 
-                Notification.Dialog (string.Format ("Incorrect {0} installation", Constants.AssemblyName),
+                Notification.Dialog (string.Format ("Incorrect {0} installation", Constants.AssemblyName), "#F0F0F0",
                                      string.Format ("An error has occurred while checking the installation of {0}.\n\n", Constants.AssemblyName) +
                                      string.Format ("You need to:\n" +
                                      "  •  Terminate the KSP instance\n" +
                                      "  •  Send a complete copy of the 'output.log' file to the mod developer\n" +
-                                     "  •  Completely remove and re-install {0} and it's required mods\n", Constants.AssemblyName));
+                                     "  •  Completely remove and re-install {0} and it's required mods\n", Constants.AssemblyName), "#F0F0F0");
             }
         }
     }
