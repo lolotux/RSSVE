@@ -96,7 +96,7 @@ namespace RSSVE
 
         public static void Dialog (string TitleText, string TitleColor, string ContentText, string ContentColor)
         {
-            if (!TitleText.Equals (null) && (!ContentText.Equals (null)))
+            if (!TitleText.Equals (null) && !ContentText.Equals (null))
             {
                 PopupDialog.SpawnPopupDialog (new Vector2 (0.5f, 0.5f), new Vector2 (0.5f, 0.5f), string.Format ("<color={0}>{1}</color>", TitleColor, TitleText), string.Format ("<color={0}>{1}</color>", ContentColor, ContentText), "OK", false, HighLogic.UISkin, true, string.Empty);
             }
@@ -114,7 +114,7 @@ namespace RSSVE
 
         public static void Logger (string AssemblyTagName, string LogType, string Content)
         {
-            if (!AssemblyTagName.Equals (null))
+            if (!AssemblyTagName.Equals (null) && !Content.Equals (null))
             {
                 switch (LogType)
                 {
@@ -259,7 +259,7 @@ namespace RSSVE
         /// Method to get the assembly version.
         /// </summary>
         /// <returns>
-        /// Returns the assembly version as a string (major.minor.revision.build).
+        /// Returns the assembly version as a string with the format: "major.minor.revision.build".
         /// </returns>
 
         public static string GetAssemblyVersion
