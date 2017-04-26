@@ -259,7 +259,7 @@ namespace RSSVE
         /// Method to get the assembly version.
         /// </summary>
         /// <returns>
-        /// Returns the assembly version as a string with the format: "major.minor.revision.build".
+        /// Returns the assembly version as a string with the format: major.minor.revision.build.
         /// </returns>
 
         public static string GetAssemblyVersion

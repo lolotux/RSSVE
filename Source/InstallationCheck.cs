@@ -54,7 +54,7 @@ namespace RSSVE
             {
                 //  Search for this mod's DLL existing in the wrong location. This will also detect duplicate copies because only one can be in the right place.
 
-                var assemblies = AssemblyLoader.loadedAssemblies.Where (asm => asm.assembly.GetName ().Name == Assembly.GetExecutingAssembly ().GetName ().Name).Where (asm => asm.url != Constants.AssemblyPath);
+                var assemblies = AssemblyLoader.loadedAssemblies.Where (asm => asm.assembly.GetName ().Name.Equals (Assembly.GetExecutingAssembly ().GetName ().Name)).Where (asm => asm.url != Constants.AssemblyPath);
 
                 if (assemblies.Any ())
                 {
@@ -78,7 +78,7 @@ namespace RSSVE
                     MissingDependenciesNames += "  •  Environmental Visual Enhancements\n";
                     MissingDependenciesCount += 1;
 
-                    Notification.Logger(Constants.AssemblyName, "Warning", "Missing or incorrectly installed Environmental Visual Enhancements!");
+                    Notification.Logger (Constants.AssemblyName, "Warning", "Missing or incorrectly installed Environmental Visual Enhancements!");
                 }
 
                 //  Check if Scatterer is installed.
@@ -105,7 +105,7 @@ namespace RSSVE
 
                 if (!MissingDependenciesCount.Equals (0))
                 {
-                    Notification.Dialog ("Missing Dependencies", "#F0F0F0", string.Format("{0} requires the following listed mods in order to function correctly:\n\n  {1}", Constants.AssemblyName, MissingDependenciesNames.Trim ()), "#F0F0F0");
+                    Notification.Dialog ("Missing Dependencies", "#F0F0F0", string.Format ("{0} requires the following listed mods in order to function correctly:\n\n  {1}", Constants.AssemblyName, MissingDependenciesNames.Trim ()), "#F0F0F0");
 
                     Notification.Logger (Constants.AssemblyName, "Error", "Required dependencies missing!");
                 }

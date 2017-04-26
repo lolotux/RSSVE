@@ -6,7 +6,7 @@
     <members>
         <member name="T:RSSVE.InstallChecker">
             <summary>
-            Version and filesystem integrity checker class. Operates only in the Main Menu scene.
+            Version and file system integrity checker class. Operates only in the Main Menu scene.
             </summary>
         </member>
         <member name="M:RSSVE.InstallChecker.Start">
@@ -66,7 +66,7 @@
         </member>
         <member name="M:RSSVE.Notification.Dialog(System.String,System.String,System.String,System.String)">
             <summary>
-            Method to create popup notification dialogs.
+            Method to create pop-up notification dialogs.
             </summary>
             <param name = "TitleText">The title text of the dialog window. (string)</param>
             <param name = "TitleColor">The color of the message text.</param>
@@ -126,7 +126,7 @@
             Method to get the assembly version.
             </summary>
             <returns>
-            Returns the assembly version as a string (major.minor.revision.build).
+            Returns the assembly version as a string with the format: major.minor.revision.build.
             </returns>
         </member>
         <member name="T:RSSVE.StartupChecker">

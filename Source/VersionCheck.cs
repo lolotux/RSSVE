@@ -58,14 +58,14 @@ namespace RSSVE
             // Even if you don't lock down functionality, you should return true if your users
             // can expect a future update to be available.
 
-            return (Versioning.version_minor == Constants.VersionCompatible.Minor && Versioning.version_major == Constants.VersionCompatible.Major && Versioning.Revision == Constants.VersionCompatible.Revis);
+            return (Versioning.version_minor.Equals (Constants.VersionCompatible.Minor) && Versioning.version_major.Equals (Constants.VersionCompatible.Major) && Versioning.Revision.Equals (Constants.VersionCompatible.Revis));
         }
 
         public static bool IsUnityCompatible ()
         {
             //  Check if the version of Unity used by KSP is compatible with the version of Unity that the mod expects.
 
-            return (Application.unityVersion == Constants.UnityVersion);
+            return (Application.unityVersion.Equals (Constants.UnityVersion));
         }
 
         //  Version of the compatibility checker itself.
@@ -77,10 +77,10 @@ namespace RSSVE
             // Checkers are identified by the type name and version field name.
 
             var fields = getAllTypes ()
-                .Where (t => t.Name == "CompatibilityChecker")
+                .Where (t => t.Name.Equals ("CompatibilityChecker"))
                 .Select (t => t.GetField ("_version", BindingFlags.Static | BindingFlags.NonPublic))
                 .Where (f => f != null)
-                .Where (f => f.FieldType == typeof (int))
+                .Where (f => f.FieldType.Equals (typeof (int)))
                 .ToArray ();
 
             //  Let the latest version of the checker execute.
@@ -90,7 +90,7 @@ namespace RSSVE
                 return;
             }
 
-            Debug.Log(string.Format ("[CompatibilityChecker] Running checker version {0} from '{1}'", _version, Assembly.GetExecutingAssembly ().GetName ().Name));
+            Debug.Log (string.Format ("[CompatibilityChecker] Running checker version {0} from '{1}'", _version, Assembly.GetExecutingAssembly ().GetName ().Name));
 
             //  Other checkers will see this version and not run.
             //  This accomplishes the same as an explicit "ran" flag with fewer moving parts.
@@ -102,7 +102,7 @@ namespace RSSVE
             var incompatible = fields
                 .Select (f => f.DeclaringType.GetMethod ("IsCompatible", Type.EmptyTypes))
                 .Where (m => m.IsStatic)
-                .Where (m => m.ReturnType == typeof (bool))
+                .Where (m => m.ReturnType.Equals (typeof (bool)))
                 .Where (m =>
                 {
                     try
@@ -127,7 +127,7 @@ namespace RSSVE
                 .Select (f => f.DeclaringType.GetMethod ("IsUnityCompatible", Type.EmptyTypes))
                 .Where (m => m != null)  //  Mods without IsUnityCompatible () are assumed to be compatible.
                 .Where (m => m.IsStatic)
-                .Where (m => m.ReturnType == typeof (bool))
+                .Where (m => m.ReturnType.Equals (typeof (bool)))
                 .Where (m =>
                 {
                     try
@@ -153,7 +153,7 @@ namespace RSSVE
 
             if ((incompatible.Length > 0) || (incompatibleUnity.Length > 0))
             {
-                message += ((message == string.Empty) ? "Some" : "\n\nAdditionally, some") + " installed mods may be incompatible with this version of Kerbal Space Program. Features may be broken or disabled. Please check for updates to the listed mods.";
+                message += ((message.Equals (string.Empty)) ? "Some" : "\n\nAdditionally, some") + " installed mods may be incompatible with this version of Kerbal Space Program. Features may be broken or disabled. Please check for updates to the listed mods.";
 
                 if (incompatible.Length > 0)
                 {
