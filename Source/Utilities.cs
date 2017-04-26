@@ -98,7 +98,7 @@ namespace RSSVE
         {
             if (!TitleText.Equals (null) && !ContentText.Equals (null))
             {
-                PopupDialog.SpawnPopupDialog (new Vector2 (0.5f, 0.5f), new Vector2 (0.5f, 0.5f), string.Format ("<color={0}>{1}</color>", TitleColor, TitleText), string.Format ("<color={0}>{1}</color>", ContentColor, ContentText), "OK", false, HighLogic.UISkin, true, string.Empty);
+                PopupDialog.SpawnPopupDialog (new Vector2 (0.5f, 0.5f), new Vector2 (0.5f, 0.5f), string.Empty, string.Format ("<color={0}>{1}</color>", TitleColor, TitleText), string.Format ("<color={0}>{1}</color>", ContentColor, ContentText), "OK", false, HighLogic.UISkin, true, string.Empty);
             }
         }
 
