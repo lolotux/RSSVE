@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")] 
 
 #if DEBUG
-[assembly: AssemblyConfiguration("Develop")]
+[assembly: AssemblyConfiguration("Development")]
 #else
 [assembly: AssemblyConfiguration("Stable")]
 #endif
@@ -48,7 +48,7 @@ using System.Runtime.InteropServices;
 //    • Revision
 
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.2.2.1622")]
-[assembly: AssemblyInformationalVersion("1.2.2.1622")]
+[assembly: AssemblyFileVersion("1.3.0.1804")]
+[assembly: AssemblyInformationalVersion("1.3.0.1804")]
 
 [assembly: KSPAssembly("RSSVE", 1, 0)]

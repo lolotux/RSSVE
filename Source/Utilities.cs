@@ -43,19 +43,19 @@ namespace RSSVE
             /// The minor version value.
             /// </summary>
 
-            static public readonly int Minor = 2;
+            static public readonly int Minor = 3;
 
             /// <summary>
             /// The revision version value.
             /// </summary>
 
-            static public readonly int Revis = 2;
+            static public readonly int Revis = 0;
 
             /// <summary>
             /// The build version value.
             /// </summary>
 
-            static public readonly int Build = 1622;
+            static public readonly int Build = 1804;
         }
 
         /// <summary>
