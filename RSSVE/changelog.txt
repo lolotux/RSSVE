@@ -23,6 +23,7 @@ Known Issues:
 
     * The city lights may appear to fade in/out or flicker.
     * The new Scatterer cloud integration and Kopernicus ring shader features are currently disabled.
+    * The bodies may appear as featureless spheres under DirextX 11 or OpenGL. A hotfix patch has been issued as a temporary solution.
 
 ==================================================
 RSSVE v1.2.2-RC2 for KSP 1.2.2 (16/12/2016)
