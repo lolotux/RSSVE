@@ -16,6 +16,7 @@
 
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Reflection;
 using UnityEngine;
 
@@ -74,7 +75,7 @@ namespace RSSVE
         /// The (relative to the "GameData") path where the assembly resides.
         /// </summary>
 
-        static public readonly string AssemblyPath = AssemblyName + "/Plugins";
+        static public readonly string AssemblyPath = AssemblyName + Path.AltDirectorySeparatorChar + "Plugins";
     }
 
     /// <summary>
@@ -86,7 +87,7 @@ namespace RSSVE
         /// <summary>
         /// Method to create pop-up notification dialogs.
         /// </summary>
-        /// <param name = "DialogName">The name of the dialog window spawned.</param>
+        /// <param name = "DialogName">The internal name of the dialog window spawned.</param>
         /// <param name = "TitleText">The title text of the dialog window. (string)</param>
         /// <param name = "TitleColor">The color of the message text.</param>
         /// <param name = "ContentText">The message text of the dialog window. (string)</param>

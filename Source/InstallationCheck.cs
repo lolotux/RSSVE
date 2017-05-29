@@ -64,7 +64,7 @@ namespace RSSVE
 
                     Notification.Logger (Constants.AssemblyName, "Error", string.Format ("Incorrect installation, bad path(s): {0}", BadPathsString));
 
-                    Notification.Dialog ("BaseAssemblyChecker", string.Format ("Incorrect {0} Installation", Constants.AssemblyName), "#F0F0F0", string.Format ("{0} has been installed incorrectly and will not function properly. All files should be located under the KSP/GameData/RSSVE folder. Do not move any files from inside that folder!\n\nIncorrect path(s):\n    •    {1}", Constants.AssemblyName, BadPathsString), "#F0F0F0");
+                    Notification.Dialog ("BaseAssemblyChecker", string.Format ("Incorrect {0} Installation", Constants.AssemblyName), "#F0F0F0", string.Format ("{0} has been installed incorrectly and will not function properly. All files should be located under the GameData" + Path.AltDirectorySeparatorChar + Constants.AssemblyName + "folder. Do not move any files from inside that folder!\n\nIncorrect path(s):\n    •    {1}", Constants.AssemblyName, BadPathsString), "#F0F0F0");
                 }
 
                 string MissingDependenciesNames = string.Empty;
@@ -73,7 +73,7 @@ namespace RSSVE
 
                 //  Check if Environmental Visual Enhancements is installed.
 
-                if (!AssemblyLoader.loadedAssemblies.Any (asm => asm.assembly.GetName ().Name.StartsWith ("EVEManager", StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower ().Equals ("environmentalvisualenhancements/plugins")))
+                if (!AssemblyLoader.loadedAssemblies.Any (asm => asm.assembly.GetName ().Name.StartsWith ("EVEManager", StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower ().Equals ("environmentalvisualenhancements" + Path.AltDirectorySeparatorChar + "plugins")))
                 {
                     MissingDependenciesNames += "  •  Environmental Visual Enhancements\n";
                     MissingDependenciesCount += 1;
