@@ -43,6 +43,7 @@ namespace RSSVE
             {
                 Notification.Logger (Constants.AssemblyName, null, string.Format ("Using x86-64 binaries: {0}", System.Is64BitOS));
                 Notification.Logger (Constants.AssemblyName, null, string.Format ("Using Unity player: {0}", System.GetPlatformType));
+                Notification.Logger (Constants.AssemblyName, null, string.Format ("Using renderer: {0}", System.GetGraphicsRenderer));
             }
             #endif
 

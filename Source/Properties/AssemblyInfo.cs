@@ -29,9 +29,13 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")] 
 
 #if DEBUG
-[assembly: AssemblyConfiguration("Development")]
+
+    [assembly: AssemblyConfiguration("Development")]
+
 #else
-[assembly: AssemblyConfiguration("Stable")]
+
+    [assembly: AssemblyConfiguration("Stable")]
+
 #endif
 
 //  Hide the specified assembly from any COM components.
