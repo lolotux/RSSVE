@@ -70,7 +70,7 @@ namespace RSSVE
 
         //  Version of the compatibility checker itself.
 
-        static int _version = 5;
+        static int _version = 6;
 
         public void Start ()
         {
