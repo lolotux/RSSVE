@@ -1,4 +1,24 @@
 ==================================================
+RSSVE v1.3.0-RC1 for KSP 1.3.0 (--/--/2017)
+==================================================
+
+Change Log:
+
+    * Compatibility update for the KSP 1.3 release.
+    * Enabled the Scatterer cloud integration feature.
+
+Bug Fixes:
+
+    * Reduced the amount of ground flickering on the Earth.
+    * The ScaledSpace camera will not clip the Earth clouds anymore for altitudes less than 167 km.
+    * Reduced the apparent brightness of the SS Earth surface (less washed out colors).
+
+Known Issues:
+
+    * The city lights appear to be blocky from low altitudes.
+    * The Scatterer Kopernicus ring shader features are currently disabled.
+
+==================================================
 RSSVE v1.2.2-RC3 for KSP 1.2.2 (26/02/2017)
 ==================================================
 
@@ -23,7 +43,6 @@ Known Issues:
 
     * The city lights may appear to fade in/out or flicker.
     * The new Scatterer cloud integration and Kopernicus ring shader features are currently disabled.
-    * The bodies may appear as featureless spheres under DirextX 11 or OpenGL. A hotfix patch has been issued as a temporary solution.
 
 ==================================================
 RSSVE v1.2.2-RC2 for KSP 1.2.2 (16/12/2016)
