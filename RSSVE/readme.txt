@@ -22,6 +22,7 @@ Installation:
         *   RSS-Textures
         *   RSSVE
         *   Scatterer
+        *   Squad
 
     7. Launch KSP and enjoy the new visual effects!
 
@@ -37,7 +38,7 @@ Credits:
 
     Textures:
 
-    * Cloud and city detail textures by Real Visual Enhancements
+    * Cloud and city detail textures by Real Visual Enhancements (RVE)
     * Earth cloud and city light main textures by NASA Visible Earth
     * Gas giants source textures (used for exporting some basic cloud textures) by JHT's Planetary Pixel Emporium
 
