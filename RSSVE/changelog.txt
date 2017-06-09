@@ -9,9 +9,10 @@ Change Log:
 
 Bug Fixes:
 
-    * Reduced the amount of ground flickering on the Earth.
-    * The ScaledSpace camera will not clip the Earth clouds anymore for altitudes less than 167 km.
-    * Reduced the apparent brightness of the SS Earth surface (less washed out colors).
+    * Eliminated the ground flickering on Earth.
+    * The Earth clouds will not appear clipped anymore for altitudes less than 167 km.
+    * Reduced the apparent brightness of the Earth surface (less washed out colors).
+    * Tweaked the surface lighting levels of the surface of Venus.
 
 Known Issues:
 
@@ -43,6 +44,7 @@ Known Issues:
 
     * The city lights may appear to fade in/out or flicker.
     * The new Scatterer cloud integration and Kopernicus ring shader features are currently disabled.
+    * The bodies may appear as featureless spheres under DirextX 11 or OpenGL. A hotfix patch has been issued as a temporary solution.
 
 ==================================================
 RSSVE v1.2.2-RC2 for KSP 1.2.2 (16/12/2016)
