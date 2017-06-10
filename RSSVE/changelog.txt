@@ -6,18 +6,19 @@ Change Log:
 
     * Compatibility update for the KSP 1.3 release.
     * Enabled the Scatterer cloud integration feature.
+    * Added detail surface textures to Triton.
 
 Bug Fixes:
 
     * Eliminated the ground flickering on Earth.
-    * The Earth clouds will not appear clipped anymore for altitudes less than 167 km.
-    * Reduced the apparent brightness of the Earth surface (less washed out colors).
-    * Tweaked the surface lighting levels of the surface of Venus.
+    * Fixed the Earth cloud clipping for altitudes less than 167 km.
+    * Reduced the apparent brightness of the Earth surface from orbit.
+    * Tweaked the surface lighting levels on the surface of Venus.
 
 Known Issues:
 
-    * The city lights appear to be blocky from low altitudes.
-    * The Scatterer Kopernicus ring shader features are currently disabled.
+    * The city lights may appear blocky from low altitudes.
+    * The ring shadow feature for Saturn is currently disabled.
 
 ==================================================
 RSSVE v1.2.2-RC3 for KSP 1.2.2 (26/02/2017)
