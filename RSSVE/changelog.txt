@@ -4,21 +4,24 @@ RSSVE v1.3.0-RC1 for KSP 1.3.0 (--/--/2017)
 
 Change Log:
 
-    * Compatibility update for the KSP 1.3 release.
-    * Enabled the Scatterer cloud integration feature.
+    * Compatibility update for the KSP 1.3 and Scatterer v0.0310 release.
     * Added detail surface textures to Triton.
+    * Added new cloud textures for Jupiter and Saturn.
+    * Enabled the Scatterer ring shadow for Saturn.
+    * Added a custom Saturn ring texture for the new Scatterer ring shadow feature.
 
 Bug Fixes:
 
     * Eliminated the ground flickering on Earth.
     * Fixed the Earth cloud clipping for altitudes less than 167 km.
     * Reduced the apparent brightness of the Earth surface from orbit.
-    * Tweaked the surface lighting levels on the surface of Venus.
+    * Tweaked the light level on the surface of Venus.
 
 Known Issues:
 
     * The city lights may appear blocky from low altitudes.
-    * The ring shadow feature for Saturn is currently disabled.
+    * The Scatterer cloud integration feature is currently disabled.
+    * The transition between PQS and ScaledSpace on Venus and Titan is not soft.
 
 ==================================================
 RSSVE v1.2.2-RC3 for KSP 1.2.2 (26/02/2017)
@@ -26,7 +29,7 @@ RSSVE v1.2.2-RC3 for KSP 1.2.2 (26/02/2017)
 
 Change Log:
 
-    * Compatibility update for the Scatterer v0.300 release.
+    * Compatibility update for the Scatterer v0.0300 release.
     * Many small tweaks to the atmospheric scatter effects of all bodies.
     * Increased the apparent brightness of the Moon (might still need some tweaking).
     * Titan will now appear less bright and saturated than before.
@@ -35,7 +38,7 @@ Change Log:
     * Removed an old and unused Earth cloud main texture.
     * Removed the Earth PQS texture (was a performance hog and did not look good anyway).
     * Re-factored the file and folder structure to ease management and development.
-    * New binary assemblies for KSP 1.1.3 users (for use with EVE 1.1-3 and Scatterer v0.255).
+    * New binary assemblies for KSP 1.1.3 users (for use with EVE 1.1-3 and Scatterer v0.0255).
 
 Bug Fixes:
 
@@ -57,7 +60,7 @@ Change Log:
 
 Bug Fixes:
 
-    * Softer transition between the Earth PQS and SS.
+    * Softer transition between the Earth PQS and ScaledSpace.
 
 Known Issues:
 

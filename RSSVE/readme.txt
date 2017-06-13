@@ -40,7 +40,10 @@ Credits:
 
     * Cloud and city detail textures by Real Visual Enhancements (RVE)
     * Earth cloud and city light main textures by NASA Visible Earth
-    * Gas giants source textures (used for exporting some basic cloud textures) by JHT's Planetary Pixel Emporium
+    * Jupiter texture map (used for exporting some basic cloud textures) by Vleider (redistributed by The Celestia Motherlode)
+    * Saturn texture map (used for exporting some basic cloud textures) by Runar Thorvaldsen, Dr. Fridger Schremmp and Grant Hutchinson (redistributed by The Celestia Motherlode)
+    * Saturn ring texture by CICLOPS (Cassini Imaging Central Laboratory For Operations - image preparation by Daren Wilson and Carolyn Porco)
+    * Uranus and Neptune texture maps (used for exporting some basic cloud textures) by JHT's Planetary Pixel Emporium
 
     Programming:
 
