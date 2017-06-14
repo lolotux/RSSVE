@@ -6,7 +6,7 @@ Change Log:
 
     * Compatibility update for the KSP 1.3 and Scatterer v0.0310 release.
     * Added detail surface textures to Triton.
-    * Added new cloud textures for Jupiter and Saturn.
+    * Updated the cloud texture maps for Jupiter and Saturn.
     * Enabled the Scatterer ring shadow for Saturn.
     * Added a custom Saturn ring texture for the new Scatterer ring shadow feature.
 
@@ -16,12 +16,14 @@ Bug Fixes:
     * Fixed the Earth cloud clipping for altitudes less than 167 km.
     * Reduced the apparent brightness of the Earth surface from orbit.
     * Tweaked the light level on the surface of Venus.
+    * Improved the appearance and overall performance of the volumetric clouds.
 
 Known Issues:
 
     * The city lights may appear blocky from low altitudes.
     * The Scatterer cloud integration feature is currently disabled.
     * The transition between PQS and ScaledSpace on Venus and Titan is not soft.
+    * If a reload in-flight is forced then the cloud texture maps may appear as flat surfaces.
 
 ==================================================
 RSSVE v1.2.2-RC3 for KSP 1.2.2 (26/02/2017)
