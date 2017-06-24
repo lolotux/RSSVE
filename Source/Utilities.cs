@@ -22,6 +22,8 @@ using UnityEngine;
 
 namespace RSSVE
 {
+    #region RSSVE Constants
+
     /// <summary>
     /// Class to set up the parameters required and used by RSSVE.
     /// </summary>
@@ -77,6 +79,10 @@ namespace RSSVE
 
         static public readonly string AssemblyPath = AssemblyName + Path.AltDirectorySeparatorChar + "Plugins";
     }
+
+    #endregion
+
+    #region RSSVE Notifications
 
     /// <summary>
     /// Class to create user notification dialogs and log basic information to the KSP log file.
@@ -141,6 +147,10 @@ namespace RSSVE
             }
         }
     }
+
+    #endregion
+
+    #region RSSVE System
 
     /// <summary>
     /// Class to get basic system operational parameters.
@@ -251,6 +261,10 @@ namespace RSSVE
         }
     }
 
+    #endregion
+
+    #region RSSVE Version
+
     /// <summary>
     /// Class to get the assembly version information.
     /// </summary>
@@ -274,4 +288,6 @@ namespace RSSVE
             }
         }
     }
+
+    #endregion
 }
