@@ -52,6 +52,8 @@ namespace RSSVE
         {
             try
             {
+                string MissingDependenciesNames = null;
+
                 //  Search for this mod's DLL existing in the wrong location. This will also detect duplicate copies because only one can be in the right place.
 
                 var assemblies = AssemblyLoader.loadedAssemblies.Where (asm => asm.assembly.GetName ().Name.Equals (Assembly.GetExecutingAssembly ().GetName ().Name)).Where (asm => asm.url != Constants.AssemblyPath);
@@ -67,47 +69,40 @@ namespace RSSVE
                     Notification.Dialog ("BaseAssemblyChecker", string.Format ("Incorrect {0} Installation", Constants.AssemblyName), "#F0F0F0", string.Format ("{0} has been installed incorrectly and will not function properly. All files should be located under the GameData" + Path.AltDirectorySeparatorChar + Constants.AssemblyName + "folder. Do not move any files from inside that folder!\n\nIncorrect path(s):\n    •    {1}", Constants.AssemblyName, BadPathsString), "#F0F0F0");
                 }
 
-                string MissingDependenciesNames = string.Empty;
-
-                int MissingDependenciesCount = 0;
-
                 //  Check if Environmental Visual Enhancements is installed.
 
                 if (!AssemblyLoader.loadedAssemblies.Any (asm => asm.assembly.GetName ().Name.StartsWith ("EVEManager", StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower ().Equals ("environmentalvisualenhancements" + Path.AltDirectorySeparatorChar + "plugins")))
                 {
-                    MissingDependenciesNames += "  •  Environmental Visual Enhancements\n";
-                    MissingDependenciesCount += 1;
+                    MissingDependenciesNames = string.Concat (MissingDependenciesNames, "  •  Environmental Visual Enhancements\n");
 
-                    Notification.Logger (Constants.AssemblyName, "Warning", "Missing or incorrectly installed Environmental Visual Enhancements!");
+                    Notification.Logger (Constants.AssemblyName, "Error", "Missing or incorrectly installed Environmental Visual Enhancements!");
                 }
 
                 //  Check if Scatterer is installed.
 
                 if (!AssemblyLoader.loadedAssemblies.Any (asm => asm.assembly.GetName ().Name.StartsWith ("Scatterer", StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower ().Equals ("scatterer")))
                 {
-                    MissingDependenciesNames += "  •  Scatterer\n";
-                    MissingDependenciesCount += 1;
+                    MissingDependenciesNames = string.Concat (MissingDependenciesNames, "  •  Scatterer\n");
 
-                    Notification.Logger (Constants.AssemblyName, "Warning", "Missing or incorrectly installed Scatterer!");
+                    Notification.Logger (Constants.AssemblyName, "Error", "Missing or incorrectly installed Scatterer!");
                 }
 
                 //  Check it Module Manager is installed.
 
                 if (!AssemblyLoader.loadedAssemblies.Any (asm => asm.assembly.GetName ().Name.StartsWith ("ModuleManager", StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower ().Equals (string.Empty)))
                 {
-                    MissingDependenciesNames += "  •  Module Manager\n";
-                    MissingDependenciesCount += 1;
+                    MissingDependenciesNames = string.Concat (MissingDependenciesNames, "  •  Module Manager\n");
 
-                    Notification.Logger (Constants.AssemblyName, "Warning", "Missing or incorrectly installed Module Manager!");
+                    Notification.Logger (Constants.AssemblyName, "Error", "Missing or incorrectly installed Module Manager!");
                 }
 
                 //  Warn the user if any of the dependencies are missing.
 
-                if (!MissingDependenciesCount.Equals (0))
+                if (!MissingDependenciesNames.Equals (null))
                 {
                     Notification.Dialog ("DependencyChecker", "Missing Dependencies", "#F0F0F0", string.Format ("{0} requires the following listed mods in order to function correctly:\n\n  {1}", Constants.AssemblyName, MissingDependenciesNames.Trim ()), "#F0F0F0");
 
-                    Notification.Logger (Constants.AssemblyName, "Error", "Required dependencies missing!");
+                    Notification.Logger (Constants.AssemblyName, "Error", "Required dependencies missing: " + MissingDependenciesNames);
                 }
             }
             catch (Exception ex)

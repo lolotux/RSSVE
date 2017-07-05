@@ -20,23 +20,14 @@ using System.Runtime.InteropServices;
 
 //  General Information about the specified assembly.
 
-[assembly: AssemblyTitle("RSSVE")]
+[assembly: AssemblyCompany("Phineas Freak")]
+[assembly: AssemblyConfiguration("Stable")]
+[assembly: AssemblyCopyright("Copyright © 2016 - 2017, Phineas Freak")]
+[assembly: AssemblyCulture("")]
 [assembly: AssemblyDescription("Real Solar System Visual Enhancements")]
 [assembly: AssemblyProduct("RSSVE")]
-[assembly: AssemblyCompany("Phineas Freak")]
-[assembly: AssemblyCopyright("Copyright © 2016 - 2017, Phineas Freak")]
+[assembly: AssemblyTitle("RSSVE")]
 [assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")] 
-
-#if DEBUG
-
-    [assembly: AssemblyConfiguration("Development")]
-
-#else
-
-    [assembly: AssemblyConfiguration("Stable")]
-
-#endif
 
 //  Hide the specified assembly from any COM components.
 
@@ -47,7 +38,7 @@ using System.Runtime.InteropServices;
 //  Consists of the following four values:
 //
 //    • Major Version
-//    • Minor Version 
+//    • Minor Version
 //    • Build Number
 //    • Revision
 

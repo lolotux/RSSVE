@@ -39,13 +39,12 @@ namespace RSSVE
             Notification.Logger (Constants.AssemblyName, null, string.Format ("Assembly version: {0}", Version.GetAssemblyVersion));
             Notification.Logger (Constants.AssemblyName, null, string.Format ("Assembly compatibility: {0}.{1}.{2}.{3}", Constants.VersionCompatible.Major, Constants.VersionCompatible.Minor, Constants.VersionCompatible.Revis, Constants.VersionCompatible.Build));
 
-            #if DEBUG
+            if (GameSettings.VERBOSE_DEBUG_LOG.Equals (true))
             {
                 Notification.Logger (Constants.AssemblyName, null, string.Format ("Using x86-64 binaries: {0}", System.Is64BitOS));
                 Notification.Logger (Constants.AssemblyName, null, string.Format ("Using Unity player: {0}", System.GetPlatformType));
                 Notification.Logger (Constants.AssemblyName, null, string.Format ("Using renderer: {0}", System.GetGraphicsRenderer));
             }
-            #endif
 
             //  Check if we are running under a x86 environment. The large amount of memory space required by the texture assets does not
             //  allow the use of the 32 bit binaries.
@@ -81,7 +80,7 @@ namespace RSSVE
 
                 Notification.Dialog ("RendererChecker", "Unsupported Graphics Renderer Detected", "#F0F0F0", string.Format ("The following listed graphics renderer is unsupported by {0} under the Windows OS:\n\n{1}\n\n Please use the default DirectX 9 graphics renderer.", Constants.AssemblyName, IncompatibleRendererMsg), "#F0F0F0");
 
-                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("Unsupported Graphics Renderer (using {0})!", System.GetGraphicsRenderer));
+                Notification.Logger (Constants.AssemblyName, "Warning", string.Format ("Unsupported Graphics Renderer (using {0})!", System.GetGraphicsRenderer));
             }
         }
     }
