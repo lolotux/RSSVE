@@ -1,23 +1,22 @@
 ==================================================
-RSSVE v1.2.2-RC4 for KSP 1.2.2 (2017-XX-XX)
+RSSVE v1.2.2-RC4 for KSP 1.2.2 (2017-07-XX)
 ==================================================
 
 Change Log:
 
     • Compatibility update for the Scatterer v0.0320 release.
-    • Enabled the cloud integration feature.
+    • Enabled the Scatterer cloud integration and ring shadow features.
     • Rebuilt all Scatterer profiles from scratch (courtesy of RSSVE collaborator Theysen).
     • Added detail surface textures to Triton.
     • Updated the aurora texture map for Earth.
     • Updated the cloud texture maps for Jupiter, Saturn and Uranus.
-    • Enabled the Scatterer ring shadow Scatterer feature.
-    • Added a custom Saturn ring texture for the new Scatterer ring shadow feature.
-    • Improved the appearance and overall performance of the volumetric clouds.
-    • Tweaked the brightness and movement of the Earth auroras.
+    • Added a custom Saturn ring texture for the new ring shadow feature.
+    • Fixed the altitude of the gas giants cloud layers (still wrong by a factor of ten though).
+    • Improved the appearance and overall performance impact of the volumetric clouds.
+    • Added some missing volumetric clouds to Saturn, Uranus and Neptune.
+    • Tweaked the apparent brightness and movement of the Earth auroras.
     • Reduced the apparent brightness of the Earth surface from orbit.
     • Tweaked the apparent light levels on the surface of Venus.
-    • Added some missing volumetric clouds from Uranus and Neptune.
-    • Tweaked the altitude of the gas giants cloud layers (still wrong by a factor of ten though).
 
 Bug Fixes:
 
