@@ -5,7 +5,7 @@ RSSVE v1.2.2-RC4 for KSP 1.2.2 (2017-XX-XX)
 Change Log:
 
     • Compatibility update for the Scatterer v0.0320 release.
-    • Enabled the cloud integration feature (currently only for Venus, Earth and Mars).
+    • Enabled the cloud integration feature.
     • Rebuilt all Scatterer profiles from scratch (courtesy of RSSVE collaborator Theysen).
     • Added detail surface textures to Triton.
     • Updated the aurora texture map for Earth.
