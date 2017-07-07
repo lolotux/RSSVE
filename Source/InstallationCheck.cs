@@ -52,7 +52,7 @@ namespace RSSVE
         {
             try
             {
-                string MissingDependenciesNames = null;
+                string MissingDependenciesNames = string.Empty;
 
                 //  Search for this mod's DLL existing in the wrong location. This will also detect duplicate copies because only one can be in the right place.
 
@@ -98,7 +98,7 @@ namespace RSSVE
 
                 //  Warn the user if any of the dependencies are missing.
 
-                if (!MissingDependenciesNames.Equals (null))
+                if (!string.IsNullOrEmpty (MissingDependenciesNames))
                 {
                     Notification.Dialog ("DependencyChecker", "Missing Dependencies", "#F0F0F0", string.Format ("{0} requires the following listed mods in order to function correctly:\n\n  {1}", Constants.AssemblyName, MissingDependenciesNames.Trim ()), "#F0F0F0");
 
