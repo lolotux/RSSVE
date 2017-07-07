@@ -13,16 +13,16 @@ Installation:
     5. Download the latest version of Real Solar System Visual Enhancements (RSSVE).
     6. Extract the contents of the RSSVE .zip file and move the resulting "RSSVE" folder inside the GameData folder. The final basic file and folder structure should look like this:
 
-        * GameData/
-        *   ModuleManager.X.X.XX.X.dll
-        *   EnvironmentalVisualEnhancements
-        *   Kopernicus
-        *   ModularFlightIntegrator
-        *   RealSolarSystem
-        *   RSS-Textures
-        *   RSSVE
-        *   Scatterer
-        *   Squad
+        • GameData/
+        •   ModuleManager.X.X.XX.X.dll
+        •   EnvironmentalVisualEnhancements
+        •   Kopernicus
+        •   ModularFlightIntegrator
+        •   RealSolarSystem
+        •   RSS-Textures
+        •   RSSVE
+        •   Scatterer
+        •   Squad
 
     7. Launch KSP and enjoy the new visual effects!
 
@@ -38,23 +38,23 @@ Credits:
 
     Textures:
 
-    * Cloud and city detail textures by Real Visual Enhancements (RVE)
-    * Earth cloud and city light main textures by NASA Visible Earth
-    * Jupiter texture map (used for exporting some basic cloud textures) by Vleider (redistributed by The Celestia Motherlode)
-    * Saturn texture map (used for exporting some basic cloud textures) by Runar Thorvaldsen, Dr. Fridger Schremmp and Grant Hutchinson (redistributed by The Celestia Motherlode)
-    * Saturn ring texture by CICLOPS (Cassini Imaging Central Laboratory For Operations - image preparation by Daren Wilson and Carolyn Porco)
-    * Uranus and Neptune texture maps (used for exporting some basic cloud textures) by JHT's Planetary Pixel Emporium
+    • Cloud and city detail textures by Real Visual Enhancements (RVE)
+    • Earth cloud and city light main textures by NASA Visible Earth
+    • Jupiter texture map (used for exporting some basic cloud textures) by Vleider (redistributed by The Celestia Motherlode)
+    • Saturn texture map (used for exporting some basic cloud textures) by Runar Thorvaldsen, Dr. Fridger Schremmp and Grant Hutchinson (redistributed by The Celestia Motherlode)
+    • Saturn ring texture by CICLOPS (Cassini Imaging Central Laboratory For Operations - image preparation by Daren Wilson and Carolyn Porco)
+    • Uranus and Neptune texture maps (used for exporting some basic cloud textures) by JHT's Planetary Pixel Emporium
 
     Programming:
 
-    * CubeTheSphere by Realm Of Concepts
-    * Environmental Visual Enhancements (EVE) by rbray89 & WazWaz
-    * Module Manager by ialdabaoth and sarbian
-    * Real Solar System (RSS) by NathanKell
-    * Real Visual Enhancements (RVE) by Pingopete
-    * Scatterer by Blackrack
+    • CubeTheSphere by Realm Of Concepts
+    • Environmental Visual Enhancements (EVE) by rbray89 & WazWaz
+    • Module Manager by ialdabaoth and sarbian
+    • Real Solar System (RSS) by NathanKell
+    • Real Visual Enhancements (RVE) by Pingopete
+    • Scatterer by Blackrack
 
 Contributors:
 
-    * Francois W. Nel
-    * Lukas "Theysen" Theisen
+    • Francois W. Nel
+    • Lukas "Theysen" Theisen
