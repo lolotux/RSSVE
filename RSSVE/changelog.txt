@@ -1,87 +1,91 @@
 ==================================================
-RSSVE v1.3.0-RC1 for KSP 1.3.0 (--/--/2017)
+RSSVE v1.2.2-RC4 for KSP 1.2.2 (2017-XX-XX)
 ==================================================
 
 Change Log:
 
-    * Compatibility update for the KSP 1.3 and Scatterer v0.0310 release.
-    * Added detail surface textures to Triton.
-    * Updated the cloud texture maps for Jupiter and Saturn.
-    * Enabled the Scatterer ring shadow for Saturn.
-    * Added a custom Saturn ring texture for the new Scatterer ring shadow feature.
-    * Improved the appearance and overall performance of the volumetric clouds.
-    * Tweaked the brightness and movement of the Earth auroras.
-    * Reduced the apparent brightness of the Earth surface from orbit.
-    * Tweaked the light level on the surface of Venus.
-    * Added some missing volumetric clouds from Uranus and Neptune.
+    • Compatibility update for the Scatterer v0.0320 release.
+    • Enabled the cloud integration feature (currently only for Venus, Earth and Mars).
+    • Rebuilt all Scatterer profiles from scratch (courtesy of RSSVE collaborator Theysen).
+    • Added detail surface textures to Triton.
+    • Updated the aurora texture map for Earth.
+    • Updated the cloud texture maps for Jupiter, Saturn and Uranus.
+    • Enabled the Scatterer ring shadow Scatterer feature.
+    • Added a custom Saturn ring texture for the new Scatterer ring shadow feature.
+    • Improved the appearance and overall performance of the volumetric clouds.
+    • Tweaked the brightness and movement of the Earth auroras.
+    • Reduced the apparent brightness of the Earth surface from orbit.
+    • Tweaked the apparent light levels on the surface of Venus.
+    • Added some missing volumetric clouds from Uranus and Neptune.
+    • Tweaked the altitude of the gas giants cloud layers (still wrong by a factor of ten though).
 
 Bug Fixes:
 
-    * Eliminated the ground flickering on Earth.
-    * Fixed the Earth cloud clipping for altitudes less than 167 km.
+    • Eliminated the ground flickering on Earth.
+    • Fixed the Earth cloud clipping for altitudes less than 167 km.
 
 Known Issues:
 
-    * The city lights may appear blocky from low altitudes.
-    * The Scatterer cloud integration feature is currently disabled.
-    * The transition between PQS and ScaledSpace on Venus and Titan is not as soft as it should.
-    * If a reload in-flight is forced then the cloud texture maps may break.
+    • The city lights may appear blocky from low altitudes.
+    • The transitioning between PQS and ScaledSpace is not as soft as it should.
+    • If a save reload in-flight is done then the cloud texture maps will break.
+    • The bodies may appear as featureless spheres under DirextX 11 or OpenGL.
 
 ==================================================
-RSSVE v1.2.2-RC3 for KSP 1.2.2 (26/02/2017)
+RSSVE v1.2.2-RC3 for KSP 1.2.2 (2017-02-26)
 ==================================================
 
 Change Log:
 
-    * Compatibility update for the Scatterer v0.0300 release.
-    * Many small tweaks to the atmospheric scatter effects of all bodies.
-    * Increased the apparent brightness of the Moon (might still need some tweaking).
-    * Titan will now appear less bright and saturated than before.
-    * Remade and simplified the Earth aurora main and detail textures.
-    * The Earth aurora is now less visible in the daylight.
-    * Removed an old and unused Earth cloud main texture.
-    * Removed the Earth PQS texture (was a performance hog and did not look good anyway).
-    * Re-factored the file and folder structure to ease management and development.
-    * New binary assemblies for KSP 1.1.3 users (for use with EVE 1.1-3 and Scatterer v0.0255).
+    • Compatibility update for the Scatterer v0.0300 release.
+    • Many small tweaks to the atmospheric scatter effects of all bodies.
+    • Increased the apparent brightness of the Moon (might still need some tweaking).
+    • Titan will now appear less bright and saturated than before.
+    • Remade and simplified the Earth aurora main and detail textures.
+    • The Earth aurora is now less visible in the daylight.
+    • Removed an old and unused Earth cloud main texture.
+    • Removed the Earth PQS texture (was a performance hog and did not look good anyway).
+    • Re-factored the file and folder structure to ease management and development.
+    • New binary assemblies for KSP 1.1.3 users (for use with EVE 1.1-3 and Scatterer v0.0255).
 
 Bug Fixes:
 
-    * None so far.
+    • None so far.
 
 Known Issues:
 
-    * The city lights may appear to fade in/out or flicker.
-    * The new Scatterer cloud integration and Kopernicus ring shader features are currently disabled.
-    * The bodies may appear as featureless spheres under DirextX 11 or OpenGL. A hotfix patch has been issued as a temporary solution.
+    • The city lights may appear to fade in/out or flicker.
+    • The new Scatterer cloud integration and Kopernicus ring shader features are currently disabled.
+    • The bodies may appear as featureless spheres under DirextX 11 or OpenGL. A hotfix patch has been issued as a temporary solution.
 
 ==================================================
-RSSVE v1.2.2-RC2 for KSP 1.2.2 (16/12/2016)
+RSSVE v1.2.2-RC2 for KSP 1.2.2 (2016-12-16)
 ==================================================
 
 Change Log:
 
-    * Improved Earth Scatterer configs (atmospheric and oceanic). Courtesy of user Lukas "Theysen" Theisen.
+    • Improved Earth Scatterer configs (atmospheric and oceanic). Courtesy of user Lukas "Theysen" Theisen.
 
 Bug Fixes:
 
-    * Softer transition between the Earth PQS and ScaledSpace.
+    • Softer transition between the Earth PQS and ScaledSpace.
 
 Known Issues:
 
-    * The city lights may appear to fade in/out or flicker.
+    • The city lights may appear to fade in/out or flicker.
 
 ==================================================
-RSSVE v1.2.2-RC1 for KSP 1.2.2 (12/12/2016)
+RSSVE v1.2.2-RC1 for KSP 1.2.2 (2016-12-12)
 ==================================================
 
 Change Log:
 
-    * First release candidate for Real Solar System Visual Enhancements.
+    • First release candidate for Real Solar System Visual Enhancements.
 
 Bug Fixes:
 
-    * None so far.
+    • None so far.
 
 Known Issues:
 
-    * None so far.
+    • None so far.
