@@ -28,7 +28,8 @@ Known Issues:
     • The city lights may appear blocky from low altitudes.
     • The transitioning between PQS and ScaledSpace is not as soft as it should.
     • If a save reload in-flight is done then the cloud texture maps will break.
-    • The bodies may appear as featureless spheres under DirextX 11 or OpenGL.
+    • The Uranus ring may appear out of place sometimes.
+    • Some of the bodies may appear as featureless spheres under DirextX 11 or OpenGL.
 
 ==================================================
 RSSVE v1.2.2-RC3 for KSP 1.2.2 (2017-02-26)
