@@ -64,11 +64,10 @@
             Class to create user notification dialogs and log basic information to the KSP log file.
             </summary>
         </member>
-        <member name="M:RSSVE.Notification.Dialog(System.String,System.String,System.String,System.String,System.String)">
+        <member name="M:RSSVE.Notification.Dialog(System.String,System.String,System.String,System.String)">
             <summary>
             Method to create pop-up notification dialogs.
             </summary>
-            <param name = "DialogName">The internal name of the dialog window spawned.</param>
             <param name = "TitleText">The title text of the dialog window. (string)</param>
             <param name = "TitleColor">The color of the message text.</param>
             <param name = "ContentText">The message text of the dialog window. (string)</param>

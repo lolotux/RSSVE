@@ -66,7 +66,7 @@ namespace RSSVE
 
                     Notification.Logger (Constants.AssemblyName, "Error", string.Format ("Incorrect installation, bad path(s): {0}", BadPathsString));
 
-                    Notification.Dialog ("BaseAssemblyChecker", string.Format ("Incorrect {0} Installation", Constants.AssemblyName), "#F0F0F0", string.Format ("{0} has been installed incorrectly and will not function properly. All files should be located under the GameData" + Path.AltDirectorySeparatorChar + Constants.AssemblyName + "folder. Do not move any files from inside that folder!\n\nIncorrect path(s):\n    •    {1}", Constants.AssemblyName, BadPathsString), "#F0F0F0");
+                    Notification.Dialog (string.Format ("Incorrect {0} Installation", Constants.AssemblyName), "#F0F0F0", string.Format ("{0} has been installed incorrectly and will not function properly. All files should be located under the GameData" + Path.AltDirectorySeparatorChar + Constants.AssemblyName + "folder. Do not move any files from inside that folder!\n\nIncorrect path(s):\n    •    {1}", Constants.AssemblyName, BadPathsString), "#F0F0F0");
                 }
 
                 //  Check if Environmental Visual Enhancements is installed.
@@ -100,7 +100,7 @@ namespace RSSVE
 
                 if (!string.IsNullOrEmpty (MissingDependenciesNames))
                 {
-                    Notification.Dialog ("DependencyChecker", "Missing Dependencies", "#F0F0F0", string.Format ("{0} requires the following listed mods in order to function correctly:\n\n  {1}", Constants.AssemblyName, MissingDependenciesNames.Trim ()), "#F0F0F0");
+                    Notification.Dialog ("Missing Dependencies", "#F0F0F0", string.Format ("{0} requires the following listed mods in order to function correctly:\n\n  {1}", Constants.AssemblyName, MissingDependenciesNames.Trim ()), "#F0F0F0");
 
                     Notification.Logger (Constants.AssemblyName, "Error", "Required dependencies missing: " + MissingDependenciesNames);
                 }
@@ -109,7 +109,7 @@ namespace RSSVE
             {
                 Notification.Logger (Constants.AssemblyName, "Error", string.Format ("{0}: Caught an exception:\n{1}\n", ex.Message, ex.StackTrace));
 
-                Notification.Dialog ("ExceptionChecker", string.Format ("Incorrect {0} installation", Constants.AssemblyName), "#F0F0F0",
+                Notification.Dialog (string.Format ("Incorrect {0} installation", Constants.AssemblyName), "#F0F0F0",
                                      string.Format ("An error has occurred while checking the installation of {0}.\n\n", Constants.AssemblyName) +
                                      string.Format ("You need to:\n" +
                                      "  •  Terminate the KSP instance\n" +
