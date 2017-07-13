@@ -46,19 +46,19 @@ namespace RSSVE
             /// The minor version value.
             /// </summary>
 
-            static public readonly int Minor = 2;
+            static public readonly int Minor = 3;
 
             /// <summary>
             /// The revision version value.
             /// </summary>
 
-            static public readonly int Revis = 2;
+            static public readonly int Revis = 0;
 
             /// <summary>
             /// The build version value.
             /// </summary>
 
-            static public readonly int Build = 1622;
+            static public readonly int Build = 1804;
         }
 
         /// <summary>
@@ -93,6 +93,7 @@ namespace RSSVE
         /// <summary>
         /// Method to create pop-up notification dialogs.
         /// </summary>
+        /// <param name = "DialogName">The internal name of the dialog window spawned.</param>
         /// <param name = "TitleText">The title text of the dialog window. (string)</param>
         /// <param name = "TitleColor">The color of the message text.</param>
         /// <param name = "ContentText">The message text of the dialog window. (string)</param>
@@ -101,11 +102,11 @@ namespace RSSVE
         /// Does not return a value.
         /// </returns>
 
-        public static void Dialog (string TitleText, string TitleColor, string ContentText, string ContentColor)
+        public static void Dialog (string DialogName, string TitleText, string TitleColor, string ContentText, string ContentColor)
         {
             if (!TitleText.Equals (null) && !ContentText.Equals (null))
             {
-                PopupDialog.SpawnPopupDialog (new Vector2 (0.5f, 0.5f), new Vector2 (0.5f, 0.5f), string.Format ("<color={0}>{1}</color>", TitleColor, TitleText), string.Format ("<color={0}>{1}</color>", ContentColor, ContentText), "OK", false, HighLogic.UISkin, true, string.Empty);
+                PopupDialog.SpawnPopupDialog (new Vector2 (0.5f, 0.5f), new Vector2 (0.5f, 0.5f), DialogName, string.Format ("<color={0}>{1}</color>", TitleColor, TitleText), string.Format ("<color={0}>{1}</color>", ContentColor, ContentText), "OK", false, HighLogic.UISkin, true, string.Empty);
             }
         }
 
