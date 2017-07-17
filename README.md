@@ -15,8 +15,8 @@ Check the **![RSSVE wiki][RSSVE:wiki-link]** about the requirements and the inst
 
   * Cloud and city detail textures by **[Real Visual Enhancements (RVE)][RSSVE:RVE-link]**
   * Earth cloud and city light main textures by **[NASA Visible Earth][RSSVE:NASA-VE-link]**
-  * Jupiter texture map (used for exporting some basic cloud textures) by **Vleider** (redistributed by **[The Celestia Motherlode][TCM-link]**)
-  * Saturn texture map (used for exporting some basic cloud textures) by **Runar Thorvaldsen**, **Dr. Fridger Schremmp** and **Grant Hutchinson** (redistributed by **[The Celestia Motherlode][TCM-link]**)
+  * Jupiter texture map (used for exporting some basic cloud textures) by **Vleider** (redistributed by **[The Celestia Motherlode][RSSVE:TCM-link]**)
+  * Saturn texture map (used for exporting some basic cloud textures) by **Runar Thorvaldsen**, **Dr. Fridger Schremmp** and **Grant Hutchinson** (redistributed by **[The Celestia Motherlode][RSSVE:TCM-link]**)
   * Saturn ring texture by **[CICLOPS][RSSVE:CICLOPS-link]** (Cassini Imaging Central Laboratory For Operations - image preparation by **Daren Wilson** and **Carolyn Porco**)
   * Uranus and Neptune texture maps (used for exporting some basic cloud textures) by **[JHT's Planetary Pixel Emporium][RSSVE:PPE-link]**
 
