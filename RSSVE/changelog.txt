@@ -13,6 +13,7 @@ Change Log:
     • Updated the cloud texture maps for Jupiter, Saturn and Uranus.
     • Added a custom Saturn ring texture for the new ring shadow feature.
     • Fixed the altitude of the gas giants cloud layers (still wrong by a factor of ten though).
+    • Fixed the altitude of the Venus cloud layer.
     • Improved the appearance and overall performance impact of the volumetric clouds.
     • Improved the appearance of the city day and night detail texture maps.
     • Added some missing volumetric clouds to Saturn, Uranus and Neptune.

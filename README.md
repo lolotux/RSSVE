@@ -13,9 +13,12 @@ Check the **![RSSVE wiki][RSSVE:wiki-link]** about the requirements and the inst
 
 ### Textures:
 
-  * **Cloud and city detail textures** by **[Real Visual Enhancements (RVE)][RSSVE:RVE-link]**
-  * **Earth cloud and city light main textures** by **[NASA Visible Earth][RSSVE:NASA-VE-link]**
-  * **Gas giants source textures** (used for exporting some basic cloud textures) by **[JHT's Planetary Pixel Emporium][RSSVE:PPE-link]**
+  * Cloud and city detail textures by **[Real Visual Enhancements (RVE)][RSSVE:RVE-link]**
+  * Earth cloud and city light main textures by **[NASA Visible Earth][RSSVE:NASA-VE-link]**
+  * Jupiter texture map (used for exporting some basic cloud textures) by **Vleider** (redistributed by **[The Celestia Motherlode][TCM-link]**)
+  * Saturn texture map (used for exporting some basic cloud textures) by **Runar Thorvaldsen**, **Dr. Fridger Schremmp** and **Grant Hutchinson** (redistributed by **[The Celestia Motherlode][TCM-link]**)
+  * Saturn ring texture by **[CICLOPS][RSSVE:CICLOPS-link]** (Cassini Imaging Central Laboratory For Operations - image preparation by **Daren Wilson** and **Carolyn Porco**)
+  * Uranus and Neptune texture maps (used for exporting some basic cloud textures) by **[JHT's Planetary Pixel Emporium][RSSVE:PPE-link]**
 
 ### Programming:
 
@@ -65,6 +68,7 @@ You should have received a copy of the license along with this work. If not, vis
 [RSSVE:shield-license]:  https://img.shields.io/badge/License-CC--BY--NC--SA%204.0-green.svg
 [RSSVE:cc-license-link]: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
+[RSSVE:CICLOPS-link]:       http://www.ciclops.org
 [RSSVE:CubeTheSphere-link]: http://realmofconcepts.com/unreal/CubeTheSphere.html
 [RSSVE:EVE-link-rbray]:     https://github.com/rbray89
 [RSSVE:EVE-link-waz]:       https://github.com/WazWaz
@@ -75,6 +79,7 @@ You should have received a copy of the license along with this work. If not, vis
 [RSSVE:RSS-link]:           https://github.com/KSP-RO/RealSolarSystem
 [RSSVE:RVE-link]:           https://github.com/Pingopete
 [RSSVE:Scatterer-link]:     https://github.com/LGhassen
+[RSSVE:TCM-link]:           http://www.celestiamotherlode.net    
 
 [RSSVE:contributor-francois]: https://github.com/francoiswnel
 [RSSVE:contributor-theysen]:  https://github.com/Theysen

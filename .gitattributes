@@ -1,11 +1,12 @@
 # ==================================================
-# Auto detect text files and perform LF normalization
+# Auto detect text files and perform LF
+# normalization.
 # ==================================================
 
 * text=auto
 
 # ==================================================
-# Generic files
+# Generic files.
 # ==================================================
 
 *.cfg    text
@@ -20,7 +21,7 @@
 *.XML    text
 
 # ==================================================
-# Texture files
+# Texture files.
 # ==================================================
 
 *.dds  binary
@@ -33,21 +34,21 @@
 *.RAW  binary
 
 # ==================================================
-# Assemblies & database files
+# Assemblies and database files.
 # ==================================================
 
 *.dll  binary
 *.DLL  binary
 
 # ==================================================
-# Compilable source code files
+# Compilable source code files.
 # ==================================================
 
 *.cs diff=csharp
 *.CS diff=csharp
 
 # ==================================================
-# Ignore list (folder & file names)
+# Ignore list (folder and file names).
 # ==================================================
 
 Source export-ignore
