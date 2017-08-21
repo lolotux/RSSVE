@@ -53,7 +53,8 @@
 # Ignore list (folder and file names).
 # ==================================================
 
-Source export-ignore
+Profiles export-ignore
+Source   export-ignore
 
 .gitattributes export-ignore
 .gitignore     export-ignore
