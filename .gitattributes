@@ -13,6 +13,8 @@
 *.CFG    text
 *.csproj text
 *.CSPROJ text
+*.scprof text
+*.SCPROF text
 *.sln    text
 *.SLN    text
 *.txt    text
