@@ -105,9 +105,9 @@ namespace RSSVE
                     Notification.Logger (Constants.AssemblyName, "Error", "Required dependencies missing: " + MissingDependenciesNames);
                 }
             }
-            catch (Exception ex)
+            catch (Exception ExceptionStack)
             {
-                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("{0}: Caught an exception:\n{1}\n", ex.Message, ex.StackTrace));
+                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("{0}: Caught an exception:\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
 
                 Notification.Dialog ("ExceptionChecker", string.Format ("Incorrect {0} installation", Constants.AssemblyName), "#F0F0F0",
                                      string.Format ("An error has occurred while checking the installation of {0}.\n\n", Constants.AssemblyName) +
