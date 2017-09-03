@@ -9,7 +9,7 @@ Change Log:
     • Rebuilt all Scatterer profiles from scratch (courtesy of RSSVE collaborator Theysen).
     • Added detail surface textures to Earth and Triton.
     • Updated the aurora texture map for Earth.
-    • Increased the transparency of the Titan cloud texture map.
+    • Decreased the opacity of the Titan cloud texture map.
     • Updated the cloud texture maps for Jupiter, Saturn and Uranus.
     • Added a custom Saturn ring texture for the new ring shadow feature.
     • Fixed the altitude of the gas giants cloud layers (still wrong by a factor of ten though).
@@ -67,7 +67,7 @@ RSSVE v1.2.2-RC2 for KSP 1.2.2 (2016-12-16)
 
 Change Log:
 
-    • Improved Earth Scatterer configs (atmospheric and oceanic). Courtesy of user Lukas "Theysen" Theisen.
+    • Improved Earth Scatterer configs (atmospheric and oceanic). Courtesy of RSSVE collaborator Lukas "Theysen" Theisen.
 
 Bug Fixes:
 
