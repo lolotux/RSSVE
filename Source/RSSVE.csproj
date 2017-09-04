@@ -8,7 +8,7 @@
     <RootNamespace>RSSVE</RootNamespace>
     <AssemblyName>RSSVE</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <ReleaseVersion>1.2.2.1622</ReleaseVersion>
+    <ReleaseVersion>1.3.0.1804</ReleaseVersion>
     <Description>Real Solar System Visual Enhancements. A graphical add-on for the Real Solar System (RSS) modification of Kerbal Space Program (KSP).</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
