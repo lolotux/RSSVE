@@ -4,6 +4,7 @@
 # ==================================================
 
 Source/obj/*
+Source/.vs/*
 
 *.db
 *.DB
@@ -20,5 +21,3 @@ Source/obj/*
 *.PNG
 *.raw
 *.RAW
-*.userprefs
-*.USERPREFS
