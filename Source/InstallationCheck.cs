@@ -40,7 +40,7 @@ namespace RSSVE
     /// Version and file system integrity checker class. Operates only in the Main Menu scene.
     /// </summary>
 
-    [KSPAddon(KSPAddon.Startup.MainMenu, true)]
+    [KSPAddon (KSPAddon.Startup.MainMenu, true)]
 
     class InstallChecker : MonoBehaviour
     {
@@ -60,7 +60,7 @@ namespace RSSVE
 
                 if (assemblies.Any ())
                 {
-                    var BadPaths = assemblies.Select (asm => asm.path).Select (p => Uri.UnescapeDataString (new Uri(Path.GetFullPath (KSPUtil.ApplicationRootPath)).MakeRelativeUri (new Uri (p)).ToString ().Replace ('/', Path.DirectorySeparatorChar)));
+                    var BadPaths = assemblies.Select (asm => asm.path).Select (p => Uri.UnescapeDataString (new Uri (Path.GetFullPath (KSPUtil.ApplicationRootPath)).MakeRelativeUri (new Uri (p)).ToString ().Replace ('/', Path.DirectorySeparatorChar)));
 
                     var BadPathsString = string.Join ("\n", BadPaths.ToArray ());
 
@@ -76,6 +76,15 @@ namespace RSSVE
                     MissingDependenciesNames = string.Concat (MissingDependenciesNames, "  •  Environmental Visual Enhancements\n");
 
                     Notification.Logger (Constants.AssemblyName, "Error", "Missing or incorrectly installed Environmental Visual Enhancements!");
+                }
+
+                //  Check if Real Solar System is installed.
+
+                if (!AssemblyLoader.loadedAssemblies.Any (asm => asm.assembly.GetName ().Name.StartsWith ("RealSolarSystem", StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower ().Equals ("realsolarsystem" + Path.AltDirectorySeparatorChar + "plugins")))
+                {
+                    MissingDependenciesNames = string.Concat (MissingDependenciesNames, "  •  Real Solar System\n");
+
+                    Notification.Logger (Constants.AssemblyName, "Error", "Missing or incorrectly installed Real Solar System!");
                 }
 
                 //  Check if Scatterer is installed.

@@ -41,7 +41,7 @@ namespace RSSVE
      * http://forum.kerbalspaceprogram.com/threads/65395-Voluntarily-Locking-Plugins-to-a-Particular-KSP-Version
      */
 
-    [KSPAddon(KSPAddon.Startup.Instantly, true)]
+    [KSPAddon (KSPAddon.Startup.Instantly, true)]
 
     class CompatibilityChecker : MonoBehaviour
     {
@@ -85,7 +85,7 @@ namespace RSSVE
 
             //  Let the latest version of the checker execute.
 
-            if (_version != fields.Max (f => (int)f.GetValue (null)))
+            if (_version != fields.Max (f => (int) f.GetValue (null)))
             {
                 return;
             }
