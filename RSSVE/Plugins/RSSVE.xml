@@ -19,6 +19,21 @@
             Class to set up the parameters required and used by RSSVE.
             </summary>
         </member>
+        <member name="F:RSSVE.Constants.UnityVersion">
+            <summary>
+            The compatible Unity version.
+            </summary>
+        </member>
+        <member name="F:RSSVE.Constants.AssemblyName">
+            <summary>
+            The name of the assembly (used as a tag for the notification dialogs and the log file).
+            </summary>
+        </member>
+        <member name="F:RSSVE.Constants.AssemblyPath">
+            <summary>
+            The (relative to the "GameData") path where the assembly resides.
+            </summary>
+        </member>
         <member name="T:RSSVE.Constants.VersionCompatible">
             <summary>
             Version parameters struct.
@@ -42,21 +57,6 @@
         <member name="F:RSSVE.Constants.VersionCompatible.Build">
             <summary>
             The build version value.
-            </summary>
-        </member>
-        <member name="F:RSSVE.Constants.UnityVersion">
-            <summary>
-            The compatible Unity version.
-            </summary>
-        </member>
-        <member name="F:RSSVE.Constants.AssemblyName">
-            <summary>
-            The name of the assembly (used as a tag for the notification dialogs and the log file).
-            </summary>
-        </member>
-        <member name="F:RSSVE.Constants.AssemblyPath">
-            <summary>
-            The (relative to the "GameData") path where the assembly resides.
             </summary>
         </member>
         <member name="T:RSSVE.Notification">
