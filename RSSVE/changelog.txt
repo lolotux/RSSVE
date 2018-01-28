@@ -1,4 +1,27 @@
 ==================================================
+RSSVE v1.3.1-1 for KSP 1.3.1 (YYYY-MM-DD)
+==================================================
+
+Change Log:
+
+    • Compatibility update for the KSP 1.3.1 and Scatterer v0.0320b releases.
+    • Updated the Earth city lights detail texture maps to fix some issues with moire patterns.
+    • Features like the Earth city lights, the terrain detail textures and the volumetric clouds, can now be easily disabled.
+
+Bug Fixes:
+
+    • Fixed the DirectX 11 and OpenGL "featureless sphere" bug.
+    • Fixed the main cloud texture maps of some bodies appearing fuzzy.
+    • Fixed the hard terminators appearing as shells over some bodies.
+
+Known Issues:
+
+    • The city lights may appear blocky from low altitudes.
+    • The transitioning between PQS and ScaledSpace is not as soft as it should.
+    • If a save reload in-flight is done then the cloud texture maps will break.
+    • The Saturn rings may sometimes appear to cast hard shadows or be completely black.
+
+==================================================
 RSSVE v1.2.2-RC4 for KSP 1.2.2 (2017-09-03)
 ==================================================
 
