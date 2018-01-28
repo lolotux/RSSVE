@@ -4,6 +4,51 @@
         <name>RSSVE</name>
     </assembly>
     <members>
+        <member name="T:RSSVE.CameraUpdate">
+            <summary>
+            ScaledSpace camera updater class. Operates only in the Flight scene.
+            </summary>
+        </member>
+        <member name="F:RSSVE.CameraUpdate.fCameraNearClipLow">
+            <summary>
+            The ScaledSpace camera near clip minimum value.
+            </summary>
+        </member>
+        <member name="F:RSSVE.CameraUpdate.fCameraNearClipHigh">
+            <summary>
+            The ScaledSpace camera near clip maximum value.
+            </summary>
+        </member>
+        <member name="F:RSSVE.CameraUpdate.SSCamera">
+            <summary>
+            The ScaledSpace camera object.
+            </summary>
+        </member>
+        <member name="F:RSSVE.CameraUpdate.fDefaultNearClip">
+            <summary>
+            The ScaledSpace camera default near clip value.
+            </summary>
+        </member>
+        <member name="F:RSSVE.CameraUpdate.fTargetBodyRadius">
+            <summary>
+            The target body radius (in meters).
+            </summary>
+        </member>
+        <member name="F:RSSVE.CameraUpdate.TargetBodyTransform">
+            <summary>
+            The target body transform.
+            </summary>
+        </member>
+        <member name="M:RSSVE.CameraUpdate.Start">
+            <summary>
+            Method to start the ScaledSpace camera patcher.
+            </summary>
+        </member>
+        <member name="M:RSSVE.CameraUpdate.Update">
+            <summary>
+            Method to update the ScaledSpace camera near clip value.
+            </summary>
+        </member>
         <member name="T:RSSVE.InstallChecker">
             <summary>
             Version and file system integrity checker class. Operates only in the Main Menu scene.
@@ -31,12 +76,12 @@
         </member>
         <member name="F:RSSVE.Constants.AssemblyPath">
             <summary>
-            The (relative to the "GameData") path where the assembly resides.
+            The (relative to the "GameData" folder) path where the assembly resides.
             </summary>
         </member>
         <member name="T:RSSVE.Constants.VersionCompatible">
             <summary>
-            Version parameters struct.
+            Version check structure.
             </summary>
         </member>
         <member name="F:RSSVE.Constants.VersionCompatible.Major">
@@ -88,33 +133,33 @@
             Does not return a value.
             </returns>
         </member>
-        <member name="T:RSSVE.System">
+        <member name="T:RSSVE.Utilities">
             <summary>
             Class to get basic system operational parameters.
             </summary>
         </member>
-        <member name="P:RSSVE.System.GetGraphicsRenderer">
+        <member name="P:RSSVE.Utilities.GetGraphicsRenderer">
             <summary>
             Method to get the operating system graphics renderer.
             </summary>
             <returns>
-            Returns one of the following renderer types: D3D9, D3D11, OpenGL or Unknown.
+            Returns one of the following renderer types: D3D9, D3D11, OpenGL or Unknown (string).
             </returns>
         </member>
-        <member name="P:RSSVE.System.Is64BitOS">
+        <member name="P:RSSVE.Utilities.Is64BitOS">
             <summary>
             Method to get the operating system octet size.
             </summary>
             <returns>
-            Returns "True" if the Operating System is using the AMD64 specification (x64) and "False" if it is using the baseline Intel specification (x86).
+            Returns True if the Operating System is using the AMD64 specification (x64) and False if it is using the baseline Intel specification (x86).
             </returns>
         </member>
-        <member name="P:RSSVE.System.GetPlatformType">
+        <member name="P:RSSVE.Utilities.GetPlatformType">
             <summary>
             Method to get the operating system type.
             </summary>
             <returns>
-            Returns one the following operating system types: Linux, OSX, Windows or Unknown.
+            Returns one the following operating system types: Linux, OSX, Windows or Unknown (string).
             </returns>
         </member>
         <member name="T:RSSVE.Version">
@@ -127,7 +172,7 @@
             Method to get the assembly version.
             </summary>
             <returns>
-            Returns the assembly version as a string with the format: major.minor.revision.build.
+            Returns the assembly version (major.minor.revision.build) (string).
             </returns>
         </member>
         <member name="T:RSSVE.StartupChecker">

@@ -1,7 +1,7 @@
 //  ================================================================================
 //  Real Solar System Visual Enhancements for Kerbal Space Program.
 
-//  Copyright © 2016-2017, Alexander "Phineas Freak" Kampolis.
+//  Copyright © 2016-2018, Alexander "Phineas Freak" Kampolis.
 
 //  This file is part of Real Solar System Visual Enhancements.
 
@@ -48,19 +48,19 @@ namespace RSSVE
         /// Method to start the installation checker.
         /// </summary>
 
-        protected void Start ()
+        void Start ()
         {
             try
             {
                 string MissingDependenciesNames = string.Empty;
 
-                //  Search for this mod's DLL existing in the wrong location. This will also detect duplicate copies because only one can be in the right place.
+                //  Check if the mod's assembly is placed at the correct location. This will also detect duplicate copies because only one can be in the right place.
 
-                var assemblies = AssemblyLoader.loadedAssemblies.Where (asm => asm.assembly.GetName ().Name.Equals (Assembly.GetExecutingAssembly ().GetName ().Name)).Where (asm => asm.url != Constants.AssemblyPath);
+                var BaseAssembly = AssemblyLoader.loadedAssemblies.Where (asm => asm.assembly.GetName ().Name.Equals (Assembly.GetExecutingAssembly ().GetName ().Name)).Where (asm => asm.url != Constants.AssemblyPath);
 
-                if (assemblies.Any ())
+                if (BaseAssembly.Any ())
                 {
-                    var BadPaths = assemblies.Select (asm => asm.path).Select (p => Uri.UnescapeDataString (new Uri (Path.GetFullPath (KSPUtil.ApplicationRootPath)).MakeRelativeUri (new Uri (p)).ToString ().Replace ('/', Path.DirectorySeparatorChar)));
+                    var BadPaths = BaseAssembly.Select (asm => asm.path).Select (p => Uri.UnescapeDataString (new Uri (Path.GetFullPath (KSPUtil.ApplicationRootPath)).MakeRelativeUri (new Uri (p)).ToString ().Replace ('/', Path.DirectorySeparatorChar)));
 
                     var BadPathsString = string.Join ("\n", BadPaths.ToArray ());
 
@@ -68,57 +68,65 @@ namespace RSSVE
 
                     Notification.Dialog ("BaseAssemblyChecker", string.Format ("Incorrect {0} Installation", Constants.AssemblyName), "#F0F0F0", string.Format ("{0} has been installed incorrectly and will not function properly. All files should be located under the GameData" + Path.AltDirectorySeparatorChar + Constants.AssemblyName + "folder. Do not move any files from inside that folder!\n\nIncorrect path(s):\n    •    {1}", Constants.AssemblyName, BadPathsString), "#F0F0F0");
                 }
-
-                //  Check if Environmental Visual Enhancements is installed.
-
-                if (!AssemblyLoader.loadedAssemblies.Any (asm => asm.assembly.GetName ().Name.StartsWith ("EVEManager", StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower ().Equals ("environmentalvisualenhancements" + Path.AltDirectorySeparatorChar + "plugins")))
+                else
                 {
-                    MissingDependenciesNames = string.Concat (MissingDependenciesNames, "  •  Environmental Visual Enhancements\n");
+                    //  Check the GameDatabase to see if the following dependencies are installed:
 
-                    Notification.Logger (Constants.AssemblyName, "Error", "Missing or incorrectly installed Environmental Visual Enhancements!");
-                }
+                    //      • Environmental Visual Enhancements
+                    //      • Module Manager
+                    //      • Real Solar System
+                    //      • Scatterer
 
-                //  Check if Real Solar System is installed.
+                    bool AssemblyEVELoaded       = AssemblyLoader.loadedAssemblies.Any (asm => asm.assembly.GetName ().Name.StartsWith ("EVEManager",      StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower ().Equals ("environmentalvisualenhancements" + Path.AltDirectorySeparatorChar + "plugins"));
+                    bool AssemblyMMLoaded        = AssemblyLoader.loadedAssemblies.Any (asm => asm.assembly.GetName ().Name.StartsWith ("ModuleManager",   StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower ().Equals (string.Empty));
+                    bool AssemblyRSSLoaded       = AssemblyLoader.loadedAssemblies.Any (asm => asm.assembly.GetName ().Name.StartsWith ("RealSolarSystem", StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower ().Equals ("realsolarsystem" + Path.AltDirectorySeparatorChar + "plugins"));
+                    bool AssemblyScattererLoaded = AssemblyLoader.loadedAssemblies.Any (asm => asm.assembly.GetName ().Name.StartsWith ("Scatterer",       StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower ().Equals ("scatterer"));
 
-                if (!AssemblyLoader.loadedAssemblies.Any (asm => asm.assembly.GetName ().Name.StartsWith ("RealSolarSystem", StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower ().Equals ("realsolarsystem" + Path.AltDirectorySeparatorChar + "plugins")))
-                {
-                    MissingDependenciesNames = string.Concat (MissingDependenciesNames, "  •  Real Solar System\n");
+                    //  If a dependency is not installed then we add it in the missing dependencies list.
 
-                    Notification.Logger (Constants.AssemblyName, "Error", "Missing or incorrectly installed Real Solar System!");
-                }
+                    if (!AssemblyEVELoaded)
+                    {
+                        MissingDependenciesNames = string.Concat (MissingDependenciesNames, "  •  Environmental Visual Enhancements\n");
 
-                //  Check if Scatterer is installed.
+                        Notification.Logger (Constants.AssemblyName, "Error", "Missing or incorrectly installed Environmental Visual Enhancements!");
+                    }
 
-                if (!AssemblyLoader.loadedAssemblies.Any (asm => asm.assembly.GetName ().Name.StartsWith ("Scatterer", StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower ().Equals ("scatterer")))
-                {
-                    MissingDependenciesNames = string.Concat (MissingDependenciesNames, "  •  Scatterer\n");
+                    if (!AssemblyMMLoaded)
+                    {
+                        MissingDependenciesNames = string.Concat (MissingDependenciesNames, "  •  Module Manager\n");
 
-                    Notification.Logger (Constants.AssemblyName, "Error", "Missing or incorrectly installed Scatterer!");
-                }
+                        Notification.Logger (Constants.AssemblyName, "Error", "Missing or incorrectly installed Module Manager!");
+                    }
 
-                //  Check it Module Manager is installed.
+                    if (!AssemblyRSSLoaded)
+                    {
+                        MissingDependenciesNames = string.Concat (MissingDependenciesNames, "  •  Real Solar System\n");
 
-                if (!AssemblyLoader.loadedAssemblies.Any (asm => asm.assembly.GetName ().Name.StartsWith ("ModuleManager", StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower ().Equals (string.Empty)))
-                {
-                    MissingDependenciesNames = string.Concat (MissingDependenciesNames, "  •  Module Manager\n");
+                        Notification.Logger (Constants.AssemblyName, "Error", "Missing or incorrectly installed Real Solar System!");
+                    }
 
-                    Notification.Logger (Constants.AssemblyName, "Error", "Missing or incorrectly installed Module Manager!");
-                }
+                    if (!AssemblyScattererLoaded)
+                    {
+                        MissingDependenciesNames = string.Concat (MissingDependenciesNames, "  •  Scatterer\n");
 
-                //  Warn the user if any of the dependencies are missing.
+                        Notification.Logger (Constants.AssemblyName, "Error", "Missing or incorrectly installed Scatterer!");
+                    }
 
-                if (!string.IsNullOrEmpty (MissingDependenciesNames))
-                {
-                    Notification.Dialog ("DependencyChecker", "Missing Dependencies", "#F0F0F0", string.Format ("{0} requires the following listed mods in order to function correctly:\n\n  {1}", Constants.AssemblyName, MissingDependenciesNames.Trim ()), "#F0F0F0");
+                    //  Warn the user if any of the dependencies are missing.
 
-                    Notification.Logger (Constants.AssemblyName, "Error", "Required dependencies missing: " + MissingDependenciesNames);
+                    if (!string.IsNullOrEmpty (MissingDependenciesNames))
+                    {
+                        Notification.Dialog ("DependencyChecker", "Missing Dependencies", "#F0F0F0", string.Format ("{0} requires the following listed mods in order to function correctly:\n\n  {1}", Constants.AssemblyName, MissingDependenciesNames.Trim ()), "#F0F0F0");
+
+                        Notification.Logger (Constants.AssemblyName, "Error", "Required dependencies missing!");
+                    }
                 }
             }
             catch (Exception ExceptionStack)
             {
                 Notification.Logger (Constants.AssemblyName, "Error", string.Format ("{0}: Caught an exception:\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
 
-                Notification.Dialog ("ExceptionChecker", string.Format ("Incorrect {0} installation", Constants.AssemblyName), "#F0F0F0",
+                Notification.Dialog ("ExceptionChecker", string.Format ("Fatal {0} Installation Error", Constants.AssemblyName), "#F0F0F0",
                                      string.Format ("An error has occurred while checking the installation of {0}.\n\n", Constants.AssemblyName) +
                                      string.Format ("You need to:\n" +
                                      "  •  Terminate the KSP instance\n" +

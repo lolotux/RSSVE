@@ -53,6 +53,7 @@
 # Ignore list (folder and file names).
 # ==================================================
 
+Builds         export-ignore
 Profiles       export-ignore
 Source         export-ignore
 

@@ -1,6 +1,6 @@
 //  ================================================================================
 /*
- * Copyright © 2014-2017, Majiir, ferram4.
+ * Copyright © 2014-2018, Majiir, ferram4.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification, are permitted
@@ -33,13 +33,11 @@ using UnityEngine;
 
 namespace RSSVE
 {
-    /*
-     * This utility displays a warning with a list of mods that determine themselves
-     * to be incompatible with the current running version of Kerbal Space Program.
-     *
-     * See this forum thread for details:
-     * http://forum.kerbalspaceprogram.com/threads/65395-Voluntarily-Locking-Plugins-to-a-Particular-KSP-Version
-     */
+    //  This utility displays a warning with a list of mods that determine themselves
+    //  to be incompatible with the current running version of Kerbal Space Program.
+
+    //  See this forum thread for details:
+    //  http://forum.kerbalspaceprogram.com/threads/65395-Voluntarily-Locking-Plugins-to-a-Particular-KSP-Version
 
     [KSPAddon (KSPAddon.Startup.Instantly, true)]
 
@@ -47,16 +45,16 @@ namespace RSSVE
     {
         public static bool IsCompatible ()
         {
-            // If you want to disable some behavior when incompatible, other parts of the plugin
-            // should query this method:
-            //
-            //    if (!CompatibilityChecker.IsCompatible ())
-            //    {
-            //        ...disable some features...
-            //    }
-            //
-            // Even if you don't lock down functionality, you should return true if your users
-            // can expect a future update to be available.
+            //  If you want to disable some behavior when incompatible, other parts of the plugin
+            //  should query this method:
+
+            //      if (!CompatibilityChecker.IsCompatible ())
+            //      {
+            //          ...disable some features...
+            //      }
+
+            //  Even if you don't lock down functionality, you should return true if your users
+            //  can expect a future update to be available.
 
             return (Versioning.version_minor.Equals (Constants.VersionCompatible.Minor) && Versioning.version_major.Equals (Constants.VersionCompatible.Major) && Versioning.Revision.Equals (Constants.VersionCompatible.Revis));
         }
@@ -72,11 +70,11 @@ namespace RSSVE
 
         static int _version = 6;
 
-        public void Start ()
+        void Start ()
         {
             // Checkers are identified by the type name and version field name.
 
-            var fields = getAllTypes ()
+            var fields = GetAllTypes ()
                 .Where (t => t.Name.Equals ("CompatibilityChecker"))
                 .Select (t => t.GetField ("_version", BindingFlags.Static | BindingFlags.NonPublic))
                 .Where (f => f != null)
@@ -107,7 +105,7 @@ namespace RSSVE
                 {
                     try
                     {
-                        return !(bool)m.Invoke (null, new object[0]);
+                        return !(bool) m.Invoke (null, new object[0]);
                     }
                     catch (Exception e)
                     {
@@ -132,7 +130,7 @@ namespace RSSVE
                 {
                     try
                     {
-                        return !(bool)m.Invoke (null, new object[0]);
+                        return !(bool) m.Invoke (null, new object[0]);
                     }
                     catch (Exception e)
                     {
@@ -178,12 +176,7 @@ namespace RSSVE
             }
         }
 
-        public static bool IsAllCompatible ()
-        {
-            return IsCompatible () && IsUnityCompatible ();
-        }
-
-        static IEnumerable<Type> getAllTypes ()
+        static IEnumerable<Type> GetAllTypes ()
         {
             foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies ())
             {

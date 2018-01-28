@@ -1,7 +1,7 @@
 //  ================================================================================
 //  Real Solar System Visual Enhancements for Kerbal Space Program.
 
-//  Copyright © 2016-2017, Alexander "Phineas Freak" Kampolis.
+//  Copyright © 2016-2018, Alexander "Phineas Freak" Kampolis.
 
 //  This file is part of Real Solar System Visual Enhancements.
 
@@ -31,7 +31,7 @@ namespace RSSVE
     public static class Constants
     {
         /// <summary>
-        /// Version parameters struct.
+        /// Version check structure.
         /// </summary>
 
         public struct VersionCompatible
@@ -40,55 +40,55 @@ namespace RSSVE
             /// The major version value.
             /// </summary>
 
-            static public readonly int Major = 1;
+            public static readonly int Major = 1;
 
             /// <summary>
             /// The minor version value.
             /// </summary>
 
-            static public readonly int Minor = 3;
+            public static readonly int Minor = 3;
 
             /// <summary>
             /// The revision version value.
             /// </summary>
 
-            static public readonly int Revis = 0;
+            public static readonly int Revis = 1;
 
             /// <summary>
             /// The build version value.
             /// </summary>
 
-            static public readonly int Build = 1804;
+            public static readonly int Build = 1891;
         }
 
         /// <summary>
         /// The compatible Unity version.
         /// </summary>
 
-        static public readonly string UnityVersion = "5.4.0p4";
+        public static readonly string UnityVersion = "5.4.0p4";
 
         /// <summary>
         /// The name of the assembly (used as a tag for the notification dialogs and the log file).
         /// </summary>
 
-        static public readonly string AssemblyName = "RSSVE";
+        public static readonly string AssemblyName = "RSSVE";
 
         /// <summary>
-        /// The (relative to the "GameData") path where the assembly resides.
+        /// The (relative to the "GameData" folder) path where the assembly resides.
         /// </summary>
 
-        static public readonly string AssemblyPath = AssemblyName + Path.AltDirectorySeparatorChar + "Plugins";
+        public static readonly string AssemblyPath = AssemblyName + Path.AltDirectorySeparatorChar + "Plugins";
     }
 
     #endregion
 
-    #region RSSVE Notifications
+    #region RSSVE Notification Functions
 
     /// <summary>
     /// Class to create user notification dialogs and log basic information to the KSP log file.
     /// </summary>
 
-    class Notification
+    static class Notification
     {
         /// <summary>
         /// Method to create pop-up notification dialogs.
@@ -104,7 +104,7 @@ namespace RSSVE
 
         public static void Dialog (string DialogName, string TitleText, string TitleColor, string ContentText, string ContentColor)
         {
-            if (!TitleText.Equals (null) && !ContentText.Equals (null))
+            if (!DialogName.Equals(null) && !TitleText.Equals (null) && !TitleColor.Equals(null) && !ContentText.Equals (null) && !ContentColor.Equals(null))
             {
                 PopupDialog.SpawnPopupDialog (new Vector2 (0.5f, 0.5f), new Vector2 (0.5f, 0.5f), DialogName, string.Format ("<color={0}>{1}</color>", TitleColor, TitleText), string.Format ("<color={0}>{1}</color>", ContentColor, ContentText), "OK", false, HighLogic.UISkin, true, string.Empty);
             }
@@ -150,19 +150,19 @@ namespace RSSVE
 
     #endregion
 
-    #region RSSVE System
+    #region RSSVE System Functions
 
     /// <summary>
     /// Class to get basic system operational parameters.
     /// </summary>
 
-    public static class System
+    public static class Utilities
     {
         /// <summary>
         /// Method to get the operating system graphics renderer.
         /// </summary>
         /// <returns>
-        /// Returns one of the following renderer types: D3D9, D3D11, OpenGL or Unknown.
+        /// Returns one of the following renderer types: D3D9, D3D11, OpenGL or Unknown (string).
         /// </returns>
 
         public static string GetGraphicsRenderer
@@ -198,19 +198,14 @@ namespace RSSVE
         /// Method to get the operating system octet size.
         /// </summary>
         /// <returns>
-        /// Returns "True" if the Operating System is using the AMD64 specification (x64) and "False" if it is using the baseline Intel specification (x86).
+        /// Returns True if the Operating System is using the AMD64 specification (x64) and False if it is using the baseline Intel specification (x86).
         /// </returns>
 
         public static bool Is64BitOS
         {
             get
             {
-                if (IntPtr.Size.Equals (8))
-                {
-                    return true;
-                }
-
-                return false;
+                return (IntPtr.Size.Equals (8));
             }
         }
 
@@ -218,7 +213,7 @@ namespace RSSVE
         /// Method to get the operating system type.
         /// </summary>
         /// <returns>
-        /// Returns one the following operating system types: Linux, OSX, Windows or Unknown.
+        /// Returns one the following operating system types: Linux, OSX, Windows or Unknown (string).
         /// </returns>
 
         public static string GetPlatformType
@@ -263,19 +258,19 @@ namespace RSSVE
 
     #endregion
 
-    #region RSSVE Version
+    #region RSSVE Version Functions
 
     /// <summary>
     /// Class to get the assembly version information.
     /// </summary>
 
-    class Version
+    static class Version
     {
         /// <summary>
         /// Method to get the assembly version.
         /// </summary>
         /// <returns>
-        /// Returns the assembly version as a string with the format: major.minor.revision.build.
+        /// Returns the assembly version (major.minor.revision.build) (string).
         /// </returns>
 
         public static string GetAssemblyVersion
