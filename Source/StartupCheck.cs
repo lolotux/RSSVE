@@ -57,33 +57,6 @@ namespace RSSVE
 
                 Notification.Logger (Constants.AssemblyName, "Error", "Unsupported OS Version (using 32 bit)!");
             }
-
-            //  Check if we are using a different graphics renderer (D3D11 or OpenGL) under Windows (should be using D3D9 for now).
-            //  MacOS and Linux do not have the same problem as they only use the OpenGL renderer.
-
-            if (Utilities.GetPlatformType.Equals ("Windows") && !Utilities.GetGraphicsRenderer.Equals ("D3D9"))
-            {
-                string IncompatibleRendererMsg = string.Empty;
-
-                switch (Utilities.GetGraphicsRenderer)
-                {
-                    case ("D3D11"):
-
-                        IncompatibleRendererMsg = "  •  DirectX 11";
-
-                    break;
-
-                    case ("OpenGL"):
-
-                        IncompatibleRendererMsg = "  •  OpenGL";
-
-                    break;
-                }
-
-                Notification.Dialog ("RendererChecker", "Unsupported Graphics Renderer Detected", "#F0F0F0", string.Format ("The following graphics renderer is unsupported by {0} under the Windows OS:\n\n{1}\n\n Please use the default DirectX 9 graphics renderer.", Constants.AssemblyName, IncompatibleRendererMsg), "#F0F0F0");
-
-                Notification.Logger (Constants.AssemblyName, "Warning", string.Format ("Unsupported Graphics Renderer (using {0})!", Utilities.GetGraphicsRenderer));
-            }
         }
     }
 }
