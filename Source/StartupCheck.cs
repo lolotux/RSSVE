@@ -14,6 +14,7 @@
 //      • https://www.creativecommons.org/licensies/by-nc-sa/4.0
 //  ================================================================================
 
+using System;
 using System.Reflection;
 using UnityEngine;
 
@@ -33,29 +34,36 @@ namespace RSSVE
 
         void Start ()
         {
-            //  Log some basic information that might be of interest when debugging installations.
-
-            Notification.Logger (Constants.AssemblyName, null, string.Format ("Assembly location: {0}", Assembly.GetExecutingAssembly ().Location));
-            Notification.Logger (Constants.AssemblyName, null, string.Format ("Assembly version: {0}", Version.GetAssemblyVersion));
-            Notification.Logger (Constants.AssemblyName, null, string.Format ("Assembly compatibility: {0}.{1}.{2}.{3}", Constants.VersionCompatible.Major, Constants.VersionCompatible.Minor, Constants.VersionCompatible.Revis, Constants.VersionCompatible.Build));
-
-            //  The following information fields are only active if the "Verbose Logging" option in the KSP menu is checked.
-
-            if (GameSettings.VERBOSE_DEBUG_LOG.Equals (true))
+            try
             {
-                Notification.Logger (Constants.AssemblyName, null, string.Format ("Using x86-64 KSP binaries: {0}", Utilities.Is64BitOS));
-                Notification.Logger (Constants.AssemblyName, null, string.Format ("Using Unity player: {0}", Utilities.GetPlatformType));
-                Notification.Logger (Constants.AssemblyName, null, string.Format ("Using renderer: {0}", Utilities.GetGraphicsRenderer));
+                //  Log some basic information that might be of interest when debugging installations.
+
+                Notification.Logger (Constants.AssemblyName, null, string.Format ("Assembly location: {0}", Assembly.GetExecutingAssembly ().Location));
+                Notification.Logger (Constants.AssemblyName, null, string.Format ("Assembly version: {0}", Version.GetAssemblyVersion));
+                Notification.Logger (Constants.AssemblyName, null, string.Format ("Assembly compatibility: {0}.{1}.{2}.{3}", Constants.VersionCompatible.Major, Constants.VersionCompatible.Minor, Constants.VersionCompatible.Revis, Constants.VersionCompatible.Build));
+
+                //  The following information fields are only active if the "Verbose Logging" option in the KSP menu is checked.
+
+                if (GameSettings.VERBOSE_DEBUG_LOG.Equals (true))
+                {
+                    Notification.Logger (Constants.AssemblyName, null, string.Format ("Using x86-64 KSP binaries: {0}", Utilities.Is64BitOS));
+                    Notification.Logger (Constants.AssemblyName, null, string.Format ("Using Unity player: {0}", Utilities.GetPlatformType));
+                    Notification.Logger (Constants.AssemblyName, null, string.Format ("Using renderer: {0}", Utilities.GetGraphicsRenderer));
+                }
+
+                //  Check if we are running under a x86 environment. The large amount of RAM space required by the RSSVE assets does not
+                //  allow the use of the 32 bit binaries.
+
+                if (Utilities.Is64BitOS.Equals (false))
+                {
+                    Notification.Dialog ("OSChecker", "Unsupported OS Version", "#F0F0F0", string.Format ("{0} is not supported by 32 bit KSP installations.\n\nPlease use the 64 bit instance of KSP.", Constants.AssemblyName), "#F0F0F0");
+
+                    Notification.Logger (Constants.AssemblyName, "Error", "Unsupported OS Version (using 32 bit)!");
+                }
             }
-
-            //  Check if we are running under a x86 environment. The large amount of RAM space required by the RSSVE assets does not
-            //  allow the use of the 32 bit binaries.
-
-            if (Utilities.Is64BitOS.Equals (false))
+            catch (Exception ExceptionStack)
             {
-                Notification.Dialog ("OSChecker", "Unsupported OS Version", "#F0F0F0", string.Format ("{0} is not supported by 32 bit KSP installations.\n\nPlease use the 64 bit instance of KSP.", Constants.AssemblyName), "#F0F0F0");
-
-                Notification.Logger (Constants.AssemblyName, "Error", "Unsupported OS Version (using 32 bit)!");
+                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("{0}: StartupChecker.Start() caught an exception:\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
             }
         }
     }

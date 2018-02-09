@@ -124,7 +124,7 @@ namespace RSSVE
             }
             catch (Exception ExceptionStack)
             {
-                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("{0}: Caught an exception:\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
+                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("{0}: InstallChecker.Start() caught an exception:\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
 
                 Notification.Dialog ("ExceptionChecker", string.Format ("Fatal {0} Installation Error", Constants.AssemblyName), "#F0F0F0",
                                      string.Format ("An error has occurred while checking the installation of {0}.\n\n", Constants.AssemblyName) +

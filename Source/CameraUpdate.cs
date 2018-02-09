@@ -25,7 +25,7 @@ namespace RSSVE
 
     [KSPAddon (KSPAddon.Startup.Flight, false)]
 
-    public class CameraUpdate : MonoBehaviour
+    public class CameraUpdater : MonoBehaviour
     {
         /// <summary>
         /// The ScaledSpace camera object.
@@ -124,7 +124,7 @@ namespace RSSVE
 
                     // Before we continue check if the body actually exists in the world.
 
-                    if (!szTargetBodyName.Equals (null))
+                    if (!string.IsNullOrEmpty (szTargetBodyName))
                     {
                         // Get the transform of said body.
 
@@ -189,7 +189,7 @@ namespace RSSVE
             }
             catch (Exception ExceptionStack)
             {
-                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("{0}: Caught an exception:\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
+                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("{0}: CameraUpdater.Update() caught an exception:\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
             }
         }
     }
