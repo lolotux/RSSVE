@@ -4,21 +4,25 @@ RSSVE v1.3.1-1 for KSP 1.3.1 (YYYY-MM-DD)
 
 Change Log:
 
-    • Compatibility update for the KSP 1.3.1 and Scatterer v0.0320b releases.
-    • Updated the Earth city lights detail texture maps to fix some issues with moire patterns.
+    • Compatibility update for the KSP 1.3.1 and Scatterer v0.0324 releases.
     • Features like the Earth city lights, the terrain detail textures and the volumetric clouds, can now be easily disabled.
+    • Enabled the EVE cloud integration feature for Jupiter and Saturn.
+    • Updated the Earth city lights detail texture maps to fix some issues with moire patterns.
+    • Tweaked the Venus cloud color to be less yellow.
+    • Tweaked the Titan cloud color to be less orange.
+    • Removed the volumetric clouds from the gas giants.
 
 Bug Fixes:
 
     • Fixed the DirectX 11 and OpenGL "featureless sphere" bug.
     • Fixed the main cloud texture maps of some bodies appearing fuzzy.
-    • Fixed the hard terminators appearing as shells over some bodies.
+    • Fixed the atmosphere terminators appearing as shells over some bodies.
 
 Known Issues:
 
-    • The city lights may appear blocky from low altitudes.
+    • The city lights may appear blocky from low orbital altitudes.
     • The transitioning between PQS and ScaledSpace is not as soft as it should.
-    • If a save reload in-flight is done then the cloud texture maps will break.
+    • The cloud texture maps may break upon quickloading a save while in-flight.
     • The Saturn rings may sometimes appear to cast hard shadows or be completely black.
 
 ==================================================
@@ -29,31 +33,31 @@ Change Log:
 
     • Compatibility update for the Scatterer v0.0320 release.
     • Enabled the Scatterer cloud integration and ring shadow features.
-    • Rebuilt all Scatterer profiles from scratch (courtesy of RSSVE collaborator Theysen).
-    • Added detail surface textures to Earth and Triton.
-    • Updated the aurora texture map for Earth.
-    • Decreased the opacity of the Titan cloud texture map.
-    • Updated the cloud texture maps for Jupiter, Saturn and Uranus.
+    • Rebuilt all Scatterer profiles from scratch (courtesy of RSSVE collaborator Lukas "Theysen" Theisen).
     • Added a custom Saturn ring texture for the new ring shadow feature.
-    • Fixed the altitude of the gas giants cloud layers (still wrong by a factor of ten though).
-    • Fixed the altitude of the Venus cloud layer.
+    • Added detail surface textures to Earth and Triton.
+    • Added some missing volumetric clouds to Saturn, Uranus and Neptune.
+    • Updated the aurora texture map for Earth.
+    • Updated the cloud texture maps for Jupiter, Saturn and Uranus.
     • Improved the appearance and overall performance impact of the volumetric clouds.
     • Improved the appearance of the city day and night detail texture maps.
-    • Added some missing volumetric clouds to Saturn, Uranus and Neptune.
     • Tweaked the apparent brightness and movement of the Earth auroras.
-    • Reduced the apparent brightness of the Earth surface from orbit.
     • Tweaked the apparent light levels on the surface of Venus.
+    • Decreased the opacity of the Titan cloud texture map.
+    • Reduced the apparent brightness of the Earth surface from orbit.
 
 Bug Fixes:
 
-    • Eliminated the ground flickering on Earth.
+    • Fixed the ground flickering on Earth.
     • Fixed the Earth cloud clipping for altitudes less than 167 km.
+    • Fixed the altitude of the gas giants cloud layers (still wrong by a factor of ten though).
+    • Fixed the altitude of the Venus cloud layer.
 
 Known Issues:
 
-    • The city lights may appear blocky from low altitudes.
+    • The city lights may appear blocky from low orbital altitudes.
     • The transitioning between PQS and ScaledSpace is not as soft as it should.
-    • If a save reload in-flight is done then the cloud texture maps will break.
+    • The cloud texture maps may break upon quickloading a save while in-flight.
     • The Saturn ring may appear to cast hard shadows.
     • Some of the bodies may appear as featureless spheres under DirectX 11 or OpenGL. Affected users can enable the Scatterer PlanetFix patch.
 
@@ -65,14 +69,14 @@ Change Log:
 
     • Compatibility update for the Scatterer v0.0300 release.
     • Many small tweaks to the atmospheric scatter effects of all bodies.
+    • New binary assemblies for KSP 1.1.3 users (for use with EVE 1.1-3 and Scatterer v0.0255).
+    • Re-factored the file and folder structure to ease management and development.
+    • Remade and simplified the Earth aurora main and detail textures.
     • Increased the apparent brightness of the Moon (might still need some tweaking).
     • Titan will now appear less bright and saturated than before.
-    • Remade and simplified the Earth aurora main and detail textures.
     • The Earth aurora is now less visible in the daylight.
     • Removed an old and unused Earth cloud main texture.
     • Removed the Earth PQS texture (was a performance hog and did not look good anyway).
-    • Re-factored the file and folder structure to ease management and development.
-    • New binary assemblies for KSP 1.1.3 users (for use with EVE 1.1-3 and Scatterer v0.0255).
 
 Bug Fixes:
 
@@ -90,7 +94,7 @@ RSSVE v1.2.2-RC2 for KSP 1.2.2 (2016-12-16)
 
 Change Log:
 
-    • Improved Earth Scatterer configs (atmospheric and oceanic). Courtesy of RSSVE collaborator Lukas "Theysen" Theisen.
+    • Improved the Earth Scatterer configs (courtesy of RSSVE collaborator Lukas "Theysen" Theisen).
 
 Bug Fixes:
 
