@@ -4,9 +4,10 @@ RSSVE v1.3.1-1 for KSP 1.3.1 (YYYY-MM-DD)
 
 Change Log:
 
-    • Compatibility update for the KSP 1.3.1 and Scatterer v0.0324 releases.
+    • Compatibility update for the KSP 1.3.1 and Scatterer v0.0320b releases.
     • Features like the Earth city lights, the terrain detail textures and the volumetric clouds, can now be easily disabled.
     • Enabled the EVE cloud integration feature for Jupiter and Saturn.
+    • Added a custom Sun corona texture.
     • Updated the Earth city lights detail texture maps to fix some issues with moire patterns.
     • Tweaked the Venus cloud color to be less yellow.
     • Tweaked the Titan cloud color to be less orange.
@@ -16,7 +17,8 @@ Bug Fixes:
 
     • Fixed the DirectX 11 and OpenGL "featureless sphere" bug.
     • Fixed the main cloud texture maps of some bodies appearing fuzzy.
-    • Fixed the atmosphere terminators appearing as shells over some bodies.
+    • Fixed the hard terminators appearing as shells over some bodies.
+    • Fixed the Sun surface colors.
 
 Known Issues:
 
