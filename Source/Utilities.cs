@@ -104,7 +104,7 @@ namespace RSSVE
 
         public static void Dialog (string DialogName, string TitleText, string TitleColor, string ContentText, string ContentColor)
         {
-            if (!DialogName.Equals(null) && !TitleText.Equals (null) && !TitleColor.Equals(null) && !ContentText.Equals (null) && !ContentColor.Equals(null))
+            if (!DialogName.Equals (null) && !TitleText.Equals (null) && !TitleColor.Equals (null) && !ContentText.Equals (null) && !ContentColor.Equals (null))
             {
                 PopupDialog.SpawnPopupDialog (new Vector2 (0.5f, 0.5f), new Vector2 (0.5f, 0.5f), DialogName, string.Format ("<color={0}>{1}</color>", TitleColor, TitleText), string.Format ("<color={0}>{1}</color>", ContentColor, ContentText), "OK", false, HighLogic.UISkin, true, string.Empty);
             }

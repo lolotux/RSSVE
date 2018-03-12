@@ -59,6 +59,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CameraUpdate.cs" />
+    <Compile Include="EVEConfigCheck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="InstallationCheck.cs" />
     <Compile Include="Utilities.cs" />

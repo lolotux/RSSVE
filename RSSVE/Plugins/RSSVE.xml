@@ -49,6 +49,20 @@
             Method to update the ScaledSpace camera near clip value.
             </summary>
         </member>
+        <member name="T:RSSVE.EVEConfigChecker">
+            <summary>
+            Environmental Visual Enhancements configuration file integrity checker class.
+            </summary>
+        </member>
+        <member name="M:RSSVE.EVEConfigChecker.ValidateConfig(System.String)">
+            <summary>
+            Method to validate an EVE configuration file.
+            </summary>
+            <param name = "EVENodeToCheck">The name of the configuration file to be checked.</param>
+            <returns>
+            Does not return a value.
+            </returns>
+        </member>
         <member name="T:RSSVE.InstallChecker">
             <summary>
             Version and file system integrity checker class. Operates only in the Main Menu scene.

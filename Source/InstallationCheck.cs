@@ -120,6 +120,15 @@ namespace RSSVE
 
                         Notification.Logger (Constants.AssemblyName, "Error", "Required dependencies missing!");
                     }
+
+                    //  Validate all possible EVE configs loaded in the GameDatabase.
+
+                    EVEConfigChecker.ValidateConfig ("EVE_ATMOSPHERE");
+                    EVEConfigChecker.ValidateConfig ("EVE_CITY_LIGHTS");
+                    EVEConfigChecker.ValidateConfig ("EVE_CLOUDS");
+                    EVEConfigChecker.ValidateConfig ("EVE_SHADOWS");
+                    EVEConfigChecker.ValidateConfig ("EVE_TERRAIN");
+                    EVEConfigChecker.ValidateConfig ("PQS_MANAGER");
                 }
             }
             catch (Exception ExceptionStack)
