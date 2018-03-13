@@ -63,6 +63,14 @@
             Does not return a value.
             </returns>
         </member>
+        <member name="M:RSSVE.EVEConfigChecker.OnEVEConfigValidation">
+            <summary>
+            Method to register the EVE configuration file validator.
+            </summary>
+            <returns>
+            Does not return a value.
+            </returns>
+        </member>
         <member name="T:RSSVE.InstallChecker">
             <summary>
             Version and file system integrity checker class. Operates only in the Main Menu scene.

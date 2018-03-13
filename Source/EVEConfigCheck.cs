@@ -111,5 +111,22 @@ namespace RSSVE
                 }
             }
         }
+
+        /// <summary>
+        /// Method to register the EVE configuration file validator.
+        /// </summary>
+        /// <returns>
+        /// Does not return a value.
+        /// </returns>
+
+        public static void OnEVEConfigValidation ()
+        {
+            ValidateConfig ("EVE_ATMOSPHERE");
+            ValidateConfig ("EVE_CITY_LIGHTS");
+            ValidateConfig ("EVE_CLOUDS");
+            ValidateConfig ("EVE_SHADOWS");
+            ValidateConfig ("EVE_TERRAIN");
+            ValidateConfig ("PQS_MANAGER");
+        }
     }
 }

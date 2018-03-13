@@ -123,24 +123,18 @@ namespace RSSVE
 
                     //  Validate all possible EVE configs loaded in the GameDatabase.
 
-                    EVEConfigChecker.ValidateConfig ("EVE_ATMOSPHERE");
-                    EVEConfigChecker.ValidateConfig ("EVE_CITY_LIGHTS");
-                    EVEConfigChecker.ValidateConfig ("EVE_CLOUDS");
-                    EVEConfigChecker.ValidateConfig ("EVE_SHADOWS");
-                    EVEConfigChecker.ValidateConfig ("EVE_TERRAIN");
-                    EVEConfigChecker.ValidateConfig ("PQS_MANAGER");
+                    EVEConfigChecker.OnEVEConfigValidation ();
+
+                    //  Register the validation method to the GameDatabase (re)loading event (so that
+                    //  we can catch invalid EVE configs when reloading the database either via the
+                    //  stock reloading system or via Module Manager). 
+
+                    GameEvents.OnGameDatabaseLoaded.Add (EVEConfigChecker.OnEVEConfigValidation);
                 }
             }
             catch (Exception ExceptionStack)
             {
                 Notification.Logger (Constants.AssemblyName, "Error", string.Format ("{0}: InstallChecker.Start() caught an exception:\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
-
-                Notification.Dialog ("ExceptionChecker", string.Format ("Fatal {0} Installation Error", Constants.AssemblyName), "#F0F0F0",
-                                     string.Format ("An error has occurred while checking the installation of {0}.\n\n", Constants.AssemblyName) +
-                                     string.Format ("You need to:\n" +
-                                     "  •  Terminate the KSP instance\n" +
-                                     "  •  Send a complete copy of the 'output.log' file to the mod developer\n" +
-                                     "  •  Completely remove and re-install {0} and it's required mods\n", Constants.AssemblyName), "#F0F0F0");
             }
         }
     }
