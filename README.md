@@ -42,6 +42,8 @@ RSSVE is licensed under a **Creative Commons Attribution-NonCommercial-ShareAlik
 
 You should have received a copy of the license along with this work. If not, visit the **[official Creative Commons web page][RSSVE:cc-license-link]**.
 
+**Note that the above license does not cover mod packs. Redistributing this work via a mod pack is not allowed.**
+
 ***
 
 ![][RSSVE:Venus]
