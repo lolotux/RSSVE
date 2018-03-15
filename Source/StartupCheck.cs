@@ -44,7 +44,7 @@ namespace RSSVE
 
                 //  The following information fields are only active if the "Verbose Logging" option in the KSP menu is checked.
 
-                if (GameSettings.VERBOSE_DEBUG_LOG.Equals (true))
+                if (Utilities.IsVerboseDebugEnabled ())
                 {
                     Notification.Logger (Constants.AssemblyName, null, string.Format ("Using x86-64 KSP binaries: {0}", Utilities.Is64BitOS));
                     Notification.Logger (Constants.AssemblyName, null, string.Format ("Using Unity player: {0}", Utilities.GetPlatformType));
@@ -63,7 +63,7 @@ namespace RSSVE
             }
             catch (Exception ExceptionStack)
             {
-                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("{0}: StartupChecker.Start() caught an exception:\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
+                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("StartupChecker.Start() caught an exception: {0}\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
             }
         }
     }

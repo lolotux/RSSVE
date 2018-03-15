@@ -66,18 +66,21 @@ namespace RSSVE
         /// <summary>
         /// Method to start the ScaledSpace camera patcher.
         /// </summary>
+        /// <returns>
+        /// Does not return a value.
+        /// </returns>
 
         void Start ()
         {
             // Check if the KSP version is compatible.
 
-            if (CompatibilityChecker.IsCompatible ().Equals (true))
+            if (CompatibilityChecker.IsCompatible ())
             {
                 // Get all available camera transforms.
 
                 Camera [] CameraList = Camera.allCameras;
 
-                Notification.Logger (Constants.AssemblyName, null, "Getting camera transforms...");
+                Notification.Logger (Constants.AssemblyName, null, "Getting all available camera transforms...");
 
                 // Iterate until the SS camera transform is found.
 
@@ -106,6 +109,9 @@ namespace RSSVE
         /// <summary>
         /// Method to update the ScaledSpace camera near clip value.
         /// </summary>
+        /// <returns>
+        /// Does not return a value.
+        /// </returns>
 
         void Update ()
         {
@@ -113,7 +119,7 @@ namespace RSSVE
             {
                 // Check if the KSP version is compatible.
 
-                if (CompatibilityChecker.IsCompatible ().Equals (true))
+                if (CompatibilityChecker.IsCompatible ())
                 {
                     // Get the name of the body that the camera is currently focused to.
 
@@ -178,18 +184,18 @@ namespace RSSVE
 
                     // Log some debugging information. NOTE: major log spam source!
 
-                    if (GameSettings.VERBOSE_DEBUG_LOG.Equals (true))
+                    if (Utilities.IsVerboseDebugEnabled ())
                     {
-                        Notification.Logger (Constants.AssemblyName, "", string.Format ("Target body name: {0}", szTargetBodyName));
-                        Notification.Logger (Constants.AssemblyName, "", string.Format ("Target body transform: {0}", TargetBodyTransform));
-                        Notification.Logger (Constants.AssemblyName, "", string.Format ("Target body radius: {0}", fTargetBodyRadius));
-                        Notification.Logger (Constants.AssemblyName, "", string.Format ("SS camera near clip: {0}", SSCamera.nearClipPlane));
+                        Notification.Logger (Constants.AssemblyName, string.Empty, string.Format ("Target body name: {0}", szTargetBodyName));
+                        Notification.Logger (Constants.AssemblyName, string.Empty, string.Format ("Target body transform: {0}", TargetBodyTransform));
+                        Notification.Logger (Constants.AssemblyName, string.Empty, string.Format ("Target body radius: {0}", fTargetBodyRadius));
+                        Notification.Logger (Constants.AssemblyName, string.Empty, string.Format ("SS camera near clip: {0}", SSCamera.nearClipPlane));
                     }
                 }
             }
             catch (Exception ExceptionStack)
             {
-                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("{0}: CameraUpdater.Update() caught an exception:\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
+                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("CameraUpdater.Update() caught an exception: {0}\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
             }
         }
     }

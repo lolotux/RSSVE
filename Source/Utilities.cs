@@ -15,6 +15,7 @@
 //  ================================================================================
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -27,6 +28,9 @@ namespace RSSVE
     /// <summary>
     /// Class to set up the parameters required and used by RSSVE.
     /// </summary>
+    /// <returns>
+    /// Does not return a value.
+    /// </returns>
 
     public static class Constants
     {
@@ -104,7 +108,11 @@ namespace RSSVE
 
         public static void Dialog (string DialogName, string TitleText, string TitleColor, string ContentText, string ContentColor)
         {
-            if (!DialogName.Equals (null) && !TitleText.Equals (null) && !TitleColor.Equals (null) && !ContentText.Equals (null) && !ContentColor.Equals (null))
+            if (!string.IsNullOrEmpty (DialogName)  &&
+                !string.IsNullOrEmpty (TitleText)   &&
+                !string.IsNullOrEmpty (TitleColor)  &&
+                !string.IsNullOrEmpty (ContentText) &&
+                !string.IsNullOrEmpty (ContentColor))
             {
                 PopupDialog.SpawnPopupDialog (new Vector2 (0.5f, 0.5f), new Vector2 (0.5f, 0.5f), DialogName, string.Format ("<color={0}>{1}</color>", TitleColor, TitleText), string.Format ("<color={0}>{1}</color>", ContentColor, ContentText), "OK", false, HighLogic.UISkin, true, string.Empty);
             }
@@ -122,7 +130,7 @@ namespace RSSVE
 
         public static void Logger (string AssemblyTagName, string LogType, string Content)
         {
-            if (!AssemblyTagName.Equals (null) && !Content.Equals (null))
+            if (!string.IsNullOrEmpty (AssemblyTagName) && !string.IsNullOrEmpty (Content))
             {
                 switch (LogType)
                 {
@@ -159,6 +167,28 @@ namespace RSSVE
     public static class Utilities
     {
         /// <summary>
+        /// Method to get the available celestial body names.
+        /// </summary>
+        /// <returns>
+        /// Returns a list of names for all celestial bodies found in the GameDatabase (string).
+        /// </returns>
+
+        public static List<string> GetCelestialBodyList ()
+        {
+            var szBodyLoaderNames = new List <string>();
+
+            foreach (var Celestial in FlightGlobals.Bodies)
+            {
+                //  Add the body name to the list. We are saving it to
+                //  lowercase, since it is the lowest common denominator.
+
+                szBodyLoaderNames.Add (Celestial.bodyName.ToLower ());
+            }
+
+            return szBodyLoaderNames;
+        }
+
+        /// <summary>
         /// Method to get the operating system graphics renderer.
         /// </summary>
         /// <returns>
@@ -191,21 +221,6 @@ namespace RSSVE
                 }
 
                 return RendererName;
-            }
-        }
-
-        /// <summary>
-        /// Method to get the operating system octet size.
-        /// </summary>
-        /// <returns>
-        /// Returns True if the Operating System is using the AMD64 specification (x64) and False if it is using the baseline Intel specification (x86).
-        /// </returns>
-
-        public static bool Is64BitOS
-        {
-            get
-            {
-                return (IntPtr.Size.Equals (8));
             }
         }
 
@@ -253,6 +268,33 @@ namespace RSSVE
 
                 return PlatformTypeName;
             }
+        }
+
+        /// <summary>
+        /// Method to get the operating system octet size.
+        /// </summary>
+        /// <returns>
+        /// Returns True if the Operating System is using the AMD64 specification (x64) and False if it is using the baseline Intel specification (x86).
+        /// </returns>
+
+        public static bool Is64BitOS
+        {
+            get
+            {
+                return (IntPtr.Size.Equals (8));
+            }
+        }
+
+        /// <summary>
+        /// Method to check if the verbose debug option is active.
+        /// </summary>
+        /// <returns>
+        /// Returns the status of the verbose debug option (boolean).
+        /// </returns>
+
+        public static bool IsVerboseDebugEnabled ()
+        {
+            return GameSettings.VERBOSE_DEBUG_LOG;
         }
     }
 

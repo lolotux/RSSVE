@@ -105,7 +105,7 @@ namespace RSSVE
                 {
                     try
                     {
-                        return !(bool) m.Invoke (null, new object[0]);
+                        return !(bool) m.Invoke (null, new object [0]);
                     }
                     catch (Exception e)
                     {
@@ -180,7 +180,7 @@ namespace RSSVE
         {
             foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies ())
             {
-                Type[] types;
+                Type [] types;
 
                 try
                 {

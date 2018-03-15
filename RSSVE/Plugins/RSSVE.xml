@@ -43,30 +43,38 @@
             <summary>
             Method to start the ScaledSpace camera patcher.
             </summary>
+            <returns>
+            Does not return a value.
+            </returns>
         </member>
         <member name="M:RSSVE.CameraUpdater.Update">
             <summary>
             Method to update the ScaledSpace camera near clip value.
             </summary>
+            <returns>
+            Does not return a value.
+            </returns>
         </member>
         <member name="T:RSSVE.EVEConfigChecker">
             <summary>
             Environmental Visual Enhancements configuration file integrity checker class.
             </summary>
         </member>
-        <member name="M:RSSVE.EVEConfigChecker.ValidateConfig(System.String)">
+        <member name="M:RSSVE.EVEConfigChecker.GetCheckConfig(System.Collections.Generic.List{System.String},System.String)">
             <summary>
-            Method to validate an EVE configuration file.
+            Method to check if a specific EVE configuration file is valid.
             </summary>
-            <param name = "EVENodeToCheck">The name of the configuration file to be checked.</param>
+            <param name = "szBodyLoaderNames">A list with all celestial body names found in the GameDatabase</param>
+            <param name = "szEVENodeToCheck">The name of the configuration file to be checked (string).</param>
             <returns>
-            Does not return a value.
+            Returns the number of the specific EVE configuration files found.
             </returns>
         </member>
-        <member name="M:RSSVE.EVEConfigChecker.OnEVEConfigValidation">
+        <member name="M:RSSVE.EVEConfigChecker.GetValidateConfig(System.Collections.Generic.List{System.String})">
             <summary>
-            Method to register the EVE configuration file validator.
+            Method to validate a set of EVE configuration files.
             </summary>
+            <param name = "szBodyLoaderNames">A list with all celestial body names found in the GameDatabase</param>
             <returns>
             Does not return a value.
             </returns>
@@ -76,15 +84,37 @@
             Version and file system integrity checker class. Operates only in the Main Menu scene.
             </summary>
         </member>
+        <member name="M:RSSVE.InstallChecker.OnDestroy">
+            <summary>
+            Method to destroy any active gameobjects.
+            </summary>
+            <returns>
+            Does not return a value.
+            </returns>
+        </member>
+        <member name="M:RSSVE.InstallChecker.OnGameDatabaseLoaded">
+            <summary>
+            Method to register the EVE configuration file validator when a GameDatabase reload is invoked.
+            </summary>
+            <returns>
+            Does not return a value.
+            </returns>
+        </member>
         <member name="M:RSSVE.InstallChecker.Start">
             <summary>
             Method to start the installation checker.
             </summary>
+            <returns>
+            Does not return a value.
+            </returns>
         </member>
         <member name="T:RSSVE.Constants">
             <summary>
             Class to set up the parameters required and used by RSSVE.
             </summary>
+            <returns>
+            Does not return a value.
+            </returns>
         </member>
         <member name="F:RSSVE.Constants.UnityVersion">
             <summary>
@@ -160,6 +190,22 @@
             Class to get basic system operational parameters.
             </summary>
         </member>
+        <member name="M:RSSVE.Utilities.GetCelestialBodyList">
+            <summary>
+            Method to get the available celestial body names.
+            </summary>
+            <returns>
+            Returns a list of names for all celestial bodies found in the GameDatabase (string).
+            </returns>
+        </member>
+        <member name="M:RSSVE.Utilities.IsVerboseDebugEnabled">
+            <summary>
+            Method to check if the verbose debug option is active.
+            </summary>
+            <returns>
+            Returns the status of the verbose debug option (boolean).
+            </returns>
+        </member>
         <member name="P:RSSVE.Utilities.GetGraphicsRenderer">
             <summary>
             Method to get the operating system graphics renderer.
@@ -168,20 +214,20 @@
             Returns one of the following renderer types: D3D9, D3D11, OpenGL or Unknown (string).
             </returns>
         </member>
-        <member name="P:RSSVE.Utilities.Is64BitOS">
-            <summary>
-            Method to get the operating system octet size.
-            </summary>
-            <returns>
-            Returns True if the Operating System is using the AMD64 specification (x64) and False if it is using the baseline Intel specification (x86).
-            </returns>
-        </member>
         <member name="P:RSSVE.Utilities.GetPlatformType">
             <summary>
             Method to get the operating system type.
             </summary>
             <returns>
             Returns one the following operating system types: Linux, OSX, Windows or Unknown (string).
+            </returns>
+        </member>
+        <member name="P:RSSVE.Utilities.Is64BitOS">
+            <summary>
+            Method to get the operating system octet size.
+            </summary>
+            <returns>
+            Returns True if the Operating System is using the AMD64 specification (x64) and False if it is using the baseline Intel specification (x86).
             </returns>
         </member>
         <member name="T:RSSVE.Version">

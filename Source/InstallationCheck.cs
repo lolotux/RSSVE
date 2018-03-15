@@ -44,16 +44,54 @@ namespace RSSVE
 
     class InstallChecker : MonoBehaviour
     {
+
+        /// <summary>
+        /// Method to destroy any active gameobjects.
+        /// </summary>
+        /// <returns>
+        /// Does not return a value.
+        /// </returns>
+
+        void OnDestroy ()
+        {
+            try
+            {
+                if (CompatibilityChecker.IsCompatible ())
+                {
+                    GameEvents.OnGameDatabaseLoaded.Remove (OnGameDatabaseLoaded);
+                }
+            }
+            catch (Exception ExceptionStack)
+            {
+                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("InstallChecker.OnDestroy() caught an exception: {0}\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
+            }
+        }
+
+        /// <summary>
+        /// Method to register the EVE configuration file validator when a GameDatabase reload is invoked.
+        /// </summary>
+        /// <returns>
+        /// Does not return a value.
+        /// </returns>
+
+        void OnGameDatabaseLoaded ()
+        {
+            Notification.Logger (Constants.AssemblyName, string.Empty, "Reloading GameDatabase...");
+
+            EVEConfigChecker.GetValidateConfig (Utilities.GetCelestialBodyList ());
+        }
+
         /// <summary>
         /// Method to start the installation checker.
         /// </summary>
+        /// <returns>
+        /// Does not return a value.
+        /// </returns>
 
         void Start ()
         {
             try
             {
-                string MissingDependenciesNames = string.Empty;
-
                 //  Check if the mod's assembly is placed at the correct location. This will also detect duplicate copies because only one can be in the right place.
 
                 var BaseAssembly = AssemblyLoader.loadedAssemblies.Where (asm => asm.assembly.GetName ().Name.Equals (Assembly.GetExecutingAssembly ().GetName ().Name)).Where (asm => asm.url != Constants.AssemblyPath);
@@ -70,12 +108,13 @@ namespace RSSVE
                 }
                 else
                 {
-                    //  Check the GameDatabase to see if the following dependencies are installed:
+                    string MissingDependenciesNames = string.Empty;
 
-                    //      • Environmental Visual Enhancements
-                    //      • Module Manager
-                    //      • Real Solar System
-                    //      • Scatterer
+                    //  Check the GameDatabase to see if the following dependencies are installed:
+                    //  • Environmental Visual Enhancements
+                    //  • Module Manager
+                    //  • Real Solar System
+                    //  • Scatterer
 
                     bool AssemblyEVELoaded       = AssemblyLoader.loadedAssemblies.Any (asm => asm.assembly.GetName ().Name.StartsWith ("EVEManager",      StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower ().Equals ("environmentalvisualenhancements" + Path.AltDirectorySeparatorChar + "plugins"));
                     bool AssemblyMMLoaded        = AssemblyLoader.loadedAssemblies.Any (asm => asm.assembly.GetName ().Name.StartsWith ("ModuleManager",   StringComparison.InvariantCultureIgnoreCase) && asm.url.ToLower ().Equals (string.Empty));
@@ -123,18 +162,21 @@ namespace RSSVE
 
                     //  Validate all possible EVE configs loaded in the GameDatabase.
 
-                    EVEConfigChecker.OnEVEConfigValidation ();
+                    if (CompatibilityChecker.IsCompatible ())
+                    {
+                        Notification.Logger (Constants.AssemblyName, string.Empty, "Starting the EVE config validator...");
 
-                    //  Register the validation method to the GameDatabase (re)loading event (so that
-                    //  we can catch invalid EVE configs when reloading the database either via the
-                    //  stock reloading system or via Module Manager). 
+                        EVEConfigChecker.GetValidateConfig (Utilities.GetCelestialBodyList ());
 
-                    GameEvents.OnGameDatabaseLoaded.Add (EVEConfigChecker.OnEVEConfigValidation);
+                        Notification.Logger (Constants.AssemblyName, string.Empty, "Adding the EVE config GameDatabase event handler...");
+
+                        GameEvents.OnGameDatabaseLoaded.Add (OnGameDatabaseLoaded);
+                    }
                 }
             }
             catch (Exception ExceptionStack)
             {
-                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("{0}: InstallChecker.Start() caught an exception:\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
+                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("InstallChecker.Start() caught an exception: {0}\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
             }
         }
     }

@@ -26,73 +26,46 @@ namespace RSSVE
     static class EVEConfigChecker
     {
         /// <summary>
-        /// Method to validate an EVE configuration file.
+        /// Method to check if a specific EVE configuration file is valid.
         /// </summary>
-        /// <param name = "EVENodeToCheck">The name of the configuration file to be checked.</param>
+        /// <param name = "szBodyLoaderNames">A list with all celestial body names found in the GameDatabase</param>
+        /// <param name = "szEVENodeToCheck">The name of the configuration file to be checked (string).</param>
         /// <returns>
-        /// Does not return a value.
+        /// Returns the number of the specific EVE configuration files found.
         /// </returns>
 
-        public static void ValidateConfig (string EVENodeToCheck)
+        public static int GetCheckConfig (List<string>szBodyLoaderNames, string szEVENodeToCheck)
         {
-            if (!String.IsNullOrEmpty (EVENodeToCheck))
+            //  Check if other EVE configs are present in the GameDatabase.
+            //  Configs that refer to non-existent bodies WILL break the EVE config loader.
+
+            int nEVENodeCount = 0;
+
+            if (!string.IsNullOrEmpty (szEVENodeToCheck))
             {
-                //  Check if other EVE configs are present in the GameDatabase
-                //  (configs that refer to non-existent bodies WILL break EVE).
-
-                string PrevBodyName = string.Empty;
-
-                var BodyLoaderNames = new List <string>();
-
-                int EVENodeCount = 0;
-
-                //  Start by creating a list with all possible celestial bodies found in the GameDatabase.
-
-                foreach (var Celestial in FlightGlobals.Bodies)
-                {
-                    //  Print the body name to the log (for debug purposes).
-
-                    if (GameSettings.VERBOSE_DEBUG_LOG.Equals (true))
-                    {
-                        Notification.Logger (Constants.AssemblyName, "", string.Format ("CelestialBody found: {0}", Celestial.bodyName));
-                    }
-
-                    //  Add the body name to the list. We are saving them as lowercase since it is the
-                    //  least common.
-
-                    BodyLoaderNames.Add (Celestial.bodyName.ToLower ());
-                }
-
                 //  Scan the GameDatabase for all loaded EVE configs.
 
-                foreach (ConfigNode EVENode in GameDatabase.Instance.GetConfigNodes (EVENodeToCheck))
+                foreach (ConfigNode EVENode in GameDatabase.Instance.GetConfigNodes (szEVENodeToCheck))
                 {
-                    EVENodeCount++;
-
-                    //  Search for the EVE body names;
+                    //  Search for the EVE body sub-confignodes.
 
                     foreach (ConfigNode EVECloudsObject in EVENode.GetNodes ("OBJECT"))
                     {
                         if (EVENode != null && EVECloudsObject.HasValue ("body"))
                         {
-                            // Get the EVE_CLOUDS body name.
+                            // Get the raw body name from the sub-config.
 
-                            string BodyName = EVECloudsObject.GetValue ("body");
+                            string szBodyName = EVECloudsObject.GetValue ("body");
 
-                            //  Check if the body name exists in the body name database. If not then we are going to have
-                            //  a bad time...
+                            //  Check if the body name exists in the celestial body database.
 
-                            if (Array.IndexOf (BodyLoaderNames.ToArray (), BodyName.ToLower ()) < 0)
+                            if (Array.IndexOf (szBodyLoaderNames.ToArray (), szBodyName.ToLower ()) < 0)
                             {
                                 //  Print the invalid body name (for debug purposes).
-                                //  Also, make sure that we are printing the body name only once (EVE
-                                //  nodes may contain multiple objects for the same body).
 
-                                if (GameSettings.VERBOSE_DEBUG_LOG.Equals (true) && !BodyName.Equals (PrevBodyName))
+                                if (Utilities.IsVerboseDebugEnabled ())
                                 {
-                                    PrevBodyName = BodyName;
-
-                                    Notification.Logger (Constants.AssemblyName, "", string.Format ("Incompatible {0} body detected! (name: {1})", EVENodeToCheck, BodyName));
+                                    Notification.Logger (Constants.AssemblyName, "Warning", string.Format ("Incompatible {0} body detected (name: {1})!", szEVENodeToCheck, szBodyName));
                                 }
 
                                 //  Remove the invalid EVE config from the GameDatabase.
@@ -101,32 +74,57 @@ namespace RSSVE
                             }
                         }
                     }
-                }
 
-                //  Print the total number of EVE configs loaded (for debug purposes).
+                    //  Increment the EVE config counter.
 
-                if (GameSettings.VERBOSE_DEBUG_LOG.Equals (true))
-                {
-                    Notification.Logger (Constants.AssemblyName, "", string.Format ("{0} config detected: (count: {1})", EVENodeToCheck, EVENodeCount));
+                    nEVENodeCount++;
                 }
             }
+
+            //  Return the number of EVE configs found (default: zero).
+
+            return nEVENodeCount;
         }
 
         /// <summary>
-        /// Method to register the EVE configuration file validator.
+        /// Method to validate a set of EVE configuration files.
         /// </summary>
+        /// <param name = "szBodyLoaderNames">A list with all celestial body names found in the GameDatabase</param>
         /// <returns>
         /// Does not return a value.
         /// </returns>
 
-        public static void OnEVEConfigValidation ()
+        public static void GetValidateConfig (List<string>szBodyLoaderNames)
         {
-            ValidateConfig ("EVE_ATMOSPHERE");
-            ValidateConfig ("EVE_CITY_LIGHTS");
-            ValidateConfig ("EVE_CLOUDS");
-            ValidateConfig ("EVE_SHADOWS");
-            ValidateConfig ("EVE_TERRAIN");
-            ValidateConfig ("PQS_MANAGER");
+            string [] szEVEConfigToCheck = {"EVE_ATMOSPHERE", "EVE_CITY_LIGHTS", "EVE_CLOUDS", "EVE_SHADOWS", "EVE_TERRAIN", "PQS_MANAGER"};
+
+            foreach (string szEVENodeToCheck in szEVEConfigToCheck)
+            {
+                //  Before we start, check if the celestial body list has been populated.
+
+                if (szBodyLoaderNames.Count > 0)
+                {
+                    //  Try to validate each one of the EVE config types.
+
+                    int nEVENodesFound = GetCheckConfig (szBodyLoaderNames, szEVENodeToCheck);
+
+                    //  Make a note if no EVE configs of that type have been installed.
+
+                    if (nEVENodesFound == 0)
+                    {
+                        Notification.Logger (Constants.AssemblyName, "Warning", string.Format ("No {0} configs found!", szEVENodeToCheck));
+                    }
+                    else
+                    {
+                        //  Print the total number of EVE configs loaded (for debug purposes).
+
+                        if (Utilities.IsVerboseDebugEnabled ())
+                        {
+                            Notification.Logger (Constants.AssemblyName, string.Empty, string.Format ("{0} config found (count: {1})!", szEVENodeToCheck, nEVENodesFound));
+                        }
+                    }
+                }
+            }
         }
     }
 }

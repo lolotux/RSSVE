@@ -1,7 +1,7 @@
 //  ================================================================================
 //  Real Solar System Visual Enhancements for Kerbal Space Program.
 
-//  Copyright © 2016-2017, Alexander "Phineas Freak" Kampolis.
+//  Copyright © 2016-2018, Alexander "Phineas Freak" Kampolis.
 
 //  This file is part of Real Solar System Visual Enhancements.
 
@@ -32,6 +32,10 @@ using System.Runtime.InteropServices;
 //  Hide the specified assembly from any COM components.
 
 [assembly: ComVisible (false)]
+
+//  Tag the assembly as non-CLS compliant.
+
+[assembly: CLSCompliant (false)]
 
 //  Assembly version information. Consists of the following four values:
 //
