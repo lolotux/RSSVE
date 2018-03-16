@@ -1,17 +1,29 @@
 //  ================================================================================
 //  Real Solar System Visual Enhancements for Kerbal Space Program.
-
+//
 //  Copyright © 2016-2018, Alexander "Phineas Freak" Kampolis.
-
+//
 //  This file is part of Real Solar System Visual Enhancements.
-
-//  Real Solar System Visual Enhancements is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+//
+//  Real Solar System Visual Enhancements is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
 //  (CC-BY-NC-SA 4.0) license.
-
+//
 //  You should have received a copy of the license along with this work. If not, visit the official
 //  Creative Commons web page:
-
+//
 //      • https://www.creativecommons.org/licensies/by-nc-sa/4.0
+//
+//  Based on code by Blackrack:
+//
+//      • https://github.com/LGhassen/Scatterer/blob/master/scatterer/Core.cs
+//
+//  Original is © Copyright Blackrack, GNU General Public License v3:
+//
+//      • https://www.gnu.org/licenses/gpl-3.0-standalone.html
+//
+//  Forum thread:
+//
+//      • https://forum.kerbalspaceprogram.com/index.php?showtopic=103963
 //  ================================================================================
 
 using System;
@@ -72,7 +84,7 @@ namespace RSSVE
 
         void Start ()
         {
-            // Check if the KSP version is compatible.
+            // Before we start, check if the KSP version is compatible.
 
             if (CompatibilityChecker.IsCompatible ())
             {
@@ -184,18 +196,18 @@ namespace RSSVE
 
                     // Log some debugging information. NOTE: major log spam source!
 
-                    if (Utilities.IsVerboseDebugEnabled ())
+                    if (Utilities.IsVerboseDebugEnabled)
                     {
-                        Notification.Logger (Constants.AssemblyName, string.Empty, string.Format ("Target body name: {0}", szTargetBodyName));
-                        Notification.Logger (Constants.AssemblyName, string.Empty, string.Format ("Target body transform: {0}", TargetBodyTransform));
-                        Notification.Logger (Constants.AssemblyName, string.Empty, string.Format ("Target body radius: {0}", fTargetBodyRadius));
-                        Notification.Logger (Constants.AssemblyName, string.Empty, string.Format ("SS camera near clip: {0}", SSCamera.nearClipPlane));
+                        Notification.Logger (Constants.AssemblyName, null, string.Format ("Target body name: {0}", szTargetBodyName));
+                        Notification.Logger (Constants.AssemblyName, null, string.Format ("Target body transform: {0}", TargetBodyTransform));
+                        Notification.Logger (Constants.AssemblyName, null, string.Format ("Target body radius: {0}", fTargetBodyRadius));
+                        Notification.Logger (Constants.AssemblyName, null, string.Format ("SS camera near clip: {0}", SSCamera.nearClipPlane));
                     }
                 }
             }
             catch (Exception ExceptionStack)
             {
-                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("CameraUpdater.Update() caught an exception: {0}\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
+                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("CameraUpdater.Update() caught an exception: {0},\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
             }
         }
     }

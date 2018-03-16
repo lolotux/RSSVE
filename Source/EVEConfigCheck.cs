@@ -1,16 +1,16 @@
 //  ================================================================================
 //  Real Solar System Visual Enhancements for Kerbal Space Program.
-
+//
 //  Copyright © 2016-2018, Alexander "Phineas Freak" Kampolis.
-
+//
 //  This file is part of Real Solar System Visual Enhancements.
-
-//  Real Solar System Visual Enhancements is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+//
+//  Real Solar System Visual Enhancements is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
 //  (CC-BY-NC-SA 4.0) license.
-
+//
 //  You should have received a copy of the license along with this work. If not, visit the official
 //  Creative Commons web page:
-
+//
 //      • https://www.creativecommons.org/licensies/by-nc-sa/4.0
 //  ================================================================================
 
@@ -29,7 +29,7 @@ namespace RSSVE
         /// Method to check if a specific EVE configuration file is valid.
         /// </summary>
         /// <param name = "szBodyLoaderNames">A list with all celestial body names found in the GameDatabase</param>
-        /// <param name = "szEVENodeToCheck">The name of the configuration file to be checked (string).</param>
+        /// <param name = "szEVENodeToCheck">The name of the configuration file to be checked (string)</param>
         /// <returns>
         /// Returns the number of the specific EVE configuration files found.
         /// </returns>
@@ -63,7 +63,7 @@ namespace RSSVE
                             {
                                 //  Print the invalid body name (for debug purposes).
 
-                                if (Utilities.IsVerboseDebugEnabled ())
+                                if (Utilities.IsVerboseDebugEnabled)
                                 {
                                     Notification.Logger (Constants.AssemblyName, "Warning", string.Format ("Incompatible {0} body detected (name: {1})!", szEVENodeToCheck, szBodyName));
                                 }
@@ -118,9 +118,9 @@ namespace RSSVE
                     {
                         //  Print the total number of EVE configs loaded (for debug purposes).
 
-                        if (Utilities.IsVerboseDebugEnabled ())
+                        if (Utilities.IsVerboseDebugEnabled)
                         {
-                            Notification.Logger (Constants.AssemblyName, string.Empty, string.Format ("{0} config found (count: {1})!", szEVENodeToCheck, nEVENodesFound));
+                            Notification.Logger (Constants.AssemblyName, null, string.Format ("{0} config found (count: {1})!", szEVENodeToCheck, nEVENodesFound));
                         }
                     }
                 }

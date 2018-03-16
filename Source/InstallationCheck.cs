@@ -1,18 +1,18 @@
 //  ================================================================================
 //  Real Solar System Visual Enhancements for Kerbal Space Program.
-
+//
 //  Copyright © 2016-2018, Alexander "Phineas Freak" Kampolis.
-
+//
 //  This file is part of Real Solar System Visual Enhancements.
-
-//  Real Solar System Visual Enhancements is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+//
+//  Real Solar System Visual Enhancements is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
 //  (CC-BY-NC-SA 4.0) license.
-
+//
 //  You should have received a copy of the license along with this work. If not, visit the official
 //  Creative Commons web page:
-
+//
 //      • https://www.creativecommons.org/licensies/by-nc-sa/4.0
-
+//
 //  Based on the InstallChecker from the Kethane mod for Kerbal Space Program:
 //
 //      • https://github.com/Majiir/Kethane/blob/master/Plugin/Kethane/Utilities/InstallChecker.cs
@@ -58,12 +58,14 @@ namespace RSSVE
             {
                 if (CompatibilityChecker.IsCompatible ())
                 {
+                    Notification.Logger (Constants.AssemblyName, null, "Removing the EVE config GameDatabase event handler...");
+
                     GameEvents.OnGameDatabaseLoaded.Remove (OnGameDatabaseLoaded);
                 }
             }
             catch (Exception ExceptionStack)
             {
-                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("InstallChecker.OnDestroy() caught an exception: {0}\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
+                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("InstallChecker.OnDestroy() caught an exception: {0},\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
             }
         }
 
@@ -76,7 +78,7 @@ namespace RSSVE
 
         void OnGameDatabaseLoaded ()
         {
-            Notification.Logger (Constants.AssemblyName, string.Empty, "Reloading GameDatabase...");
+            Notification.Logger (Constants.AssemblyName, null, "Reloading GameDatabase...");
 
             EVEConfigChecker.GetValidateConfig (Utilities.GetCelestialBodyList ());
         }
@@ -92,7 +94,8 @@ namespace RSSVE
         {
             try
             {
-                //  Check if the mod's assembly is placed at the correct location. This will also detect duplicate copies because only one can be in the right place.
+                //  Check if the mod's assembly is placed at the correct location. This will
+                //  also detect duplicate copies because only one can be in the right place.
 
                 var BaseAssembly = AssemblyLoader.loadedAssemblies.Where (asm => asm.assembly.GetName ().Name.Equals (Assembly.GetExecutingAssembly ().GetName ().Name)).Where (asm => asm.url != Constants.AssemblyPath);
 
@@ -110,7 +113,7 @@ namespace RSSVE
                 {
                     string MissingDependenciesNames = string.Empty;
 
-                    //  Check the GameDatabase to see if the following dependencies are installed:
+                    //  Check if the following dependencies are installed:
                     //  • Environmental Visual Enhancements
                     //  • Module Manager
                     //  • Real Solar System
@@ -164,11 +167,11 @@ namespace RSSVE
 
                     if (CompatibilityChecker.IsCompatible ())
                     {
-                        Notification.Logger (Constants.AssemblyName, string.Empty, "Starting the EVE config validator...");
+                        Notification.Logger (Constants.AssemblyName, null, "Starting the EVE config validator...");
 
                         EVEConfigChecker.GetValidateConfig (Utilities.GetCelestialBodyList ());
 
-                        Notification.Logger (Constants.AssemblyName, string.Empty, "Adding the EVE config GameDatabase event handler...");
+                        Notification.Logger (Constants.AssemblyName, null, "Adding the EVE config GameDatabase event handler...");
 
                         GameEvents.OnGameDatabaseLoaded.Add (OnGameDatabaseLoaded);
                     }
@@ -176,7 +179,7 @@ namespace RSSVE
             }
             catch (Exception ExceptionStack)
             {
-                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("InstallChecker.Start() caught an exception: {0}\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
+                Notification.Logger (Constants.AssemblyName, "Error", string.Format ("InstallChecker.Start() caught an exception: {0},\n{1}\n", ExceptionStack.Message, ExceptionStack.StackTrace));
             }
         }
     }

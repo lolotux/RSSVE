@@ -65,7 +65,7 @@
             Method to check if a specific EVE configuration file is valid.
             </summary>
             <param name = "szBodyLoaderNames">A list with all celestial body names found in the GameDatabase</param>
-            <param name = "szEVENodeToCheck">The name of the configuration file to be checked (string).</param>
+            <param name = "szEVENodeToCheck">The name of the configuration file to be checked (string)</param>
             <returns>
             Returns the number of the specific EVE configuration files found.
             </returns>
@@ -146,7 +146,7 @@
             The minor version value.
             </summary>
         </member>
-        <member name="F:RSSVE.Constants.VersionCompatible.Revis">
+        <member name="F:RSSVE.Constants.VersionCompatible.Revision">
             <summary>
             The revision version value.
             </summary>
@@ -166,9 +166,9 @@
             Method to create pop-up notification dialogs.
             </summary>
             <param name = "DialogName">The internal name of the dialog window spawned.</param>
-            <param name = "TitleText">The title text of the dialog window. (string)</param>
+            <param name = "TitleText">The title text of the dialog window (string).</param>
             <param name = "TitleColor">The color of the message text.</param>
-            <param name = "ContentText">The message text of the dialog window. (string)</param>
+            <param name = "ContentText">The message text of the dialog window (string).</param>
             <param name = "ContentColor">The color of the message text.</param>
             <returns>
             Does not return a value.
@@ -187,7 +187,7 @@
         </member>
         <member name="T:RSSVE.Utilities">
             <summary>
-            Class to get basic system operational parameters.
+            Class to setup basic system and utility functions.
             </summary>
         </member>
         <member name="M:RSSVE.Utilities.GetCelestialBodyList">
@@ -196,14 +196,6 @@
             </summary>
             <returns>
             Returns a list of names for all celestial bodies found in the GameDatabase (string).
-            </returns>
-        </member>
-        <member name="M:RSSVE.Utilities.IsVerboseDebugEnabled">
-            <summary>
-            Method to check if the verbose debug option is active.
-            </summary>
-            <returns>
-            Returns the status of the verbose debug option (boolean).
             </returns>
         </member>
         <member name="P:RSSVE.Utilities.GetGraphicsRenderer">
@@ -230,12 +222,20 @@
             Returns True if the Operating System is using the AMD64 specification (x64) and False if it is using the baseline Intel specification (x86).
             </returns>
         </member>
+        <member name="P:RSSVE.Utilities.IsVerboseDebugEnabled">
+            <summary>
+            Method to check if the verbose debug option is active.
+            </summary>
+            <returns>
+            Returns the status of the verbose debug option (boolean).
+            </returns>
+        </member>
         <member name="T:RSSVE.Version">
             <summary>
             Class to get the assembly version information.
             </summary>
         </member>
-        <member name="P:RSSVE.Version.GetAssemblyVersion">
+        <member name="M:RSSVE.Version.GetAssemblyVersion">
             <summary>
             Method to get the assembly version.
             </summary>
@@ -245,7 +245,7 @@
         </member>
         <member name="T:RSSVE.StartupChecker">
             <summary>
-            Startup System checker. Operates only in the Loading scene.
+            Startup system checker. Operates only in the Loading scene.
             </summary>
         </member>
         <member name="M:RSSVE.StartupChecker.Start">

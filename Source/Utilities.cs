@@ -1,16 +1,16 @@
 //  ================================================================================
 //  Real Solar System Visual Enhancements for Kerbal Space Program.
-
+//
 //  Copyright © 2016-2018, Alexander "Phineas Freak" Kampolis.
-
+//
 //  This file is part of Real Solar System Visual Enhancements.
-
-//  Real Solar System Visual Enhancements is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+//
+//  Real Solar System Visual Enhancements is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
 //  (CC-BY-NC-SA 4.0) license.
-
+//
 //  You should have received a copy of the license along with this work. If not, visit the official
 //  Creative Commons web page:
-
+//
 //      • https://www.creativecommons.org/licensies/by-nc-sa/4.0
 //  ================================================================================
 
@@ -56,7 +56,7 @@ namespace RSSVE
             /// The revision version value.
             /// </summary>
 
-            public static readonly int Revis = 1;
+            public static readonly int Revision = 1;
 
             /// <summary>
             /// The build version value.
@@ -98,9 +98,9 @@ namespace RSSVE
         /// Method to create pop-up notification dialogs.
         /// </summary>
         /// <param name = "DialogName">The internal name of the dialog window spawned.</param>
-        /// <param name = "TitleText">The title text of the dialog window. (string)</param>
+        /// <param name = "TitleText">The title text of the dialog window (string).</param>
         /// <param name = "TitleColor">The color of the message text.</param>
-        /// <param name = "ContentText">The message text of the dialog window. (string)</param>
+        /// <param name = "ContentText">The message text of the dialog window (string).</param>
         /// <param name = "ContentColor">The color of the message text.</param>
         /// <returns>
         /// Does not return a value.
@@ -161,7 +161,7 @@ namespace RSSVE
     #region RSSVE System Functions
 
     /// <summary>
-    /// Class to get basic system operational parameters.
+    /// Class to setup basic system and utility functions.
     /// </summary>
 
     public static class Utilities
@@ -182,7 +182,10 @@ namespace RSSVE
                 //  Add the body name to the list. We are saving it to
                 //  lowercase, since it is the lowest common denominator.
 
-                szBodyLoaderNames.Add (Celestial.bodyName.ToLower ());
+                if (Celestial != null)
+                {
+                    szBodyLoaderNames.Add (Celestial.bodyName.ToLower ());
+                }
             }
 
             return szBodyLoaderNames;
@@ -292,9 +295,12 @@ namespace RSSVE
         /// Returns the status of the verbose debug option (boolean).
         /// </returns>
 
-        public static bool IsVerboseDebugEnabled ()
+        public static bool IsVerboseDebugEnabled
         {
-            return GameSettings.VERBOSE_DEBUG_LOG;
+            get
+            {
+                return GameSettings.VERBOSE_DEBUG_LOG;
+            }
         }
     }
 
@@ -306,7 +312,7 @@ namespace RSSVE
     /// Class to get the assembly version information.
     /// </summary>
 
-    static class Version
+    public static class Version
     {
         /// <summary>
         /// Method to get the assembly version.
@@ -315,14 +321,11 @@ namespace RSSVE
         /// Returns the assembly version (major.minor.revision.build) (string).
         /// </returns>
 
-        public static string GetAssemblyVersion
+        public static string GetAssemblyVersion ()
         {
-            get
-            {
-                var AssemblyVersion = FileVersionInfo.GetVersionInfo (Assembly.GetExecutingAssembly ().Location);
+            var AssemblyVersion = FileVersionInfo.GetVersionInfo (Assembly.GetExecutingAssembly ().Location);
 
-                return string.Format ("{0}.{1}.{2}.{3}", AssemblyVersion.FileMajorPart, AssemblyVersion.FileMinorPart, AssemblyVersion.FileBuildPart, AssemblyVersion.FilePrivatePart);
-            }
+            return string.Format ("{0}.{1}.{2}.{3}", AssemblyVersion.FileMajorPart, AssemblyVersion.FileMinorPart, AssemblyVersion.FileBuildPart, AssemblyVersion.FilePrivatePart);
         }
     }
 

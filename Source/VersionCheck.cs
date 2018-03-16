@@ -37,7 +37,7 @@ namespace RSSVE
     //  to be incompatible with the current running version of Kerbal Space Program.
 
     //  See this forum thread for details:
-    //  http://forum.kerbalspaceprogram.com/threads/65395-Voluntarily-Locking-Plugins-to-a-Particular-KSP-Version
+    //  https://forum.kerbalspaceprogram.com/index.php?showtopic=59388
 
     [KSPAddon (KSPAddon.Startup.Instantly, true)]
 
@@ -56,7 +56,9 @@ namespace RSSVE
             //  Even if you don't lock down functionality, you should return true if your users
             //  can expect a future update to be available.
 
-            return (Versioning.version_minor.Equals (Constants.VersionCompatible.Minor) && Versioning.version_major.Equals (Constants.VersionCompatible.Major) && Versioning.Revision.Equals (Constants.VersionCompatible.Revis));
+            return (Versioning.version_minor.Equals (Constants.VersionCompatible.Minor) &&
+                    Versioning.version_major.Equals (Constants.VersionCompatible.Major) &&
+                    Versioning.Revision.Equals (Constants.VersionCompatible.Revision));
         }
 
         public static bool IsUnityCompatible ()
