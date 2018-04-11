@@ -1,5 +1,39 @@
 ==================================================
-RSSVE v1.3.1-2 for KSP 1.3.1 (2018-04-34)
+RSSVE v1.3.1-4 for KSP 1.3.1 (2018-04-11)
+==================================================
+
+Change Log:
+
+    • Tweaked the Earth exposure values.
+
+Bug Fixes:
+
+    • Fixed the night side of the bodies appearing too bright.
+
+Known Issues:
+
+    • The city lights may appear blocky from low orbital altitudes.
+    • The transitioning between PQS and ScaledSpace is not as soft as it should.
+    • The cloud texture maps may break upon quickloading a save while in-flight.
+    • The Saturn rings may sometimes appear to cast hard shadows or be completely black.
+
+==================================================
+RSSVE v1.3.1-3 for KSP 1.3.1 (2018-04-06)
+==================================================
+
+Bug Fixes:
+
+    • Fixed the EVE city lights patch creating Module Manager errors.
+
+Known Issues:
+
+    • The city lights may appear blocky from low orbital altitudes.
+    • The transitioning between PQS and ScaledSpace is not as soft as it should.
+    • The cloud texture maps may break upon quickloading a save while in-flight.
+    • The Saturn rings may sometimes appear to cast hard shadows or be completely black.
+
+==================================================
+RSSVE v1.3.1-2 for KSP 1.3.1 (2018-04-04)
 ==================================================
 
 Change Log:
