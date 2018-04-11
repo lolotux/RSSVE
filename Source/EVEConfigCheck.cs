@@ -47,7 +47,7 @@ namespace RSSVE
 
                 foreach (ConfigNode EVENode in GameDatabase.Instance.GetConfigNodes (szEVENodeToCheck))
                 {
-                    //  Search for the EVE body sub-confignodes.
+                    //  Search for the EVE body sub-ConfigNodes.
 
                     foreach (ConfigNode EVECloudsObject in EVENode.GetNodes ("OBJECT"))
                     {
