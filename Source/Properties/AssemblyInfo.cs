@@ -23,11 +23,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany ("Phineas Freak")]
 [assembly: AssemblyConfiguration ("Stable")]
 [assembly: AssemblyCopyright ("Copyright © 2016 - 2018, Phineas Freak")]
-[assembly: AssemblyCulture ("")]
 [assembly: AssemblyDescription ("Real Solar System Visual Enhancements for KSP")]
 [assembly: AssemblyProduct ("RSSVE")]
 [assembly: AssemblyTitle ("RSSVE")]
-[assembly: AssemblyTrademark ("")]
 
 //  Hide the specified assembly from any COM components.
 
@@ -45,7 +43,7 @@ using System.Runtime.InteropServices;
 //    • Revision
 
 [assembly: AssemblyVersion ("1.3.1.1891")]
-[assembly: AssemblyFileVersion ("1.3.1.1")]
+[assembly: AssemblyFileVersion ("1.3.1.5")]
 [assembly: AssemblyInformationalVersion ("1.3.1.1891")]
 
 //  The KSPAssembly attribute can be used to ensure that the plugin assemblies

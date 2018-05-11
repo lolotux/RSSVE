@@ -214,6 +214,14 @@
             Returns one the following operating system types: Linux, OSX, Windows or Unknown (string).
             </returns>
         </member>
+        <member name="P:RSSVE.Utilities.GetShaderModelCapability">
+            <summary>
+            Method to get the graphics accelerator supported shader model.
+            </summary>
+            <returns>
+            Returns one of the following values: 20, 25, 30, 35, 40, 45, 46 or 50.
+            </returns>
+        </member>
         <member name="P:RSSVE.Utilities.Is64BitOS">
             <summary>
             Method to get the operating system octet size.
