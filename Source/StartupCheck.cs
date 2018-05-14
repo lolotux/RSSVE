@@ -50,7 +50,8 @@ namespace RSSVE
                     Notification.Logger (Constants.AssemblyName, null, string.Format ("Using x86-64 KSP binaries: {0}", Utilities.Is64BitOS));
                     Notification.Logger (Constants.AssemblyName, null, string.Format ("Using Unity player: {0}", Utilities.GetPlatformType));
                     Notification.Logger (Constants.AssemblyName, null, string.Format ("Using renderer: {0}", Utilities.GetGraphicsRenderer));
-                    Notification.Logger (Constants.AssemblyName, null, string.Format ("Using Shader Model: {0}", Utilities.GetShaderModelCapability));
+                    Notification.Logger (Constants.AssemblyName, null, string.Format ("Using Maximum Texture Size: {0}", SystemInfo.maxTextureSize));
+                    Notification.Logger (Constants.AssemblyName, null, string.Format ("Supports cubemap textures: {0}", SystemInfo.supportsRenderToCubemap));
                 }
 
                 //  Check if we are running under a x86 environment. The large amount of RAM space
@@ -63,14 +64,14 @@ namespace RSSVE
                     Notification.Logger (Constants.AssemblyName, "Error", "Unsupported OS Version (using 32 bit)!");
                 }
 
-                //  Check if the graphics accelerator installed supports the Shader Model 4.0 and newer. The texture size
-                //  (max 8192 pixels) required by the RSSVE assets is not supported by earlier Shader Model versions.
+                //  Check if the graphics accelerator installed supports at
+                //  least the 8K texture size required by the RSSVE assets.
 
-                if (Utilities.GetShaderModelCapability < 40)
+                if (SystemInfo.maxTextureSize < 8192 && !SystemInfo.supportsRenderToCubemap)
                 {
-                    Notification.Dialog ("ShaderModelChecker", "Unsupported Graphics Accelerator", "#F0F0F0", string.Format ("{0} is not supported by the current graphics accelerator installed.", Constants.AssemblyName), "#F0F0F0");
+                    Notification.Dialog ("TextureChecker", "Unsupported Graphics Accelerator", "#F0F0F0", string.Format ("{0} is not supported by the current graphics accelerator installed.", Constants.AssemblyName), "#F0F0F0");
 
-                    Notification.Logger (Constants.AssemblyName, "Error", string.Format ("Unsupported Shader Model version (using {0})!", Utilities.GetShaderModelCapability));
+                    Notification.Logger (Constants.AssemblyName, "Error", string.Format ("Unsupported minimum texture size (using {0})!", SystemInfo.maxTextureSize));
                 }
             }
             catch (Exception ExceptionStack)

@@ -274,21 +274,6 @@ namespace RSSVE
         }
 
         /// <summary>
-        /// Method to get the graphics accelerator supported shader model.
-        /// </summary>
-        /// <returns>
-        /// Returns one of the following values: 20, 25, 30, 35, 40, 45, 46 or 50.
-        /// </returns>
-
-        public static int GetShaderModelCapability
-        {
-            get
-            {
-                return SystemInfo.graphicsShaderLevel;
-            }
-        }
-
-        /// <summary>
         /// Method to get the operating system octet size.
         /// </summary>
         /// <returns>
